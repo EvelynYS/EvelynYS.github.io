@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+    }
+
+    .PageHead {
+        width: 100%;
+        height: 200px;
+        background-color: lightgray;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        text-align: center;
+        line-height: 1.5;
+    }
+    h2 {
+        color: darkblue;
+        font-size: 28px;
+    }
+    h3, h4 {
+        color: darkblue;
+        font-size: 24px;
+        line-height: 1.5;
+    }
+
+    .PageBody {
+        width: 1050px;
+        padding: 50px 0px;
+        display: flex;
+        flex-wrap: wrap;
+        margin: auto;
+        justify-content: space-between;
+    }
+
+    .feature:nth-child(4n+1), .feature:nth-child(4n+4){
+        width: 480px;
+        display:flex;
+        flex-direction: column;  
+        justify-content: space-evenly;
+    }
+
+    .feature img {
+        width: 100%;
+    }
+    
+    .feature li {
+        font-size: 16px;
+        color: darkslateblue;
+        width: 100%;
+        list-style: disc inside;
+        line-height: 1.5;
+    }
+
+    li::marker{
+
+        color:blue;
+        font-size: 1.2em;
+    }
+    table td:nth-child(even){
+        text-indent: 1.5em;
+    }
+    .PageBottom {
+        width: 100%;
+        height: 100px;
+        background-color: lightgray;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        text-align: center;
+    }
+    .PageFooter {
+        width: 100%;
+        background-color: lightgray;
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: row;
+        margin: auto;
+        justify-content: center;
+    }
+
+    .functions {
+        width: 320px;
+        margin: 10px;
+        text-align: center;
+        padding: 5px;
+    }
+
+    h5 {
+        color: darkblue;
+        font-size: 20px;
+    }
+
+    .functions img {
+        width: 100px;
+        height: 100px;
+        border-radius: 50%;
+    }
+
+    a{
+        color:blue;
+        font-size: 16px;
+        display: inline-block;
+        line-height: 1.5;
+    }
+    p {
+        color: darkslateblue;
+        font-size: 16px;
+        display: inline-block;
+        line-height: 1.5;
+    }
+
+    .feature:nth-child(4n+1) img,
+    .feature:nth-child(4n+4) img {
+        width: 14px;
+        height: 14px; 
+    }
+
+    .feature:nth-child(4n+1) img:hover,
+    .feature:nth-child(4n+4) img:hover {
+        transform: translate(1em);
+        transition: 1s;
+        cursor: pointer;
+    }
+</style>
+
+<body>
+    <div class="PageHead">
+        <h2>單一平台就能助你
+            <br>在全通路輕鬆開店創業
+        </h2>
+        <p>從網路商店架站到實體門市管理，只需要一個平台，就能輕鬆實現開店創業，並能同步管理所有銷售管道，SHOPLINE 助你賣得更多、賣得更好！</p>
+    </div>
+    <div div class="PageBody">
+        <div class="feature">
+            <h3>免寫程式、多款版型<br>
+                輕鬆打造全能電商網站</h3>
+            <p>不會寫程式也能輕鬆架設品牌電商官網！任何產業都能找到合適的專業設計版型，以滑鼠拖曳就能完成網頁編輯，讓架設網站就像堆積木一樣簡單。</p>
+            <table>
+                <tr>
+                    <td><ul><li>豐富版型主題與字型搭配</li></ul></td>
+                    <td><ul><li>SEO 搜尋引擎優化</li></ul></td>
+                </tr>
+                <tr>
+                    <td><ul><li>響應式網頁設計</li></ul> </td>
+                    <td><ul><li>一頁商店</li></ul></td>
+                </tr>
+                <tr>
+                    <td><ul><li>獨有網址 ＆ SSL 安全憑證</li></ul></td>
+                    <td><ul><li>開放 HTML／CSS 編輯</li></ul></td>
+                </tr>
+            </table>
+            <a href="" target="blank">看看開店祕技<img calss="forward" src="icon7.png" alt="forward"></a>
+            
+        </div>
+        <div class="feature"><img src="1.webp"></div>
+        <div class="feature"><img src="2.webp"></div>
+        <div class="feature">
+            <h3>支持海內外電商<br>
+                金流、物流一次搞定</h3>
+            <p>支持在地及國際金流、物流串接服務，提供海內外顧客最便利的付款及送貨服務，加速消費者完成下單交易，大幅降低購物車放棄率！</p>
+            <table>
+                <tr>
+                    <td><ul><li>線上／線下信用卡刷卡</li></ul></td>
+                    <td><ul><li>多溫層宅配並指定運費</li></ul></td>
+                </tr>
+                <tr>
+                    <td><ul><li>第三方金流／行動支付整合</li></ul> </td>
+                    <td><ul><li>超商／宅配貨到付款</li></ul></td>
+                </tr>
+                <tr>
+                    <td><ul><li>超商代碼／條碼繳費</li></ul></td>
+                    <td><ul><li>發票開立與串接</li></ul></td>
+                </tr>
+            </table>
+            <a href="" target="blank">了解更多金物流<img calss="forward" src="icon7.png" alt="forward"></a>
+            
+        </div>
+        <div class="feature">
+            <h3>刺激下單，創造回購<br>
+                行銷導流、促購模組任你玩</h3>
+            <p>多元優惠活動、會員集客機制、網紅分潤等多種優惠促銷，將電商行銷玩法一網打盡；加上廣告追蹤助你有效優化行銷活動，刺激顧客下單、吸引鐵粉回購！</p>
+            <table>
+                <tr>
+                    <td><ul><li>推薦活動與分潤</li></ul></td>
+                    <td><ul><li>買Ｘ享Ｙ優惠</li></ul></td>
+                </tr>
+                <tr>
+                    <td><ul><li>A+B 優惠活動</li></ul> </td>
+                    <td><ul><li>會員推薦獎賞</li></ul></td>
+                </tr>
+                <tr>
+                    <td><ul><li>會員分級／點數／購物金</li></ul></td>
+                    <td><ul><li>FB／Google／LINE 廣告追蹤</li></ul></td>
+                </tr>
+            </table>
+            <a href="" target="blank">看更多優惠模組<img calss="forward" src="icon7.png" alt="forward"></a>
+            
+        </div>
+        <div class="feature"><img src="3.webp"></div>
+        <div class="feature"><img src="4.webp"></div>
+        <div class="feature">
+            <h3>「社群+電商」輕鬆開賣<br>
+                打造一致的社群購物體驗</h3>
+            <p>善用社群與顧客頻繁互動，讓你透過社群也能輕鬆開賣！從直播 +1 接單、聊天機器人到各管道的訊息整合，我們都為你準備好了，不放過每個銷售環節，打造全方位的社群購物體驗！</p>
+            <table>
+                <tr>
+                    <td><ul><li>社群直播購物系統</li></ul></td>
+                    <td><ul><li>FB／IG／LINE 直播 +1</li></ul></td>
+                </tr>
+                <tr>
+                    <td><ul><li>FB & IG 貼文 +1</li></ul> </td>
+                    <td><ul><li>FB／IG／LINE 對話式購物</li></ul></td>
+                </tr>
+                <tr>
+                    <td><ul><li>自訂聊天機器人腳本</li></ul></td>
+                    <td><ul><li>訊息整合中心</li></ul></td>
+                </tr>
+            </table>
+            <a href="" target="blank">看更多社群購物功能<img calss="forward" src="icon7.png" alt="forward"></a>
+            
+        </div>
+    </div>
+    <div class="PageBottom">
+        <h4>功能與服務</h4>
+    </div>
+    <div class="PageFooter">
+        <div class="functions"><img src="https://picsum.photos/300/200/?random=10">
+            <h5>強大庫存與訂單系統</h5>
+            <p>從商品數量、貨況到訂單付款狀態、物流貨態一目瞭然，提升營運效率超有感。</p>
+        </div>
+        <div class="functions"><img src="https://picsum.photos/300/200/?random=10">
+            <h5>即時化商店業績分析</h5>
+            <p>圖表化報表助你一手掌握商店概況，讓數據助攻企業成長，營運策略更有方向。</p>
+        </div>
+        <div class="functions"><img src="https://picsum.photos/300/200/?random=10">
+            <h5>多國語系、幣值切換</h5>
+            <p>想做跨境電商也ＯＫ！提供語言、幣別、稅金等進階功能，友善應對海外消費需求。</p>
+        </div>
+        <div class="functions"><img src="https://picsum.photos/300/200/?random=10">
+            <h5>專業顧問線上支援</h5>
+            <p>迅速、透明的溝通管道，協助你快速解決從線上到線下、從在地到海外的網店疑難。</p>
+        </div>
+        <div class="functions"><img src="https://picsum.photos/300/200/?random=10">
+            <h5>廣告行銷加值服務</h5>
+            <p>由官方認證的專業投手團隊，協助品牌投遞 Facebook、Google、LINE 等廣告。</p>
+        </div>
+        <div class="functions"><img src="https://picsum.photos/300/200/?random=10">
+            <h5>品牌專屬成長社群</h5>
+            <p>致力為品牌店家打造能深度交流且互助的生態體系，是拓展人脈、商機的絕佳場域。</p>
+        </div>
+    </div>
+</body>
+
+</html>
