@@ -105,8 +105,9 @@
             color: gray;
             text-align: justify;
             line-height: 1.5;
-            text-indent: -1.3em;
-            margin-left: 2em;
+            
+            padding-left: 1em;
+            text-indent: -1em;
         }
 
         h4+p {
@@ -117,10 +118,37 @@
             text-align: justify;
         }
 
-        span {
+        .span1 {
             font-size: 20px;
             color: darkred;
-            font-weight: bolder;
+            display: flex;
+            align-items: center;
+        }
+
+        .span1::after {
+            content: '';
+            display: block;
+            width: 20px;
+            height: 0;
+            border-top: 1px solid red;
+            flex-grow: 1;
+            margin-left: .5em;
+        }
+
+        .span2 {
+            font-size: 20px;
+            color: darkred;
+            display: flex;
+            align-items: center;
+        }
+
+        .span2::after {
+            content: '';
+            width: 20px;
+            height: 1px;
+            background-color: red;
+            flex-grow: 1;
+            margin-left: .5em;
         }
 
         h5 {
@@ -137,11 +165,14 @@
             content: '';
             display: inline-block;
             background-color: darkred;
-            width: 5px;
-            height: 5px;
+            width: 1em;
+            height: 1em;
             border-radius: 50%;
-            margin-left: .5em;
-            margin-right: .5em;
+            vertical-align: middle;
+            position: relative;
+            top: -2px;
+            scale: 0.3;
+            
 
         }
     </style>
@@ -162,7 +193,7 @@
                 <p>透過最佳重量分配，實現平順起步，直線穩定加速，過彎同時保持車身平穩，帶給駕駛更靈敏的道路反饋，享受隨心馳騁的行駛快感。</p>
             </div>
             <div class="BoxBottom">
-                <span><strong>因為我們做了這些革新</strong></span><br>
+                <span class="span1"><strong>因為我們做了這些革新</strong></span><br>
                 <h5>低重心設計</h5>
                 <p>透過低重心設計，不僅呈現更低伏的外觀，更能減少車身側傾，保持高速行駛穩定性。</p>
                 <h5>車體剛性強化</h5>
@@ -185,12 +216,35 @@
                 <p>您的愛車會妥善保護您，強悍穩固的車身可使您安全無虞。世界級的安全功能讓您輕鬆自如享受旅程，毫無後顧之憂。</p>
             </div>
             <div class="BoxBottom">
-                <span><strong>因為我們做了這些革新</strong></span><br>
+                <span class="span2"><strong>因為我們做了這些革新</strong></span><br>
                 <h5>主動安全</h5>
                 <p>可以先進的TSS系統主動偵測路況，輔助駕駛判斷路況並維持行車安全。</p>
                 <h5>被動安全</h5>
                 <p>堅固的高剛性車體，使用熱沖壓材料的高強度抗扭鋼板，強化座艙對意外事故的保護力。</p>
             </div>
+        </div>
+        <div class="BoxList">
+            <div class="BoxLeftTop">
+                <h2>01</h2>
+            </div>
+            <div class="BoxRightTop">
+                <h3>操控樂趣</h3>
+            </div>
+            <div class="BoxCenter"><img src="p1.webp"></div>
+            <div class="BoxLeftMiddle">
+                <h4>人人滿意的駕駛體驗</h4>
+                <p>透過最佳重量分配，實現平順起步，直線穩定加速，過彎同時保持車身平穩，帶給駕駛更靈敏的道路反饋，享受隨心馳騁的行駛快感。</p>
+            </div>
+            <div class="BoxBottom">
+                <span><strong>因為我們做了這些革新<hr></strong></span>
+                <h5>低重心設計</h5>
+                <p>透過低重心設計，不僅呈現更低伏的外觀，更能減少車身側傾，保持高速行駛穩定性。</p>
+                <h5>車體剛性強化</h5>
+                <p>車身結構採用超高強度鋼材，提高車輛穩定性，同時藉由雷射強化焊接技術，大幅增加焊點數量，提升車身抗扭剛性，強化駕馭穩定性及安全性。</p>
+                <h5>四輪獨立懸吊</h5>
+                <p>搭載全新四輪獨立懸吊設定，透過懸吊的高承載強度，保持輪胎抓地力，同時兼顧轉向靈敏度與清晰路感回饋，提升駕馭樂趣。</p>
+            </div>
+
         </div>
     </div>
 </body>
