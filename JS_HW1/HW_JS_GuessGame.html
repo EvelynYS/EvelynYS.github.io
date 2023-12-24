@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>GuessGame</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+
+      font-family: Microsoft JhengHei, Arial, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+
+      background-image:
+        linear-gradient(rgba(0, 0, 255, 0.5), rgba(255, 255, 0, 0.5));
+      background-size: cover;
+    }
+
+    button {
+      padding: 10px 20px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    .btnGroup {
+      margin: 10px;
+    }
+
+    .btnGroup {
+      width: 40px;
+      height: 40px;
+      font-size: 20px;
+      background-color: rgb(192, 255, 217);
+      border-radius: 50%;
+    }
+
+    .btnGroup:hover {
+      background-color: rgb(0, 128, 102);
+      border-radius: 50%;
+      color: aliceblue;
+    }
+
+
+    input {
+      padding: 8px;
+      font-size: 16px;
+      margin-right: 8px;
+      text-align: center;
+    }
+
+    #result {
+      font-size: 18px;
+      margin-top: 10px;
+    }
+
+    #feedback {
+      margin-top: 20px;
+      font-size: 16px;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="game-container">
+    <h1>猜數字遊戲-練習版</h1>
+    <div>
+      <input type="button" class="btnGroup" id="btn1" value="1" />
+      <input type="button" class="btnGroup" id="btn2" value="2" />
+      <input type="button" class="btnGroup" id="btn3" value="3" />
+      <input type="button" class="btnGroup" id="btn4" value="4" />
+      <input type="button" class="btnGroup" id="btn5" value="5" />
+      <input type="button" class="btnGroup" id="btn6" value="6" />
+      <input type="button" class="btnGroup" id="btn7" value="7" />
+      <input type="button" class="btnGroup" id="btn8" value="8" />
+      <input type="button" class="btnGroup" id="btn9" value="9" />
+      <input type="button" class="btnGroup" id="btn0" value="0" />
+    </div>
+
+    <input type="text" id="guess-input" readonly value="" />
+    <input type="button" value="確認" id="check"/>
+    <input type="button" value="清除" onclick="" id="clear" />
+    <p id="result">Fighting</p>
+    <p class="highlight">請輸入1~100之間的數字</p>
+
+  </div>
+
+  <script>
+    function getRandomIntInclusive(min, max) {
+      min = Math.ceil(min);
+      max = Math.floor(max);
+      return Math.floor(Math.random() * (max - min + 1) + min); //The maximum is inclusive and the minimum is inclusive
+    }
+
+
+
+    //let btn = document.querySelectorAll(".btnGroup");
+
+    let btn1 = document.getElementById('btn1');
+    let btn2 = document.getElementById('btn2');
+    let btn3 = document.getElementById('btn3');
+    let btn4 = document.getElementById('btn4');
+    let btn5 = document.getElementById('btn5');
+    let btn6 = document.getElementById('btn6');
+    let btn7 = document.getElementById('btn7');
+    let btn8 = document.getElementById('btn8');
+    let btn9 = document.getElementById('btn9');
+    let btn0 = document.getElementById('btn0');
+
+    let inputText = document.getElementById('guess-input');
+    let clear = document.getElementById('clear');
+    let check = document.getElementById('check');
+    let result = document.getElementById('result');
+    
+    let randomAns;
+
+    function btn1Event() {
+      btn1.addEventListener('click', function (e) {
+        if (inputText.value === 0) {
+          inputText.value = btn1.value;
+        } else {
+          inputText.value += btn1.value;
+        }
+      });
+    }
+
+    function btn2Event() {
+      btn2.addEventListener('click', function (e) {
+        if (inputText.value === 0|| inputText.value === '0') {
+          inputText.value = btn2.value;
+        } else {
+          inputText.value += btn2.value;
+        }
+      });
+    }
+    function btn3Event() {
+      btn3.addEventListener('click', function (e) {
+        if (inputText.value === 0 || inputText.value === '0') {
+          inputText.value = btn3.value;
+        } else{
+          inputText.value += btn3.value;
+        }
+      });
+    }
+    function btn4Event() {
+      btn4.addEventListener('click', function (e) {
+        if (inputText.value === 0|| inputText.value === '0') {
+          inputText.value = btn4.value;
+        } else {
+          inputText.value += btn4.value;
+        }
+      });
+    }
+
+    function btn5Event() {
+      btn5.addEventListener('click', function (e) {
+        if (inputText.value === 0|| inputText.value === '0') {
+          inputText.value = btn5.value;
+        } else {
+          inputText.value += btn5.value;
+        }
+      });
+    }
+    function btn6Event() {
+      btn6.addEventListener('click', function (e) {
+        if (inputText.value === 0|| inputText.value === '0') {
+          inputText.value = btn6.value;
+        } else {
+          inputText.value += btn6.value;
+        }
+      });
+    }
+    function btn7Event() {
+      btn7.addEventListener('click', function (e) {
+        if (inputText.value === 0|| inputText.value === '0') {
+          inputText.value = btn7.value;
+        } else {
+          inputText.value += btn7.value;
+        }
+      });
+    }
+    function btn8Event() {
+      btn8.addEventListener('click', function (e) {
+        if (inputText.value === 0|| inputText.value === '0') {
+          inputText.value = btn8.value;
+        } else {
+          inputText.value += btn8.value;
+        }
+      });
+    }
+
+    function btn9Event() {
+      btn9.addEventListener('click', function (e) {
+        if (inputText.value === 0|| inputText.value === '0') {
+          inputText.value = btn9.value;
+        } else {
+          inputText.value += btn9.value;
+        }
+      });
+    }
+    function btn0Event() {
+      btn0.addEventListener('click', function (e) {
+        if (inputText.value === 0|| inputText.value === '0') {
+          inputText.value = btn0.value;
+        } else {
+          inputText.value += btn0.value;
+        }
+      });
+    }
+
+      // inputText.addEventListener("input", function (e) {
+      //   if (parseInt(inputText.value) > 100 ){
+      //   alert("輸入數字超過100");
+      //   }
+      // });
+
+      check.addEventListener('click', function(e){
+        if (parseInt(inputText.value)===randomAns){ result.innerText ="恭喜猜中"; }
+        else if (parseInt(inputText.value)>100){result.innerText ="輸入不在1~100範圍內，請重新輸入1~100之間的數字";inputText.value = "";
+        }
+        else{result.innerText = "沒有猜中，請再來一次";inputText.value = "";}
+      })
+
+    clear.addEventListener('click', function (e) {
+      inputText.value = "";
+      window.location.reload();
+    })
+
+    window.onload = function () {
+      randomAns = getRandomIntInclusive(1, 100);
+        btn1Event();
+        btn2Event();
+        btn3Event();
+        btn4Event();
+        btn5Event();
+        btn6Event();
+        btn7Event();
+        btn8Event();
+        btn9Event();
+        btn0Event();
+    };
+  </script>
+</body>
+
+</html>
