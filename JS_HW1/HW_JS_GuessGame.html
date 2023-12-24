@@ -82,22 +82,22 @@
     </div>
 
     <input type="text" id="guess-input" readonly value="" />
-    <input type="button" value="確認" id="check"/>
-    <input type="button" value="更新密碼數字" onclick="" id="clear" />
+    <input type="button" value="確認" id="check" />
+    <input type="button" value="更新密碼數字" onclick="" id="tryAgain" />
+    <input type="button" value="清除" onclick="" id="clear" />
     <p id="result">Fighting</p>
     <p class="highlight">請輸入1~100之間的數字</p>
 
   </div>
 
   <script>
+    let min = 1;
+    let max = 100;
     function getRandomIntInclusive(min, max) {
       min = Math.ceil(min);
       max = Math.floor(max);
       return Math.floor(Math.random() * (max - min + 1) + min); //The maximum is inclusive and the minimum is inclusive
     }
-
-
-
     //let btn = document.querySelectorAll(".btnGroup");
 
     let btn1 = document.getElementById('btn1');
@@ -112,11 +112,14 @@
     let btn0 = document.getElementById('btn0');
 
     let inputText = document.getElementById('guess-input');
+    let tryAgain = document.getElementById('tryAgain');
     let clear = document.getElementById('clear');
     let check = document.getElementById('check');
     let result = document.getElementById('result');
-    
+    let highlight = document.querySelector('.highlight');
+
     let randomAns;
+
 
     function btn1Event() {
       btn1.addEventListener('click', function (e) {
@@ -130,7 +133,7 @@
 
     function btn2Event() {
       btn2.addEventListener('click', function (e) {
-        if (inputText.value === 0|| inputText.value === '0') {
+        if (inputText.value === 0 || inputText.value === '0') {
           inputText.value = btn2.value;
         } else {
           inputText.value += btn2.value;
@@ -141,14 +144,14 @@
       btn3.addEventListener('click', function (e) {
         if (inputText.value === 0 || inputText.value === '0') {
           inputText.value = btn3.value;
-        } else{
+        } else {
           inputText.value += btn3.value;
         }
       });
     }
     function btn4Event() {
       btn4.addEventListener('click', function (e) {
-        if (inputText.value === 0|| inputText.value === '0') {
+        if (inputText.value === 0 || inputText.value === '0') {
           inputText.value = btn4.value;
         } else {
           inputText.value += btn4.value;
@@ -158,7 +161,7 @@
 
     function btn5Event() {
       btn5.addEventListener('click', function (e) {
-        if (inputText.value === 0|| inputText.value === '0') {
+        if (inputText.value === 0 || inputText.value === '0') {
           inputText.value = btn5.value;
         } else {
           inputText.value += btn5.value;
@@ -167,7 +170,7 @@
     }
     function btn6Event() {
       btn6.addEventListener('click', function (e) {
-        if (inputText.value === 0|| inputText.value === '0') {
+        if (inputText.value === 0 || inputText.value === '0') {
           inputText.value = btn6.value;
         } else {
           inputText.value += btn6.value;
@@ -176,7 +179,7 @@
     }
     function btn7Event() {
       btn7.addEventListener('click', function (e) {
-        if (inputText.value === 0|| inputText.value === '0') {
+        if (inputText.value === 0 || inputText.value === '0') {
           inputText.value = btn7.value;
         } else {
           inputText.value += btn7.value;
@@ -185,7 +188,7 @@
     }
     function btn8Event() {
       btn8.addEventListener('click', function (e) {
-        if (inputText.value === 0|| inputText.value === '0') {
+        if (inputText.value === 0 || inputText.value === '0') {
           inputText.value = btn8.value;
         } else {
           inputText.value += btn8.value;
@@ -195,7 +198,7 @@
 
     function btn9Event() {
       btn9.addEventListener('click', function (e) {
-        if (inputText.value === 0|| inputText.value === '0') {
+        if (inputText.value === 0 || inputText.value === '0') {
           inputText.value = btn9.value;
         } else {
           inputText.value += btn9.value;
@@ -204,7 +207,7 @@
     }
     function btn0Event() {
       btn0.addEventListener('click', function (e) {
-        if (inputText.value === 0|| inputText.value === '0') {
+        if (inputText.value === 0 || inputText.value === '0') {
           inputText.value = btn0.value;
         } else {
           inputText.value += btn0.value;
@@ -212,36 +215,59 @@
       });
     }
 
-      // inputText.addEventListener("input", function (e) {
-      //   if (parseInt(inputText.value) > 100 ){
-      //   alert("輸入數字超過100");
-      //   }
-      // });
+    // inputText.addEventListener("input", function (e) {
+    //   if (parseInt(inputText.value) > 100 ){
+    //   alert("輸入數字超過100");
+    //   }
+    // });
 
-      check.addEventListener('click', function(e){
-        if (parseInt(inputText.value)===randomAns){ result.innerText ="恭喜猜中"; }
-        else if (parseInt(inputText.value)>100){result.innerText ="輸入不在1~100範圍內，請重新輸入1~100之間的數字";inputText.value = "";
-        }
-        else{result.innerText = "沒有猜中，請再來一次";inputText.value = "";}
-      })
+    check.addEventListener('click', function (e) {
+      if (parseInt(inputText.value) === randomAns) {
+        result.innerText = "恭喜猜中";
+      }
+      else if (parseInt(inputText.value) > 100) {
+        result.innerText = "輸入不在1~100範圍內，請重新輸入1~100之間的數字";
+        inputText.value = "";
+      }
+      else if (parseInt(inputText.value) > randomAns) {
+        result.innerText = "沒有猜中，請再來一次";
+        max = parseInt(inputText.value);
+        highlight.innerText = `請輸入${min}~${max}之間的數字`;
 
-    clear.addEventListener('click', function (e) {
+        inputText.value = "";
+      }
+      else if (parseInt(inputText.value) < randomAns) {
+        result.innerText = "沒有猜中，請再來一次";
+        min = parseInt(inputText.value);
+        highlight.innerText = `請輸入${min}~${max}之間的數字`;
+      }
+    })
+
+    tryAgain.addEventListener('click', function (e) {
       inputText.value = "";
       window.location.reload();
     })
 
+    clear.addEventListener('click', function (e) {
+      inputText.value = "";
+      //var len = inputText.value.length;
+      //if (len > 0) {
+      // inputText.value.remove(inputText.value[len - 1]);
+      // }
+    })
+
     window.onload = function () {
       randomAns = getRandomIntInclusive(1, 100);
-        btn1Event();
-        btn2Event();
-        btn3Event();
-        btn4Event();
-        btn5Event();
-        btn6Event();
-        btn7Event();
-        btn8Event();
-        btn9Event();
-        btn0Event();
+      btn1Event();
+      btn2Event();
+      btn3Event();
+      btn4Event();
+      btn5Event();
+      btn6Event();
+      btn7Event();
+      btn8Event();
+      btn9Event();
+      btn0Event();
     };
   </script>
 </body>
