@@ -233,13 +233,13 @@
         result.innerText = "沒有猜中，請再來一次";
         max = parseInt(inputText.value);
         highlight.innerText = `請輸入${min}~${max}之間的數字`;
-
         inputText.value = "";
       }
       else if (parseInt(inputText.value) < randomAns) {
         result.innerText = "沒有猜中，請再來一次";
         min = parseInt(inputText.value);
         highlight.innerText = `請輸入${min}~${max}之間的數字`;
+        inputText.value = "";
       }
     })
 
