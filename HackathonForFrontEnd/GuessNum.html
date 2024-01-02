@@ -1,0 +1,148 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap demo</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <style>
+        .btn-group {
+            display: flex;
+            justify-content: space-around;
+
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="gameDiv mx-auto " style="width:500px">
+        <div class="btn-group" role="group" aria-label="Basic radio toggle button group">
+            <input type="radio" class="btn-check" name="btnradio" id="btnradio1" autocomplete="off" />
+            <label class="btn btn-outline-primary" for="btnradio1">開始</label>
+
+            <input type="radio" class="btn-check" name="btnradio" id="btnradio2" autocomplete="off" />
+            <label class="btn btn-outline-primary" for="btnradio2">放棄重來</label>
+
+            <input type="radio" class="btn-check" name="btnradio" id="btnradio3" autocomplete="off" />
+            <label class="btn btn-outline-primary" for="btnradio3">看答案</label>
+        </div>
+
+        <div class="list-group border border-dark-subtle" id="holder">
+            <!-- <li class="list-group-item"></li>
+            <li class="list-group-item"></li>
+            <li class="list-group-item"></li>
+            <li class="list-group-item"></li>
+            <li class="list-group-item"></li> -->
+        </div>
+
+        <div class="input-group mb-3">
+            <span class="input-group-text" id="inputGroup-sizing-default">猜答案</span>
+            <input type="text" class="form-control" aria-label="Sizing example input"
+                aria-describedby="inputGroup-sizing-default" id="keyinNum" value="" />
+            <button class="btn btn-outline-secondary" type="button" id="button-addon2">猜!</button>
+        </div>
+
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+        crossorigin="anonymous"></script>
+
+    <script>
+
+
+        let ranArr = [];
+        let ran;
+        function getRandomInt(min, max) {
+            min = Math.ceil(min);
+            max = Math.floor(max);
+            return Math.floor(Math.random() * (max - min) + min)
+        }
+        let btnStart = document.getElementById('btnradio1');
+        let btnTryAgain = document.getElementById("btnradio2");
+        let btnShow = document.querySelector("#btnradio3");
+        let typeIn = document.querySelector("#keyinNum");
+        let check = document.getElementById('button-addon2');
+        let holder = document.getElementById('holder');
+
+        function ranAns(min, max) {
+            while (ranArr.length < 4) {
+                ran = getRandomInt(0, 10)
+                if (!ranArr.includes(ran)) {
+                    ranArr.push(ran);
+                }
+            }
+        }
+        btnStart.addEventListener('click', ranAns);
+
+        btnTryAgain.addEventListener('click', (e) => {
+            alert(ranArr);
+            ranAns(0, 10);
+            holder.innerText = '';
+            typeIn.value = '';
+        });
+
+        btnShow.addEventListener('click', (e) => {
+            alert(ranArr);
+        });
+
+        let countA = 0;
+        let countB = 0;
+        let spanResult = document.createElement('span');
+        let strResult = "";
+        check.addEventListener('click', checkResult);
+        typeIn.addEventListener('keydown', function () {
+            if (event.keyCode === 13) { checkResult(); }
+        })
+
+
+        function checkResult() {
+            if (ranArr.length == 0) { alert("請先產生亂數"); }
+            else if (typeIn.value.length < 4) { alert("輸入未達4個數字"); }
+            else if (typeIn.value.length > 4) { alert("輸入超過4個數字"); }
+            //else if (filter(typeIn.value).length != 4 ) { alert("請輸入共計4個不重複的數字"); }
+            //暫時解決不了問題如下：
+            //無法決定字串字元有無重複:
+            else if (isNaN(typeIn.value)) { alert("輸入非數字"); }
+            else {
+
+                for (let i = 0; i < 4; i++) {
+                    if (typeIn.value.charAt(i) == ranArr[i]) { countA++; }
+                }
+
+                var typeInArr = [parseInt(typeIn.value.charAt(0)),parseInt(typeIn.value.charAt(1)),parseInt(typeIn.value.charAt(2)),parseInt(typeIn.value.charAt(3))];
+                var concat = ranArr.concat(typeInArr);
+                var result = [];
+                var repeat = [];
+                concat.forEach(item => {
+                    result.includes(item) ? repeat.push(item) : result.push(item);
+                });
+                countB = repeat.length;
+            
+            if (countA >= 4) {
+                spanResult.innerText = "4A0B";
+                strResult += "<span class='text-color-light bg-success ms-3 d-inline-block' style='width:fit-content'>" + spanResult.innerText + "</span>" + "<span class=' ms-3 d-inline-block'>" + typeIn.value + "</span>";
+                alert("恭喜過關");
+                holder.innerText = '';
+                typeIn.value = '';
+            }
+            else {
+                spanResult.innerText = countA + "A" + (countB - countA) + "B";
+                strResult += "<span class='text-color-light bg-danger ms-3 d-inline-block' style='width:fit-content'>" + spanResult.innerText + "</span>" + "<span class=' ms-3 d-inline-block'>" + typeIn.value + "</span>";
+                typeIn.value = '';
+            }
+        }
+        holder.innerHTML = strResult;
+        };
+
+
+
+
+    </script>
+
+
+</body>
+
+</html>
