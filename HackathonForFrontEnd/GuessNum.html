@@ -103,28 +103,33 @@
         function checkResult() {
             countA = 0;
             countB = 0;
-            if (ranArr.length == 0) { alert("請先產生亂數"); }
-            else if (typeIn.value.length < 4) { alert("輸入未達4個數字"); }
-            else if (typeIn.value.length > 4) { alert("輸入超過4個數字"); }
-            //else if (filter(typeIn.value).length != 4 ) { alert("請輸入共計4個不重複的數字"); }
-            //暫時解決不了問題如下：
-            //無法決定字串字元有無重複:
-            else if (isNaN(typeIn.value)) { alert("輸入非數字"); }
+            if (ranArr.length == 0) { alert("錯誤訊息:請先產生亂數"); }
+            else if (typeIn.value.length < 4) { alert("錯誤訊息:輸入未達4個數字"); }
+            else if (typeIn.value.length > 4) { alert("錯誤訊息:輸入超過4個數字"); }
+            else if (new Set(typeIn.value.split("")).size<4){ alert("錯誤訊息:輸入重複的數字"); }
+            else if (isNaN(typeIn.value)) { alert("錯誤訊息:輸入非數字"); }
             else {
 
                 for (let i = 0; i < 4; i++) {
                     if (parseInt(typeIn.value.charAt(i)) === ranArr[i]) { countA++; }
+
+                }
+                
+                for (let i = 0; i < 4; i++) {
+                    
+                    if (ranArr.indexOf(parseInt(typeIn.value.charAt(i)))>-1){countB++}
+
                 }
 
-                var typeInArr = [];
-                typeInArr.push(parseInt(typeIn.value.charAt(0)), parseInt(typeIn.value.charAt(1)), parseInt(typeIn.value.charAt(2)), parseInt(typeIn.value.charAt(3)));
-                var concat = ranArr.concat(typeInArr);
-                var result = [];
-                var repeat = [];
-                concat.forEach(item => {
-                    result.includes(item) ? repeat.push(item) : result.push(item);
-                });
-                countB = repeat.length;
+                // var typeInArr = [];
+                // typeInArr.push(parseInt(typeIn.value.charAt(0)), parseInt(typeIn.value.charAt(1)), parseInt(typeIn.value.charAt(2)), parseInt(typeIn.value.charAt(3)));
+                // var concat = ranArr.concat(typeInArr);
+                // var result = [];
+                // var repeat = [];
+                // concat.forEach(item => {
+                //     result.includes(item) ? repeat.push(item) : result.push(item);
+                // });
+                // countB = repeat.length;
 
                 if (countA >= 4) {
                     spanResult.innerText = "4A0B";
