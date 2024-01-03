@@ -68,6 +68,7 @@
         let holder = document.getElementById('holder');
 
         function ranAns(min, max) {
+            ranArr.length = 0;
             while (ranArr.length < 4) {
                 ran = getRandomInt(0, 10)
                 if (!ranArr.includes(ran)) {
@@ -82,6 +83,7 @@
             ranAns(0, 10);
             holder.innerText = '';
             typeIn.value = '';
+            location.reload();
         });
 
         btnShow.addEventListener('click', (e) => {
@@ -99,6 +101,8 @@
 
 
         function checkResult() {
+            countA = 0;
+            countB = 0;
             if (ranArr.length == 0) { alert("請先產生亂數"); }
             else if (typeIn.value.length < 4) { alert("輸入未達4個數字"); }
             else if (typeIn.value.length > 4) { alert("輸入超過4個數字"); }
@@ -109,10 +113,11 @@
             else {
 
                 for (let i = 0; i < 4; i++) {
-                    if (typeIn.value.charAt(i) == ranArr[i]) { countA++; }
+                    if (parseInt(typeIn.value.charAt(i)) === ranArr[i]) { countA++; }
                 }
 
-                var typeInArr = [parseInt(typeIn.value.charAt(0)),parseInt(typeIn.value.charAt(1)),parseInt(typeIn.value.charAt(2)),parseInt(typeIn.value.charAt(3))];
+                var typeInArr = [];
+                typeInArr.push(parseInt(typeIn.value.charAt(0)), parseInt(typeIn.value.charAt(1)), parseInt(typeIn.value.charAt(2)), parseInt(typeIn.value.charAt(3)));
                 var concat = ranArr.concat(typeInArr);
                 var result = [];
                 var repeat = [];
@@ -120,21 +125,21 @@
                     result.includes(item) ? repeat.push(item) : result.push(item);
                 });
                 countB = repeat.length;
-            
-            if (countA >= 4) {
-                spanResult.innerText = "4A0B";
-                strResult += "<span class='text-color-light bg-success ms-3 d-inline-block' style='width:fit-content'>" + spanResult.innerText + "</span>" + "<span class=' ms-3 d-inline-block'>" + typeIn.value + "</span>";
-                alert("恭喜過關");
-                holder.innerText = '';
-                typeIn.value = '';
+
+                if (countA >= 4) {
+                    spanResult.innerText = "4A0B";
+                    strResult += "<span class='text-color-light bg-success ms-3 d-inline-block' style='width:fit-content'>" + spanResult.innerText + "</span>" + "<span class=' ms-3 d-inline-block'>" + typeIn.value + "</span>";
+                    alert("恭喜過關");
+                    holder.innerText = '';
+                    typeIn.value = '';
+                }
+                else {
+                    spanResult.innerText = countA + "A" + (countB - countA) + "B";
+                    strResult += "<span class='text-color-light bg-danger ms-3 d-inline-block' style='width:fit-content'>" + spanResult.innerText + "</span>" + "<span class=' ms-3 d-inline-block'>" + typeIn.value + "</span>";
+                    typeIn.value = '';
+                }
             }
-            else {
-                spanResult.innerText = countA + "A" + (countB - countA) + "B";
-                strResult += "<span class='text-color-light bg-danger ms-3 d-inline-block' style='width:fit-content'>" + spanResult.innerText + "</span>" + "<span class=' ms-3 d-inline-block'>" + typeIn.value + "</span>";
-                typeIn.value = '';
-            }
-        }
-        holder.innerHTML = strResult;
+            holder.innerHTML = strResult;
         };
 
 
