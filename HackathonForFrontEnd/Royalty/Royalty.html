@@ -1,0 +1,642 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap demo</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .page {
+            width: 1300px;
+            margin: auto;
+        }
+
+        .NavBar {
+            width: 100%;
+            color: gray;
+        }
+
+        #img-icon>a>img {
+            width: 30px;
+            height: 30px;
+            vertical-align: top;
+        }
+
+        #dropdown {
+            margin-top: 30px;
+            margin-left: -420px;
+            padding-left: 350px;
+            line-height: 2em;
+            z-index: 1;
+        }
+
+        a {
+            text-decoration: none;
+            color: black;
+        }
+
+        #plus:hover span {
+            background-color: black;
+            color: aliceblue;
+        }
+
+        #showplus:hover span {
+            background-color: black;
+            color: aliceblue;
+        }
+
+        #carouselExampleIndicators{
+            position: sticky;
+            top:100px
+        }
+    </style>
+</head>
+
+<body>
+
+
+    <div class="page">
+        <div class="hiddenheader d-none" id="hiddenheader">
+            <div class="row border-bottom border-muted my-3 ms-5">
+                <div class="col-6 ">
+                    <h3 class="fw-bold">iPad Air</h3>
+                </div>
+                <div class="col-6 ">
+                    <h4 class="text-end fw-bold pe-3 me-5" id="showfinalprice">NT$1900起</h4>
+                </div>
+            </div>
+            <div class="row my-3">
+                <div class="col-10 border-end border-muted text-end "><img src="/Royalty/1205112.webp" width="30" height="30" class="me-3">免額外付費的運送服務</div>
+                <div class="col-2 text-end pe-4"><img src="/Royalty/fullbag.jpg" width="30" height="30" class="me-3"><a href="" class="me-5">直營店取貨</a></div>
+            </div>
+        </div>
+        <div class="NavBar">
+            <ul class="nav justify-content-between m-4">
+                <li class="nav-item" id="img-icon">
+                    <a class="nav-link active" aria-current="page" href="https://www.apple.com/tw/"> <img
+                            src="/Royalty/OIP.jpg" alt=""></a>
+                </li>
+                <li class="nav-item ">
+                    <a class="nav-link d-relative text-secondary" aria-current="page" href="#" id="shop">商店</a>
+                    <div class=" d-none " id="dropdown">
+                        <div class="me-5 fw-bold">
+                            <span>選購</span>
+                            <a href="">
+                                <h3>選購最新產品</h3>
+                            </a>
+                            <a href="">
+                                <h3>Mac</h3>
+                            </a>
+                            <a href="">
+                                <h3>iPad</h3>
+                            </a>
+                            <a href="">
+                                <h3>iPhone</h3>
+                            </a>
+                            <a href="">
+                                <h3>Apple Watch</h3>
+                            </a>
+                            <a href="">
+                                <h3>配件</h3>
+                            </a>
+                        </div>
+                        <div class="d-block d-flex flex-column me-5 fw-bold">
+                            <span>快速連結</span>
+                            <a href="">選購Mac</a>
+                            <a href="">Mac配件</a>
+                            <a href="">Apple Trade In 換購方案</a>
+                            <a href="">信用卡分期付款</a>
+                        </div>
+                        <div class="d-block d-flex flex-column fw-bold">
+                            <span>特定商店選購</span>
+                            <a href="">認證整修品</a>
+                            <a href="">教育</a>
+                            <a href="">商務</a>
+                        </div>
+
+                    </div>
+                </li>
+
+                <li class="nav-item ">
+                    <a class="nav-link text-secondary" href="#">Mac</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-secondary" href="#">iPad</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-secondary" href="#">iPhone</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-secondary" href="#">Watch</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-secondary" href="#">AirPods</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-secondary" href="#">TV和家庭</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-secondary" href="#">娛樂</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-secondary" href="#">配件</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-secondary">支援服務</a>
+                </li>
+                <li class="nav-item" id="img-icon">
+                    <a class="nav-link active" aria-current="page" href="#"> <img
+                            src="/Royalty/search-icon-magnifying-glass-icon-vector-magnifier-loupe-sign-vector-illustration-isolated-white-background-search-icon-133216738.webp"
+                            alt=""></a>
+                </li>
+                <li class="nav-item" id="img-icon">
+                    <a class="nav-link active" aria-current="page" href="#"> <img src="/Royalty/OIP (1).jpg" alt=""></a>
+                </li>
+            </ul>
+        </div>
+
+        <!-- -------------------------------------- -->
+        <div class="row p-2">
+            <div class="col-8">
+                <div class="title-area ">
+                    <div class="buyipadAir">
+                        <h1 class="fw-bold">購買iPad Air</h1>
+                        <p class="mt-3">NT$29,900</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-4"> <!-- Button trigger modal -->
+                <button type="button" class="btn btn-light rounded-pill" data-bs-toggle="modal"
+                    data-bs-target="#exampleModal" id="plus">
+                    透過換購，可獲享NT$700－NT$40,800 折抵優惠**<span class=" border border-black rounded-circle" id="plus">＋</span>
+                </button>
+
+                <!-- Modal -->
+                <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+                    aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-scrollable">
+                        <div class="modal-content " style="width: 800px;">
+                            <div class="modal-header  d-flex flex-column">
+
+                                <h1 class="modal-title display-5" id="exampleModalLabel"><button type="button"
+                                        class="btn-close fs-6 border rounded-circle bg-secondary"
+                                        data-bs-dismiss="modal" aria-label="Close"></button><br><strong>換購新 iPad，可獲享
+                                        NT$700 至 NT$40,800折抵優惠註腳**。</strong></h1>
+                                <p class="fs-3">透過 Apple Trade In 換購方案，你可輕鬆以符合條件的裝置換購以獲享折抵優惠，或是免費回收裝置。</p>
+                            </div>
+                            <div class="modal-body bg-body-secondary">
+                                ...
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <a href="https://www.apple.com/tw/shop/help/payments#installment" id="plus"><button type="button"
+                        class="btn btn-light rounded-pill mt-3">可選用零利率分期付款，最長可達12月
+                        <span class=" border border-black rounded-circle" id="plus">＋</span>
+                    </button></a>
+            </div>
+        </div>
+        <!-- --------------------------------------------------- -->
+        <div class="row">
+            <div class="col-8 mt-4">
+                <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="true">
+                    <div class="carousel-indicators">
+                        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0"
+                            class="active" aria-current="true" aria-label="Slide 1"></button>
+                        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"
+                            aria-label="Slide 2"></button>
+                        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"
+                            aria-label="Slide 3"></button>
+                    </div>
+                    <div class="carousel-inner rounded-5 ">
+                        <div class="carousel-item active">
+                            <div class="carousel-caption ">
+                                <h5></h5>
+                                <p></p>
+                            </div>
+                            <img src="/Royalty/太空灰色/ipad-air-finish-select-gallery-202211-space-gray-wifi.jpg"
+                                class="d-block w-100" alt="..." id="carouselimg">
+                        </div>
+                        <div class="carousel-item position-relative">
+                            <div
+                                class="carousel-caption position-absolute top-0 start-0 text-start text-black fw-bold ps-3">
+                                <h5></h5>
+                                <p></p>
+                            </div>
+                            <img src="/Royalty/太空灰色/ipad-air-finish-select-gallery-202211-space-gray-wifi_AV1.jpg"
+                                class="d-block w-100" alt="..." id="carouselimg">
+                        </div>
+                        <div class="carousel-item">
+                            <div class="carousel-caption d-none d-md-block">
+                                <h5></h5>
+                                <p></p>
+                            </div>
+                            <img src="/Royalty/太空灰色/ipad-air-finish-select-gallery-202211-space-gray-wifi_AV2.jpg"
+                                class="d-block w-100" alt="..." id="carouselimg">
+                        </div>
+                    </div>
+                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"
+                        data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon border bg-secondary rounded-circle"
+                            aria-hidden="true"></span>
+                        <span class="visually-hidden">Previous</span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators"
+                        data-bs-slide="next">
+                        <span class="carousel-control-next-icon border bg-secondary rounded-circle"
+                            aria-hidden="true"></span>
+                        <span class="visually-hidden">Next</span>
+                    </button>
+                </div>
+            </div>
+            <!-- --------------------------------------------- -->
+            <div class="col-4 mt-5">
+                <div class="title-area ">
+                    <div class="buyipadAir d-flex">
+                        <p class="fw-bold fs-4 text-body">外觀。</p>
+                        <p class="fw-bold fs-4 text-secondary">挑選喜愛的顏色。</p>
+                    </div>
+                </div>
+                <div class="color-area">
+                    <div class="d-flex-2">
+                        <button class="rounded-3 border border-muted mx-2 my-2" style="width: 190px;height: 100px;"
+                            id="colorbtn"><img src="/Royalty/太空灰色/ipad-air-finish-space-gray-2022.png"
+                                class="rounded-circle" style=" margin-top:15px; width: 25px; height: 25px;">
+                            <p class="pt-1">太空灰色</p>
+                        </button>
+                        <button class="rounded-3 border border-muted mx-2 my-2" style="width: 190px;height: 100px;"
+                            id="colorbtn"><img src="/Royalty/藍色/ipad-air-finish-blue-2022.png" class="rounded-circle"
+                                style=" margin-top:15px; width: 25px; height: 25px;">
+                            <p class="pt-1">藍色</p>
+                        </button>
+
+
+                        <button class="rounded-3 border border-muted mx-2 my-2" style="width: 190px;height: 100px;"
+                            id="colorbtn"><img src="/Royalty/粉紅色/ipad-air-finish-pink-2022.png" class="rounded-circle"
+                                style=" margin-top:15px; width: 25px; height: 25px;">
+                            <p class="pt-1">粉紅色</p>
+                        </button>
+                        <button class="rounded-3 border border-muted mx-2 my-2" style="width: 190px;height: 100px;"
+                            id="colorbtn"><img src="/Royalty/紫色/ipad-air-finish-purple-2022.png" class="rounded-circle"
+                                style=" margin-top:15px; width: 25px; height: 25px;">
+                            <p class="pt-1">紫色</p>
+                        </button>
+                        <button class="rounded-3 border border-muted mx-2 my-2" style="width: 190px;height: 100px;"
+                            id="colorbtn"><img src="/Royalty/星光色/ipad-air-finish-starlight-2022.png"
+                                class="rounded-circle" style=" margin-top:15px; width: 25px; height: 25px;">
+                            <p class="pt-1">星光色</p>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="title-area mt-5">
+                    <div class="buyipadAir d-flex" id="storagetitle">
+                        <p class="fw-bold fs-4 text-body">儲存裝置。 </p>
+                        <p class="fw-bold fs-4 text-secondary">選擇需要的儲存空間大小。</p>
+                    </div>
+                </div>
+                <div class="storage-area">
+                    <div class="d-flex-2" id="storagecontent">
+                    </div>
+                    <!-- --------------------------- -->
+                    <button type="button" class="rounded-3 border border-muted mx-2 my-2 "
+                        style="width: 400px;height: 150px;" data-bs-toggle="modal" data-bs-target="#exampleModal2"
+                        id="showplus" disabled>
+                        <div class="row">
+                            <div class="col-5"><img src="/Royalty/ipad-storage-thumbnail-202311.jpg"
+                                    class="rounded-start-3" width="170px" height="150px"></div>
+                            <div class="col-7 text-start pt-2">
+                                <p class="fw-bold fs-6 align-bottom">確定需要多少儲存空間？<span
+                                        class=" border border-black rounded-circle" id="plus">＋</span></p>
+                                <p>不你的 iPad Air 儲存空間愈大， 你就有愈多空間儲存數位內容，滿足今日所需，也滿足未來需求。</p>
+                            </div>
+                        </div>
+
+                    </button>
+
+                    <!-- Modal -->
+                    <div class="modal fade" id="exampleModal2" tabindex="-1" aria-labelledby="exampleModalLabel2"
+                        aria-hidden="true">
+                        <div class="modal-dialog modal-dialog-scrollable">
+                            <div class="modal-content " style="width: 800px;">
+                                <div class="modal-header  d-flex flex-column">
+
+                                    <h1 class="modal-title display-5" id="exampleModalLabel"><button type="button"
+                                            class="btn-close fs-6 border rounded-circle bg-secondary"
+                                            data-bs-dismiss="modal"
+                                            aria-label="Close"></button><br><strong>空間足夠，凡事大有可為。</strong></h1>
+                                    <p class="fs-3">你需要多少儲存空間取決於你使用 iPad 的方式。更多儲存空間，代表你能儲存更多的
+                                        app、音樂、電影和書籍，同時還可讓你製作並儲存影像、影片、插圖和更多內容。</p>
+                                </div>
+                                <div class="modal-body bg-body-secondary">
+                                    ...
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    </button>
+                </div>
+                <!-- ------------------------------------- -->
+                <div class="title-area mt-5">
+                    <div class="buyipadAir d-flex" id="storagetitle">
+                        <p class="fw-bold fs-4 text-body">連線能力。 </p>
+                        <p class="fw-bold fs-4 text-secondary"> 選擇連線方式。</p>
+                    </div>
+                </div>
+                <button class="rounded-3 border border-muted mx-2 my-2" style="width: 400px;height: 100px;"
+                    id="chosenwifi" value="0" disabled>
+                    <div class="row">
+                        <div class="col-8 ps-4 pt-2">
+                            <h5 class="fw-bold text-start">Wi-Fi</h5>
+                            <p class="text-start">每部 iPad 都可連接到 Wi-Fi 網路，使你能保持連線。</p>
+                        </div>
+                        <div class="col-4 align-self-center">NT$24,900</div>
+                    </div>
+                </button>
+                <button class="rounded-3 border border-muted mx-2 my-2" style="width: 400px;height: 100px;"
+                    id="chosenwifi" value="5000" disabled>
+                    <div class="row">
+                        <div class="col-8 ps-4 pt-2">
+                            <h5 class="fw-bold text-start">Wi-Fi + 行動網路</h5>
+                            <p class="text-start">Wi-Fi + 行動網路機型讓你在無法使用 Wi-Fi 時也能進行連線。</p>
+                        </div>
+                        <div class="col-4 align-self-center">NT$29,900</div>
+                    </div>
+                </button>
+                <!-- ---------------------------------- -->
+                <div class="title-area mt-5" id="finalconfirmarea">
+                    <div>
+                        
+                        <p class="fw-bold fs-4 text-body" id="finaltotalprice">NT$19900起</p>
+                        <p class="fs-6 text-secondary" id="finaltax"></p>
+                        <a href="" id="finalpaymentpackage" class="text-primary"></a>
+                        <hr>
+                        <div class="fw-bold fs-3" id="finalproductconfirm"></div>
+                        <button type="button" class="btn btn-primary btn-lg btn-block" style="width: 400px;">加入購物袋</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+            crossorigin="anonymous"></script>
+        <script>
+
+            let ipadair = [
+                {
+                    "id": "skygray64",
+                    "color": "太空灰色",
+                    "storage": "64GB",
+                    "network": ["Wi-Fi", "No-Wi-Fi"],
+                    "price": ["19900", "24900"],
+                    "description": ["10.9 吋 iPad Air Wi-Fi 機型 64GB - 太空灰色", "10.9 吋 iPad Air Wi-Fi + 行動網路機型 64GB - 太空灰色"],
+                    "picture": ["/Royalty/太空灰色/ipad-air-finish-select-gallery-202211-space-gray-wifi.jpg", "/Royalty/太空灰色/ipad-air-finish-select-gallery-202211-space-gray-wifi_AV1.jpg", "/Royalty/太空灰色/ipad-air-finish-select-gallery-202211-space-gray-wifi_AV2.jpg"]
+                },
+                {
+                    "id": "skygray256",
+                    "color": "太空灰色",
+                    "storage": "256GB",
+                    "network": ["Wi-Fi", "No-Wi-Fi"],
+                    "price": ["24900", "29900"],
+                    "description": ["10.9 吋 iPad Air Wi-Fi 機型 256GB - 太空灰色", "10.9 吋 iPad Air Wi-Fi + 行動網路機型 256GB - 太空灰色"],
+                    "picture": ["/Royalty/太空灰色/ipad-air-finish-select-gallery-202211-space-gray-wifi.jpg", "/Royalty/太空灰色/ipad-air-finish-select-gallery-202211-space-gray-wifi_AV1.jpg", "/Royalty/太空灰色/ipad-air-finish-select-gallery-202211-space-gray-wifi_AV2.jpg"]
+                },
+                {
+                    "id": "blue64",
+                    "color": "藍色",
+                    "storage": "64GB",
+                    "network": ["Wi-Fi", "No-Wi-Fi"],
+                    "price": ["19900", "24900"],
+                    "description": ["10.9 吋 iPad Air Wi-Fi 機型 64GB - 藍色", "10.9 吋 iPad Air Wi-Fi + 行動網路機型 64GB - 太空灰色"],
+                    "picture": ["/Royalty//藍色/ipad-air-finish-select-gallery-202211-blue-wifi.jpg", "/Royalty//藍色/ipad-air-finish-select-gallery-202211-blue-wifi_AV1.jpg", "/Royalty//藍色/ipad-air-finish-select-gallery-202211-blue-wifi_AV2.jpg"]
+                },
+                {
+                    "id": "blue256",
+                    "color": "藍色",
+                    "storage": "256GB",
+                    "network": ["Wi-Fi", "No-Wi-Fi"],
+                    "price": ["24900", "29900"],
+                    "description": ["10.9 吋 iPad Air Wi-Fi 機型 256GB - 藍色", "10.9 吋 iPad Air Wi-Fi + 行動網路機型 256GB - 藍色"],
+                    "picture": ["/Royalty//藍色/ipad-air-finish-select-gallery-202211-blue-wifi.jpg", "/Royalty//藍色/ipad-air-finish-select-gallery-202211-blue-wifi_AV1.jpg", "/Royalty//藍色/ipad-air-finish-select-gallery-202211-blue-wifi_AV2.jpg"]
+                },
+                {
+                    "id": "pink64",
+                    "color": "粉紅色",
+                    "storage": "64GB",
+                    "network": ["Wi-Fi", "No-Wi-Fi"],
+                    "price": ["19900", "24900"],
+                    "description": ["10.9 吋 iPad Air Wi-Fi 機型 64GB - 粉紅色", "10.9 吋 iPad Air Wi-Fi + 行動網路機型 64GB - 粉紅色"],
+                    "picture": ["/Royalty/粉紅色/ipad-air-finish-select-gallery-202211-pink-wifi.jpg", "/Royalty/粉紅色/ipad-air-finish-select-gallery-202211-pink-wifi_AV1.jpg", "/Royalty/粉紅色/ipad-air-finish-select-gallery-202211-pink-wifi_AV2.jpg"]
+                },
+                {
+                    "id": "pink256",
+                    "color": "粉紅色",
+                    "storage": "256GB",
+                    "network": ["Wi-Fi", "No-Wi-Fi"],
+                    "price": ["24900", "29900"],
+                    "description": ["10.9 吋 iPad Air Wi-Fi 機型 256GB - 粉紅色", "10.9 吋 iPad Air Wi-Fi + 行動網路機型 256GB - 粉紅色"],
+                    "picture": ["/Royalty/粉紅色/ipad-air-finish-select-gallery-202211-pink-wifi.jpg", "/Royalty/粉紅色/ipad-air-finish-select-gallery-202211-pink-wifi_AV1.jpg", "/Royalty/粉紅色/ipad-air-finish-select-gallery-202211-pink-wifi_AV2.jpg"]
+                },
+                {
+                    "id": "purple64",
+                    "color": "紫色",
+                    "storage": "64GB",
+                    "network": ["Wi-Fi", "No-Wi-Fi"],
+                    "price": ["19900", "24900"],
+                    "description": ["10.9 吋 iPad Air Wi-Fi 機型 64GB - 紫色", "10.9 吋 iPad Air Wi-Fi + 行動網路機型 64GB - 紫色"],
+                    "picture": ["/Royalty//紫色/ipad-air-finish-select-gallery-202211-purple-wifi.jpg", "/Royalty//紫色/ipad-air-finish-select-gallery-202211-purple-wifi_AV1.jpg", "/Royalty//紫色/ipad-air-finish-select-gallery-202211-purple-wifi_AV2.jpg"]
+                },
+                {
+                    "id": "purple256",
+                    "color": "紫色",
+                    "storage": "256GB",
+                    "network": ["Wi-Fi", "No-Wi-Fi"],
+                    "price": ["24900", "29900"],
+                    "description": ["10.9 吋 iPad Air Wi-Fi 機型 256GB - 紫色", "10.9 吋 iPad Air Wi-Fi + 行動網路機型 256GB - 紫色"],
+                    "picture": ["/Royalty//紫色/ipad-air-finish-select-gallery-202211-purple-wifi.jpg", "/Royalty//紫色/ipad-air-finish-select-gallery-202211-purple-wifi_AV1.jpg", "/Royalty//紫色/ipad-air-finish-select-gallery-202211-purple-wifi_AV2.jpg"]
+                },
+                {
+                    "id": "starlight64",
+                    "color": "星光色",
+                    "storage": "64GB",
+                    "network": ["Wi-Fi", "No-Wi-Fi"],
+                    "price": ["19900", "24900"],
+                    "description": ["10.9 吋 iPad Air Wi-Fi 機型 64GB - 星光色", "10.9 吋 iPad Air Wi-Fi + 行動網路機型 64GB - 星光色"],
+                    "picture": ["/Royalty//星光色/ipad-air-finish-select-gallery-202211-starlight-wifi.jpg", "/Royalty//紫色/ipad-air-finish-select-gallery-202211-starlight-wifi_AV1.jpg", "/Royalty//紫色/ipad-air-finish-select-gallery-202211-starlight-wifi_AV2.jpg"]
+                },
+                {
+                    "id": "starlight256",
+                    "color": "星光色",
+                    "storage": "256GB",
+                    "network": ["Wi-Fi", "No-Wi-Fi"],
+                    "price": ["24900", "29900"],
+                    "description": ["10.9 吋 iPad Air Wi-Fi 機型 256GB - 星光色", "10.9 吋 iPad Air Wi-Fi + 行動網路機型 256GB - 星光色"],
+                    "picture": ["/Royalty//星光色/ipad-air-finish-select-gallery-202211-starlight-wifi.jpg", "/Royalty//星光色/ipad-air-finish-select-gallery-202211-starlight-wifi_AV1.jpg", "/Royalty//星光色/ipad-air-finish-select-gallery-202211-starlight-wifi_AV2.jpg"]
+                }
+
+            ]
+
+
+
+            let shop = document.getElementById('shop');
+            let dropdown = document.getElementById('dropdown');
+            shop.addEventListener('mouseenter', (e) => {
+                dropdown.className = "container-fluid d-flex position-absolute bg-light";
+
+            })
+            //     $(document).ready(function(){
+            //     $("#shop").mousemove(function(){
+            //         $("#dropdown").fadeToggle("slow", 2000);
+            //     })
+            // })
+            dropdown.addEventListener('mouseleave', (e) => {
+                dropdown.className = "d-none";
+            })
+
+            let buttons = document.querySelectorAll("#colorbtn");
+            let carouselimgs = document.querySelectorAll("#carouselimg");
+            let storagecontent = document.querySelector("#storagecontent");
+            let priceArr = Object.values(ipadair[0].price);
+            let chosenColor;
+            let chosenStorage;
+            let chosenAcc;
+            let chosenCurr;
+            let priceAccmulating = [];
+            let finalprice = document.querySelector('#showfinalprice');
+            let carouselphoto = document.querySelector('carousel slide');
+            let hiddenheader = document.querySelector('#hiddenheader');
+            let finalconfirmarea = document.querySelector('#finalconfirmarea');
+            let finaltotalprice =document.querySelector ('#finaltotalprice');
+            let finalpaymentpackage = document.querySelector ('#finalpaymentpackage');
+            let finaltax = document.querySelector('#finaltax');
+            let finalproductconfirm = document.querySelector('#finalproductconfirm');
+            let chosenwifi;
+            
+
+
+            window.onload = function () {
+                for (let i = 0; i < 6; i++) {
+                    buttons[i].addEventListener(
+                        'click', function (event) {
+
+                            carouselimgs[0].src = ipadair[i * 2].picture[0];
+                            carouselimgs[1].src = ipadair[i * 2].picture[1];
+                            carouselimgs[2].src = ipadair[i * 2].picture[2];
+                        })
+                }
+                finalconfirmarea.disabled=true;
+            }
+            for (let j = 0; j < 2; j++) {
+                storagecontent.innerHTML += `<button class="rounded-3 border border-muted mx-2 my-2" style="width: 190px;height: 100px;" disabled>
+<h5 class="fw-bold text-center" id="chosenstorage"> ${ipadair[j].storage}</h5><p class="text-center"> NT$${priceArr[j]}起</p></button>`;
+            }
+
+           window.addEventListener('scroll', (e)=>{
+            if (window.scrollY > 0){
+                hiddenheader.className = "hiddenheader fixed-top bg-light";}
+                if (window.scrollY === 0 ){  hiddenheader.className = "hiddenheader d-none";}
+            })
+
+            buttons.forEach((button) => {
+                button.addEventListener('click', function (event) {
+                    buttons.forEach((otherBtn) => {
+                        if (otherBtn !== button) { otherBtn.className = "rounded-3 border border-muted mx-2 my-2" }
+                    });
+                    button.className = "rounded-3 border border-primary mx-2 my-2";
+                    chosenColor = button.innerText
+                    enableStorageButtons();
+                })
+            })
+            let storageButtons = document.querySelectorAll('#storagecontent>button');
+            let showplus = document.querySelector('#showplus');
+            let wifiButtons = document.querySelectorAll('#chosenwifi');
+
+            storageButtons.forEach((storageBtn) => {
+                storageBtn.addEventListener('click', function (event) {
+                    storageButtons.forEach((otherBtn) => {
+                        if (otherBtn !== storageBtn) { otherBtn.className = "rounded-3 border border-muted mx-2 my-2" }
+                    });
+                    storageBtn.className = "rounded-3 border border-primary mx-2 my-2";
+                    enableWifiButtons();
+                    // changePhoto();
+                    let h5 = storageBtn.querySelector('h5');
+                    chosenStorage = h5.innerText;
+                    let p = storageBtn.querySelector('p');
+                    chosenAcc = parseInt(p.innerText.substring(3, 8));
+                    priceAccmulating.push(chosenAcc);
+                    
+                    priceAccmulating = [chosenAcc];
+
+                    finalprice.innerText = `NT$${showFinalPrice()}起`;
+
+                })
+            })
+
+            wifiButtons.forEach((wifiBtn) => {
+                wifiBtn.addEventListener('click', function (event) {
+                    wifiButtons.forEach((otherBtn) => {
+                        if (otherBtn !== wifiBtn) { otherBtn.className = "rounded-3 border border-muted mx-2 my-2" }
+                        wifiBtn.className = "rounded-3 border border-primary mx-2 my-2"
+                    })
+                    let h5 = wifiBtn.querySelector('h5');
+                    chosenwifi = h5.innerText;
+                    chosenCurr = wifiBtn.value
+                    priceAccmulating.push(parseInt(chosenCurr))
+
+                    priceAccmulating= [chosenAcc, parseInt(chosenCurr)]
+                    finalprice.innerText = `NT$${showFinalPrice()}起`;
+                    enableFinalConfirm();
+                    let tax = showFinalPrice()*0.048;
+                    let payment = showFinalPrice()/12;
+                    finaltotalprice.innerHTML = `NT$${showFinalPrice()}`;
+                    finaltax.innerHTML = `含營業稅和其他法定稅費：約NT$${tax}。*`;
+                    finalpaymentpackage.innerHTML = `0 利率分期付款，每月 NT$${payment}起，共 12 個月`;
+                    finalproductconfirm.innerHTML = `10.9 吋 iPad Air ${chosenwifi} 機型 ${chosenStorage} - ${chosenColor}`
+                })
+            })
+            function enableStorageButtons() {
+                storageButtons.forEach((button) => {
+                    button.removeAttribute('disabled');
+                });
+                showplus.disabled = false;
+            }
+
+            function enableWifiButtons() {
+                wifiButtons.forEach((wifiBtn) => {
+                    wifiBtn.removeAttribute('disabled');
+                })
+            }
+            function enableFinalConfirm(){
+                finalconfirmarea.disabled = false;
+            }
+            //暫時解決不了的問題如下:
+            // function changePhoto(){         
+            //     carouselphoto.innerHTML = `<div class="carousel-inner rounded-5 "><div class="carousel-item position-relative">
+            //                 <div class="carousel-caption position-absolute top-0 start-0 text-start text-black fw-bold ps-3">
+            //                     <h5>Wi-Fi + 行動網路。</h5>
+            //                     <p class="text-secondary">隨時隨地瀏覽網頁、傳送電子郵件與文字訊息、進行 FaceTime 通話、存取檔案，以及更多更多。</p>
+            //                 </div>
+            //                 <img src="/Royalty/ipad-air-connectivity-select-202207.jpg"class="d-block w-100" alt="..." id="carouselimg">
+            //             </div> </div>`;
+            // }
+
+            function showFinalPrice() {
+                //chosenAcc=0;
+                //chosenCurr=0
+                return priceAccmulating.reduce((chosenAcc, chosenCurr) => chosenAcc + chosenCurr, 0)
+            }
+
+
+        </script>
+</body>
+
+</html>
