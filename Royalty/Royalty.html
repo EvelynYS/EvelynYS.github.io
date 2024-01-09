@@ -358,7 +358,7 @@
                             <h5 class="fw-bold text-start">Wi-Fi</h5>
                             <p class="text-start">每部 iPad 都可連接到 Wi-Fi 網路，使你能保持連線。</p>
                         </div>
-                        <div class="col-4 align-self-center">NT$24,900</div>
+                        <div class="col-4 align-self-center" id="addwifiprice">NT$19,900起</div>
                     </div>
                 </button>
                 <button class="rounded-3 border border-muted mx-2 my-2" style="width: 400px;height: 100px;"
@@ -368,7 +368,7 @@
                             <h5 class="fw-bold text-start">Wi-Fi + 行動網路</h5>
                             <p class="text-start">Wi-Fi + 行動網路機型讓你在無法使用 Wi-Fi 時也能進行連線。</p>
                         </div>
-                        <div class="col-4 align-self-center">NT$29,900</div>
+                        <div class="col-4 align-self-center" id="addwifiprice">NT$24,900起</div>
                     </div>
                 </button>
                 <!-- ---------------------------------- -->
@@ -520,6 +520,7 @@
             let finaltax = document.querySelector('#finaltax');
             let finalproductconfirm = document.querySelector('#finalproductconfirm');
             let chosenwifi;
+            let addwifiprice= document.querySelectorAll('#addwifiprice');
             
 
 
@@ -577,6 +578,10 @@
                     priceAccmulating = [chosenAcc];
 
                     finalprice.innerText = `NT$${showFinalPrice()}起`;
+                    addwifiprice[0].innerText=`NT$${showFinalPrice()}`;
+                    addwifiprice[1].innerText =`NT$${showFinalPrice()+5000}`;
+
+
 
                 })
             })
