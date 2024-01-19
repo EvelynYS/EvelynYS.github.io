@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Mid-Term To-Do List</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+      crossorigin="anonymous"
+    />
+
+    <style>
+      #bgphoto {
+        position: relative;
+        background-image: linear-gradient(
+          to bottom right,
+          rgb(252, 240, 202),
+          #aaf
+        );
+      }
+      #bgphoto::after {
+        content: "";
+        position: absolute;
+        top: 0px;
+        right: 0px;
+        width: 1210px;
+        min-height: 880px;
+        background-image: url(/Mid_Term_ToDoList/螢幕擷取畫面\ 2024-01-18\ 220028.png);
+        clip-path: polygon(40% 0%, 100% 0%, 100% 100%, 50% 150%, 0% 100%);
+        opacity: 0.85;
+      }
+      #bgphoto::before {
+        content: "";
+        position: absolute;
+        top: 300px;
+        left: -50px;
+        width: 100%;
+        height: 400px;
+        background-image: url(/Mid_Term_ToDoList/螢幕擷取畫面\ 2024-01-18\ 220140.png);
+        clip-path: polygon(0% 0%, 50% 0%, 100% 100%, 0% 100%);
+        opacity: 0.85;
+        rotate: 15deg;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="mt-0" style="min-height: 880px" id="bgphoto">
+      <div class="" style="height: 50px"></div>
+      <div
+        class="mx-auto px-5 py-5 bg-warning-subtle bg-opacity-25 rounded-5 border border-secondary-subtle position-relative z-1"
+        style="width: 600px"
+        id="toDoContainer" 
+      >
+        <h1 class="text-center">代辦事項清單</h1>
+        <!-- inputButton -->
+        <div
+          class="px-2 py-2 border rounded-2 border-secondary-subtle bg-warning bg-opacity-10 mb-3"
+        >
+          <div class="input-group">
+            <input
+              type="text"
+              class="form-control"
+              placeholder="看著妳...看著你...是不是還有事情沒做?...快點記下來!!!"
+              aria-label="Recipient's username"
+              aria-describedby="button-addon2"
+              id="jotDown"
+            />
+            <button
+              class="btn btn-color-dark btn-border border-secondary-subtle btn-warning fw-bold"
+              type="button"
+              id="btnAdd"
+            >
+              新增
+            </button>
+          </div>
+        </div>
+        <!-- checkbox+input 用編譯方式納入-->
+      </div>
+    </div>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+      crossorigin="anonymous"
+    ></script>
+    <script>
+      let toDoContainer = document.getElementById("toDoContainer");
+      let jotDown = document.getElementById("jotDown");
+      let btnAdd = document.getElementById("btnAdd");
+      let toDoItem, btnDeletes, btnEdits, toDoContents, btnSaves, btnChecks;
+      let toDoItems = [];
+      let localStorageKey = "todoList";
+      let jotDownContent, eventBtnDelete;
+      let index1;
+
+      btnAdd.addEventListener("click", function () {
+        createToDoContent();
+        resetStorage();
+      });
+      jotDown.addEventListener("keydown", function () {
+        if (event.keyCode === 13) {
+          createToDoContent();
+          resetStorage();
+        }
+      });
+
+      function createToDoItem(args1, args2) {
+        return `<div
+          class="d-flex  my-1 px-2 py-2 border rounded-2 border-secondary-subtle bg-warning bg-opacity-10"
+        >
+          <div class="input-group">
+            <div class="input-group-text">
+              <input
+                class="form-check-input mt-0"
+                type="checkbox"
+                value=""
+                aria-label="Checkbox for following text input"
+                id="DoneCheck" multiple  ${args2}
+              />
+            </div>
+            <input
+              type="text"
+              class="form-control"
+              aria-label="Text input with checkbox"
+              value="${args1}" id="toDoContent" disabled
+            />
+          </div>
+          <input class="btn btn-info mx-2 fw-bold opacity-10 visually-hidden"  type="button" value="保存" id="saves"/>
+          <input class="btn btn-warning mx-2 fw-bold" type="button" value="編輯" id="edits" />
+          <input class="btn btn-warning fw-bold" type="reset" value="刪除"/>
+        </div>`;
+      }
+
+      function createToDoContent() {
+        jotDownContent = jotDown.value;
+        toDoItem.innerHTML = createToDoItem(jotDownContent);
+        toDoItems.push(toDoItem.innerHTML);
+        toDoContainer.append(toDoItem);
+        jotDown.value = "";
+        window.location.reload();
+      }
+      function deleteToDoContent() {
+        let index = btnDeletes.indexOf(event.target);
+        toDoItems.splice(index, 1);
+        resetStorage();
+        getTodoFromStorage();
+        window.location.reload();
+      }
+      function editToDoContent() {
+        let index = btnEdits.indexOf(event.target);
+        btnEdits[index].classList.add("visually-hidden");
+        btnSaves[index].classList.remove("visually-hidden");
+        toDoContents[index].disabled = false;
+        resetStorage();
+      }
+
+      function saveToDoContent() {
+        let index = btnSaves.indexOf(event.target);
+        if(btnChecks[index].checked){toDoItems[index] = createToDoItem(toDoContents[index].value, "checked");}
+        else{toDoItems[index] = createToDoItem(toDoContents[index].value, "");}
+         btnEdits[index].classList.remove("visually-hidden");
+        btnSaves[index].classList.add("visually-hidden");
+        toDoContents[index].disabled = true;
+        resetStorage();
+        
+      }
+      function checkToDoContent() {
+        let index =btnChecks.indexOf(event.target);
+        if(btnChecks[index].checked){toDoItems[index] = createToDoItem(toDoContents[index].value, "checked");}
+        else{toDoItems[index] = createToDoItem(toDoContents[index].value, "");}
+        resetStorage();
+      }
+
+      function resetStorage() {
+        const jsonStr = JSON.stringify(toDoItems);
+        localStorage.setItem(localStorageKey, jsonStr);
+      }
+      function getTodoFromStorage() {
+        toDoItems = JSON.parse(localStorage.getItem(localStorageKey));
+
+        if (toDoItems) {
+          toDoItems.forEach((toDo) => {
+            let todoItem = document.createElement("div");
+            todoItem.innerHTML = toDo;
+            toDoContainer.append(todoItem);
+          });
+        }
+      }
+      window.onload = function () {
+        getTodoFromStorage();
+        toDoItem = document.createElement("div");
+
+        btnDeletes = document.querySelectorAll("input[type=reset]");
+        btnDeletes = Array.from(btnDeletes);
+        btnDeletes.forEach((btnDelete) => {
+          btnDelete.addEventListener("click", deleteToDoContent);
+        });
+
+        btnEdits = document.querySelectorAll("#edits");
+        btnSaves = document.querySelectorAll("#saves");
+        toDoContents = document.querySelectorAll("#toDoContent");
+        btnChecks = document.querySelectorAll("#DoneCheck");
+
+        btnEdits = Array.from(btnEdits);
+        btnEdits.forEach((btnEdit) => {
+          btnEdit.addEventListener("click", editToDoContent);
+        });
+        btnSaves = Array.from(btnSaves);
+        btnSaves.forEach((btnSave) => {
+          btnSave.addEventListener("click", saveToDoContent);
+        });
+
+        btnChecks = Array.from(btnChecks);
+        btnChecks.forEach((btnCheck) => {
+          btnCheck.addEventListener("change", checkToDoContent);
+        });
+      };
+    </script>
+  </body>
+</html>
