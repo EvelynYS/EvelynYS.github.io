@@ -34,7 +34,7 @@
       #bgphoto::before {
         content: "";
         position: absolute;
-        top: 300px;
+        top: 500px;
         left: -50px;
         width: 100%;
         height: 400px;
@@ -104,14 +104,14 @@
         }
       });
 
-      function createToDoItem(args1, args2) {
+      function createToDoItem(args1, args2, args3) {
         return `<div
           class="d-flex  my-1 px-2 py-2 border rounded-2 border-secondary-subtle bg-warning bg-opacity-10"
         >
           <div class="input-group">
             <div class="input-group-text">
               <input
-                class="form-check-input mt-0"
+                class="form-check-input mt-0 completed"
                 type="checkbox"
                 value=""
                 aria-label="Checkbox for following text input"
@@ -120,7 +120,7 @@
             </div>
             <input
               type="text"
-              class="form-control"
+              class="form-control ${args3}"
               aria-label="Text input with checkbox"
               value="${args1}" id="toDoContent" disabled
             />
@@ -132,9 +132,10 @@
       }
 
       function createToDoContent() {
+        toDoItem = document.createElement("div");
         jotDownContent = jotDown.value;
-        toDoItem.innerHTML = createToDoItem(jotDownContent);
-        toDoItems.push(toDoItem.innerHTML);
+        toDoItem = createToDoItem(jotDownContent);
+        toDoItems.push(toDoItem);
         toDoContainer.append(toDoItem);
         jotDown.value = "";
         window.location.reload();
@@ -162,13 +163,13 @@
         btnSaves[index].classList.add("visually-hidden");
         toDoContents[index].disabled = true;
         resetStorage();
-        
       }
       function checkToDoContent() {
         let index =btnChecks.indexOf(event.target);
-        if(btnChecks[index].checked){toDoItems[index] = createToDoItem(toDoContents[index].value, "checked");}
-        else{toDoItems[index] = createToDoItem(toDoContents[index].value, "");}
-        resetStorage();
+        if(btnChecks[index].checked){toDoItems[index] = createToDoItem(toDoContents[index].value, "checked", "text-decoration-line-through");}
+        else{toDoItems[index] = createToDoItem(toDoContents[index].value, "", "");}
+        resetStorage();getTodoFromStorage();
+        window.location.reload();
       }
 
       function resetStorage() {
@@ -176,6 +177,7 @@
         localStorage.setItem(localStorageKey, jsonStr);
       }
       function getTodoFromStorage() {
+        toDoItems=[];
         toDoItems = JSON.parse(localStorage.getItem(localStorageKey));
 
         if (toDoItems) {
