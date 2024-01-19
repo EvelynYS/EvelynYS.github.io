@@ -93,16 +93,7 @@
       let jotDownContent, eventBtnDelete;
       let index1;
 
-      btnAdd.addEventListener("click", function () {
-        createToDoContent();
-        resetStorage();
-      });
-      jotDown.addEventListener("keydown", function () {
-        if (event.keyCode === 13) {
-          createToDoContent();
-          resetStorage();
-        }
-      });
+ 
 
       function createToDoItem(args1, args2, args3) {
         return `<div
@@ -140,6 +131,16 @@
         jotDown.value = "";
         window.location.reload();
       }
+      btnAdd.addEventListener("click", function () {
+        createToDoContent();
+        resetStorage();
+      });
+      jotDown.addEventListener("keydown", function () {
+        if (event.keyCode === 13) {
+          createToDoContent();
+          resetStorage();
+        }
+      });
       function deleteToDoContent() {
         let index = btnDeletes.indexOf(event.target);
         toDoItems.splice(index, 1);
