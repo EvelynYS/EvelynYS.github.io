@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+      crossorigin="anonymous"
+    />
+
+    <style>
+      * {
+        font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+        color: rgb(77, 8, 8);
+      }
+      #bgphoto {
+        min-height: 880px;
+        position: relative;
+        background-image: linear-gradient(
+          to bottom,
+          rgb(248, 233, 183),
+          rgb(246, 110, 110)
+        );
+        z-index: -1;
+      }
+      #bgphoto::before {
+        content: "";
+        position: absolute;
+        top: 0px;
+        left: -100px;
+        width: 100%;
+        min-height: 870px;
+        background-image: url(/HEKOE3882.JPG);
+        border-radius: 10px;
+        background-repeat: no-repeat;
+        background-size: contain;
+        opacity: 0.65;
+        z-index: -1;
+        transform: scale(0.8);
+      }
+      #bgphoto::after {
+        content: "";
+        position: absolute;
+        top: 620px;
+        left: 0px;
+        width: 500px;
+        height: 250px;
+        background-image: url(/螢幕擷取畫面\ 2024-02-06\ 014241.png);
+        border-bottom: solid 5px brown;
+        border-radius: 8px;
+        background-repeat: no-repeat;
+        opacity: 0.95;
+        z-index: -1;
+        transform: scale(0.7);
+      }
+      .container {
+        top: 0px;
+        right: 20px;
+        position: absolute;
+        z-index: 1;
+      }
+      .weekday-area > * {
+        height: 40px;
+        line-height: 40px;
+        text-align: center;
+      }
+      .date-area > * {
+        height: 100px;
+        cursor: pointer;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        overflow: hidden;
+      }
+      .row-cols-7 > * {
+        flex: 0 0 auto;
+        width: 14.2857143%;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="bgphoto"></div>
+    <div class="container my-0" style="width: 60%; margin-right: 0">
+      <header class="my-0 text-center py-5">
+        <h1>星 曆 表</h1>
+        <h2 class="date-title">月份</h2>
+        <div class="control-btn-group d-flex justify-content-between">
+          <!-- Button trigger modal -->
+          <button
+            type="button"
+            class="btn"
+            style="color: rgb(77, 8, 8); border-color: rgb(77, 8, 8)"
+            data-bs-toggle="modal"
+            data-bs-target="#update_todo_modal"
+            id="create_todo_modal"
+          >
+            +
+          </button>
+          <div class="btn-group" role="group" aria-label="Basic example">
+            <button
+              type="button"
+              class="btn last-month-btn"
+              style="color: rgb(77, 8, 8); border-color: rgb(77, 8, 8)"
+            >
+              上個月
+            </button>
+            <button
+              type="button"
+              class="btn today-btn"
+              style="color: rgb(77, 8, 8); border-color: rgb(77, 8, 8)"
+            >
+              今天
+            </button>
+            <button
+              type="button"
+              class="btn next-month-btn"
+              style="color: rgb(77, 8, 8); border-color: rgb(77, 8, 8)"
+            >
+              下個月
+            </button>
+          </div>
+        </div>
+      </header>
+      <section class="calendar-area">
+        <div class="row row-cols-7 weekday-area g-0">
+          <div class="border col">日</div>
+          <div class="border col">一</div>
+          <div class="border col">二</div>
+          <div class="border col">三</div>
+          <div class="border col">四</div>
+          <div class="border col">五</div>
+          <div class="border col">六</div>
+        </div>
+        <div class="row row-cols-7 date-area g-0">
+          <div class="border col">
+            <span class="d-inline-block text-center w-100">1</span>
+          </div>
+          <div class="border col">
+            <span>1</span>
+            <ul>
+              <li>todo1</li>
+              <li>todo2</li>
+            </ul>
+          </div>
+          <div class="border col"></div>
+          <div class="border col"></div>
+          <div class="border col"></div>
+          <div class="border col"></div>
+          <div class="border col"></div>
+          <div class="border col"></div>
+          <div class="border col"></div>
+          <div class="border col"></div>
+          <div class="border col"></div>
+          <div class="border col"></div>
+          <div class="border col"></div>
+          <div class="border col"></div>
+          <div class="border col"></div>
+          <div class="border col"></div>
+          <div class="border col"></div>
+          <div class="border col"></div>
+          <div class="border col"></div>
+          <div class="border col"></div>
+          <div class="border col"></div>
+          <div class="border col"></div>
+          <div class="border col"></div>
+          <div class="border col"></div>
+          <div class="border col"></div>
+          <div class="border col"></div>
+          <div class="border col"></div>
+          <div class="border col"></div>
+          <div class="border col"></div>
+          <div class="border col"></div>
+          <div class="border col"></div>
+          <div class="border col"></div>
+          <div class="border col"></div>
+          <div class="border col"></div>
+          <div class="border col"></div>
+        </div>
+      </section>
+    </div>
+
+    <!-- Update Modal -->
+    <div
+      class="modal fade"
+      id="update_todo_modal"
+      data-bs-backdrop="static"
+      data-bs-keyboard="false"
+      tabindex="-1"
+      aria-labelledby="staticBackdropLabel2"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog">
+        <div
+          class="modal-content mx-auto px-5 py-5 bg-warning-subtle bg-opacity-25 rounded-5 border border-secondary-subtle position-relative z-1"
+          style="width: 600px"
+        >
+          <div><h2 class="modal-title2" id="staticBackdropLabel2"></h2></div>
+          <div class="modal-header">
+            <h3 class="text-center">待辦事項清單</h3>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <div class="mb-3">
+              <label for="date_input" class="form-label">日期</label>
+              <input
+                type="date"
+                class="form-control"
+                id="date_update_input"
+                aria-describedby="datetimeHelp2"
+              />
+            </div>
+            <!--增加input-group起始--------------->
+            <div
+              class="px-2 py-2 border rounded-2 border-secondary-subtle bg-warning bg-opacity-10 mb-3"
+            >
+              <div class="input-group">
+                <input
+                  type="text"
+                  class="form-control"
+                  placeholder="記錄生活"
+                  aria-label="Recipient's username"
+                  aria-describedby="button-addon2"
+                  id="jotDown"
+                />
+                <button
+                  class="btn btn-color-dark btn-border border-secondary-subtle btn-warning fw-bold"
+                  type="button"
+                  id="btnAdd"
+                >
+                  新增
+                </button>
+              </div>
+            </div>
+            <!-- 增加input-group結束----------------->
+            <div class class="modalsidebody" id="modalsidebody"></div>  
+            <!-- <div
+            class="d-flex  my-1 px-2 py-2 border rounded-2 border-secondary-subtle bg-warning bg-opacity-10"
+          >
+            <div class="input-group">
+              <div class="input-group-text">
+                <input
+                  class="form-check-input mt-0 completed"
+                  type="checkbox"
+                  value=""
+                  aria-label="Checkbox for following text input"
+                  id="DoneCheck" multiple  ${args2}
+                />
+              </div>
+              <input
+                type="text"
+                class="form-control ${args3}"
+                aria-label="Text input with checkbox"
+                value="${args1}" id="toDoContent" disabled
+              />
+            </div>
+            <input class="btn btn-warning mx-2 fw-bold" type="button" value="編輯" id="edits" />
+            <input class="btn btn-warning fw-bold" type="reset" value="刪除"/>
+          </div> -->
+            <!-- ---------------------------- -->
+          
+        </div>
+        <div class="modal-footer">
+          <button
+            type="button"
+            id="btnclose"
+            class="btn btn-secondary "
+            data-bs-dismiss="modal"
+          >
+            取消
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+      integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"
+      integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+"
+      crossorigin="anonymous"
+    ></script>
+    <script src="/main.js"></script>
+  </body>
+</html>
