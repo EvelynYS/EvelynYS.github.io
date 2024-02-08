@@ -18,7 +18,7 @@ function initCalendar() {
   currentYear = today.getFullYear();
   currentMonth = today.getMonth() + 1;
   showTitle(currentYear, currentMonth);
-  fetchAstroEvent("/AstrologicalEvent2024.json");
+  fetchAstroEvent("/RevisedCalender/AstrologicalEvent2024.json");
 }
 
 let Astro2024 = {};
