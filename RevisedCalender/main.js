@@ -268,6 +268,7 @@ function checkchange() {
     inputTexts[index].classList.remove("text-decoration-line-through");
   }
   resetStorage();
+  renderingCalendar();
 }
 function edittodo() {
   const inputEditss = modalsidebody.querySelectorAll("#inputEdits");
