@@ -1,0 +1,882 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap demo</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <style>
+        *{
+            font-family: poppins;
+        }
+#layout_form_control:focus{
+box-shadow:none;
+}
+#layout_input_group:hover{
+border-color: #ff5B00;
+}
+#layout_nav_item:hover{
+    background-color:  rgb(247, 244, 244);
+}
+/* 以上是通用layout 以下是首頁第二行layout */
+#layout_navbar_allSection:hover{
+  background-color:  rgb(247, 244, 244);
+}
+
+#layout_navbar_collapseExample:hover{
+  background-color:  rgb(247, 244, 244);
+}
+
+#layout_nav_item_dropdown:hover {
+    background-color:  rgb(247, 244, 244);
+} 
+#layout_nav_item_dropdown:hover> #layout_itinerary_dropdown_menu{
+    display: block;
+    margin-top: 355px;
+    transition-delay: 1s;
+}
+#layout_itinerary_dropdown_menu:hover{
+    display: block;
+}
+
+.dropdown-item:hover{
+    background-color: white;
+    color: #ff5B00;
+}
+
+.collapse-item:hover{
+  background-color: #ff5B00; 
+}
+.collapse-item:hover > div{
+color: white;
+}
+
+#layout_hotSpot:hover::after{
+content: "";
+position: absolute;
+width: 15px;
+height: 15px;
+top: 20%;
+left:31%;
+clip-path: polygon(0% 0%, 80% 50%, 0% 100%);
+background-color: #ff5B00;
+}
+
+#layout_eastAsia:hover::after{
+content: "";
+position: absolute;
+width: 15px;
+height: 15px;
+top: 28.5%;
+left:31%;
+clip-path: polygon(0% 0%, 80% 50%, 0% 100%);
+background-color: #ff5B00;
+}
+#layout_southEastAsia:hover::after{
+content: "";
+position: absolute;
+width: 15px;
+height: 15px;
+top: 37%;
+left: 31%;
+clip-path: polygon(0% 0%, 80% 50%, 0% 100%);
+background-color: #ff5B00;
+}
+#layout_southAsia:hover::after{
+content: "";
+position: absolute;
+width: 15px;
+height: 15px;
+top: 45%;
+left: 31%;
+clip-path: polygon(0% 0%, 80% 50%, 0% 100%);
+background-color: #ff5B00;
+}
+#layout_oceania:hover::after{
+content: "";
+position: absolute;
+width: 15px;
+height: 15px;
+top: 52%;
+left: 31%;
+clip-path: polygon(0% 0%, 80% 50%, 0% 100%);
+background-color: #ff5B00;
+}
+#layout_europe:hover::after{
+content: "";
+position: absolute;
+width: 15px;
+height: 15px;
+top: 60%;
+left: 31%;
+clip-path: polygon(0% 0%, 80% 50%, 0% 100%);
+background-color: #ff5B00;
+}
+#layout_america:hover::after{
+content: "";
+position: absolute;
+width: 15px;
+height: 15px;
+top: 68%;
+left: 31%;
+clip-path: polygon(0% 0%, 80% 50%, 0% 100%);
+background-color: #ff5B00;
+}
+.layout_eastAsia_sidebar{
+  display: none;
+}
+.layout_southEastAsia_sidebar, .layout_southAsia_sidebar, .layout_oceania_sidebar, .layout_europe_sidebar, .layout_america_sidebar{
+  display: none;
+}
+
+.layout_hotSpot_sidebar a{
+  text-decoration: none;
+  color: aliceblue;
+}
+.layout_eastAsia_sidebar a{
+  text-decoration: none;
+  line-height: 2em;
+  color: black;
+  margin-right: 1em;
+  white-space: nowrap;
+}
+.layout_eastAsia_sidebar a:hover{
+  color: #ff5B00;
+}
+.layout_southEastAsia_sidebar a{
+  text-decoration: none;
+  line-height: 2em;
+  color: black;
+  margin-right: 1em;
+  white-space: nowrap;
+}
+.layout_southEastAsia_sidebar a:hover{
+  color: #ff5B00;
+}
+.layout_southAsia_sidebar a{
+  text-decoration: none;
+  line-height: 2em;
+  color: black;
+  margin-right: 1em;
+  white-space: nowrap;
+}
+.layout_southAsia_sidebar a:hover{
+  color: #ff5B00;
+}
+.layout_oceania_sidebar a{
+  text-decoration: none;
+  line-height: 2em;
+  color: black;
+  margin-right: 1em;
+  white-space: nowrap;
+}
+.layout_oceania_sidebar a:hover{
+color: #ff5B00;
+}
+.layout_europe_sidebar a{
+  text-decoration: none;
+  line-height: 2em;
+  color: black;
+  margin-right: 1em;
+  white-space: nowrap;
+}
+.layout_europe_sidebar a:hover{
+  color: #ff5B00;
+}
+.layout_america_sidebar a{
+  text-decoration: none;
+  line-height: 2em;
+  color: black;
+  margin-right: 1em;
+  white-space: nowrap;
+}
+.layout_america_sidebar a:hover{
+  color: #ff5B00;
+}
+#layout_allSection{
+  display: none;
+}
+#layout_allSection a{
+  text-decoration: none;
+  line-height: 2em;
+  color: black;
+}
+#layout_allSection a:hover{
+  color: #ff5B00;
+}
+    </style>
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg bg-white">
+        <div class="container-fluid">
+           <div class="d-flex" style="width: 1200px; margin: auto;" >
+           
+          <a class="navbar-brand mt-2" href="#"><img src="/IconLayout.png" alt="frontpageicon"></a>
+
+          <div class="input-group"><div class="input-group-text border-muted rounded-pill mt-3" id="layout_input_group" style="height:50px"> 
+                <img style="width: 20px; height:20px;" src="/searchicon.png" alt="searchicon"> 
+                <input class="form-control boredr border-0 bg-light fs-5" type="search" placeholder="探索全球目的地 / 活動" aria-label="Search" id="layout_form_control"></div></div>
+            
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+        
+          <div class="d-flex me-auto mb-2 mb-lg-0 d-none d-lg-block">
+            <ul class="navbar-nav">
+              <li class="nav-item">
+                <div class="rounded-pill mt-3 mx-2 pt-1 px-2" id="layout_nav_item" style="height:50px; width: 100px;"> 
+                <a class="nav-link active" aria-current="page" href="#" >客服中心</a></div>
+              </li>
+              <li class="nav-item">
+                <div class="rounded-pill mt-3 mx-2 pt-1 px-2" id="layout_nav_item" style="height:50px; width: 100px;"> 
+                    <a class="nav-link active" aria-current="page" href="#">最近逛過</a></div>
+              </li>
+              <li class="nav-item">
+                <div class="rounded-pill mt-3 mx-2 pt-1 px-2" id="layout_nav_item" style="height:50px; width: 70px;"> 
+                    <a class="nav-link active" aria-current="page" href="#">註冊</a></div>
+              </li>
+              <li class="nav-item">
+                <div class="rounded-pill mt-3 mx-2 pt-1 px-2 " id="layout_nav_item" style="height:50px; width: 70px;; background-color: #ff5B00;"> 
+                    <a class="nav-link active" aria-current="page" href="#">登入</a></div>
+              </li>
+            </ul>
+        </div>
+        </div>
+  
+    </div>
+</nav>
+<div class="container-fluid d-none d-lg-block border-top border-bottom border-muted fs-5">
+    <div class="d-flex" style="width: 1200px; margin:auto;" >
+        
+    
+                      <!--探索目的地的下拉選單  -->
+               
+                      <div class="rounded-pill my-2 me-2 d-flex align-items-center" id="layout_navbar_collapseExample" style="height:50px"> 
+                      <a class="nav-link active px-3" aria-current="page" aria-expanded="false" disabled> <img src="/icons_map.png" alt="探索目的地" style="width: 25px;height: 25px; margin-right: 5px;">探索目的地</a></div>
+           
+                     <!-- 探索目的地的下拉選單 -->
+                    
+                      <div class="rounded-pill mt-2 mx-2 d-flex align-items-center" id="layout_navbar_allSection" style="height:50px"> 
+                          <a class="nav-link active px-3" aria-current="page" href="#">全部分類</a></div>
+                    
+                    <!-- 行程及體驗下拉選單 -->
+                      
+                          <div class="rounded-pill mt-2 mx-2 d-flex align-items-center" id="layout_nav_item_dropdown" style="height:50px"> 
+                          <a class="nav-link px-3 " aria-current="page" href="#" data-bs-toggle="dropdown" aria-expanded="false" disabled>行程＆體驗</a>
+                          <ul class="dropdown-menu rounded-4 fs-5 border-white" style="width: 30px;" id="layout_itinerary_dropdown_menu"> 
+                            <li><a class="dropdown-item ps-3 my-2" href="#">觀光行程</a></li>
+                            <li><a class="dropdown-item ps-3 my-2" href="#">郵輪</a></li>
+                            <li><a class="dropdown-item ps-3 my-2">按摩＆溫泉</a></li>
+                            <li><a class="dropdown-item ps-3 my-2" href="#">水上活動</a></li>
+                            <li><a class="dropdown-item ps-3 my-2">戶外＆運動</a></li>
+                            <li><a class="dropdown-item ps-3 my-2" href="#">文化體驗</a></li>
+                          </ul>
+                        </div>
+                        <!-- 景點門票下拉選單 -->
+                    
+                        <div class="rounded-pill my-2 mx-2 d-flex align-items-center" id="layout_nav_item_dropdown" style="height:50px"> 
+                            <a class="nav-link px-3 " aria-current="page" href="#" data-bs-toggle="dropdown" aria-expanded="false" disabled>景點門票</a>
+                            <ul class="dropdown-menu rounded-4 fs-5 border-white " style="width: 30px;margin-top: 585px;" id="layout_itinerary_dropdown_menu" > 
+                              <li><a class="dropdown-item ps-3 my-2" href="#">主題樂園</a></li>
+                              <li><a class="dropdown-item ps-3 my-2" href="#">水上樂園</a></li>
+                              <li><a class="dropdown-item ps-3 my-2">博物館</a></li>
+                              <li><a class="dropdown-item ps-3 my-2" href="#">公園&花園</a></li>
+                              <li><a class="dropdown-item ps-3 my-2">動物園＆水族館</a></li>
+                              <li><a class="dropdown-item ps-3 my-2" href="#">纜車</a></li>
+                              <li><a class="dropdown-item ps-3 my-2" href="#">景觀台</a></li>
+                              <li><a class="dropdown-item ps-3 my-2" href="#">歷史景點</a></li>
+                              <li><a class="dropdown-item ps-3 my-2">景點通票</a></li>
+                              <li><a class="dropdown-item ps-3 my-2" href="#">室內遊戲</a></li>
+                              <li><a class="dropdown-item ps-3 my-2">遊樂場</a></li>
+                            </ul>
+                          </div>
+
+                          <!--  -->
+
+                          <div class="rounded-pill mt-2 mx-2 d-flex align-items-center" id="layout_nav_item" style="height:50px"> 
+                            <a class="nav-link active px-3" aria-current="page" href="#">飯店</a></div>
+                            <div class="rounded-pill mt-2 mx-2 d-flex align-items-center" id="layout_nav_item" style="height:50px"> 
+                                <a class="nav-link active px-3" aria-current="page" href="#">美食品嚐</a></div>
+                  </div>
+                  
+          </div>
+       
+          <div class="collapse" id="layout_collapseExample" >
+            <div class="row  fs-5 rounded-4 border" style=" width: 1000px; margin-left: 18%;" >
+              <div class=" col-3 px-0 border-end border-muted" >
+                <div class=" collapse-item rounded-4 rounded-bottom-0 rounded-end-0 d-flex align-items-center ps-3" id="layout_hotSpot" style="height: 70px; "><div class="fw-bold" href="">熱門目的地</div></div>
+                <div class="collapse-item d-flex align-items-center ps-3 border-bottom border-top border-muted" id="layout_eastAsia" style="height: 70px; "><div class="fw-bold" href="">東亞<br><span class="fw-light fs-6 ps-2">香港 台北</span></div></div>
+                <div class="collapse-item d-flex align-items-center ps-3 border-bottom border-top border-muted" id="layout_southEastAsia" style="height: 70px; "><div class="fw-bold" href="">東南亞<br><span class="fw-light fs-6 ps-2">新加坡</span></div></div>
+                <div class="collapse-item d-flex align-items-center ps-3  border-bottom border-top border-muted" id="layout_southAsia" style="height: 70px; "><div class="fw-bold" href="">南亞 / 中東<br><span class="fw-light fs-6 ps-2">加德滿都 杜拜</span></div></div>
+                <div class="collapse-item d-flex align-items-center ps-3 border-bottom border-top border-muted" id="layout_oceania" style="height: 70px; "><div class="fw-bold" href="" >大洋洲<br><span class="fw-light fs-6 ps-2">雪梨 墨爾本</span></div></div>
+                <div class="collapse-item d-flex align-items-center ps-3 border-bottom border-top border-muted" id="layout_europe" style="height: 70px; "><div class="fw-bold" href="" >歐洲<br><span class="fw-light fs-6 ps-2">倫敦 巴黎</span></div></div>
+                <div class="collapse-item  rounded-4 rounded-top-0 rounded-end-0 d-flex align-items-center ps-3 " id="layout_america" style="height: 70px; "><div class="fw-bold" href="" >北美洲<br><span class="fw-light fs-6 ps-2">紐約 洛杉磯</span></div></div>
+              </div>
+              <div class="col-9 ">
+                <div class="layout_hotSpot_sidebar" style="height: 420px;">
+                  <div class="container text-center">
+                    <div class="row row-cols-4 mt-4 mb-2">
+                      <div class="col"><a  href="#"><div class="rounded-3 fw-bold" style=" height: 90px; background-image: url(/TPE.webp); padding-top: 60px;" disabled>台北</div></a></div>
+                      <div class="col"><a  href="#"><div class="rounded-3 fw-bold" style="height: 90px; background-image: url(/TKY.webp); padding-top: 60px;" disabled>東京</div></a></div>
+                      <div class="col"><a  href="#"><div class="rounded-3 fw-bold" style="height: 90px; background-image: url(/OSA.webp); padding-top: 60px;" disabled>大阪</div></a></div>
+                      <div class="col"><a  href="#"><div class="rounded-3 fw-bold" style="height: 90px; background-image: url(/HKG.webp); padding-top: 60px; " disabled>香港</div></a></div>
+                    </div>
+                  </div>
+                  <div class="container text-center">
+                    <div class="row row-cols-4 mt-4 mb-2">
+                      <div class="col"><a  href="#"><div class="rounded-3 fw-bold" style=" height: 90px; background-image: url(/TCU.webp); padding-top: 60px;" disabled>台中</div></a></div>
+                      <div class="col"><a  href="#"><div class="rounded-3 fw-bold" style="height: 90px; background-image: url(/BKK.webp); padding-top: 60px;" disabled>曼谷</div></a></div>
+                      <div class="col"><a  href="#"><div class="rounded-3 fw-bold" style="height: 90px; background-image: url(/KAO.webp); padding-top: 60px;" disabled>高雄</div></a></div>
+                      <div class="col"><a  href="#"><div class="rounded-3 fw-bold" style="height: 90px; background-image: url(/YLN.webp); padding-top: 60px;" disabled>宜蘭</div></a></div>
+                    </div>
+                  </div>
+                  <div class="container text-center">
+                    <div class="row row-cols-4 mt-4 mb-2">
+                      <div class="col"><a  href="#"><div class="rounded-3 fw-bold" style=" height: 90px; background-image: url(/TNA.webp); padding-top: 60px;" disabled>台南</div></a></div>
+                      <div class="col"><a  href="#"><div class="rounded-3 fw-bold" style="height: 90px; background-image: url(/SEO.webp); padding-top: 60px;" disabled>首爾</div></a></div>
+                      <div class="col"><a  href="#"><div class="rounded-3 fw-bold" style="height: 90px; background-image: url(/NAT.webp); padding-top: 60px;" disabled>南投</div></a></div>
+                      <div class="col"><a  href="#"><div class="rounded-3 fw-bold" style="height: 90px; background-image: url(/NEW.webp); padding-top: 60px;" disabled>新北</div></a></div>
+                    </div>
+                </div>
+               </div>
+                <div  class="layout_eastAsia_sidebar" style="height: 420px;">
+                  <table class="table table-borderless">
+                    <thead>
+                      <tr>
+                        <th class="fw-light" colspan="2">選擇國家 / 城市</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <th class="fw-bold" scope="row" style="width: 20%;"><a href="">香港＆澳門</a></th>
+                        <td class="fw-light"><a href="">香港</a><a  href="">澳門</a></td>
+                      </tr>
+                      <tr>
+                        <th class="fw-bold" scope="row"><a href="">台灣</a></th>
+                        <td class="fw-light "><a href="">大台北</a><a  href="">台北</a><a  href="">台南</a><a  href="">宜蘭</a><a href="">花蓮</a><a  href="">台東</a><a  href="">澎湖</a><a  href="">高雄</a><a href="">屏東</a><a  href="">台中</a><a  href="">苗栗</a><a  href="">嘉義</a><a  href="">金門、馬祖</a></td>
+                      </tr>
+                      <tr>
+                        <th class="fw-bold"　scope="row">日本</th>
+                        <td class="fw-light"><a href="">東京</a><a href="">大阪</a><a href="">名古屋</a><a href="">京都</a><a href="">北海道</a><a href="">札幌</a><a href="">九州地區</a><a href="">中國地區</a><a href="">北信越地區</a><a href="">沖繩</a><a href="">石垣島＆八重山群島</a><a href="">宮古島</a></td>
+                      </tr>
+                      <tr>
+                        <th class="fw-bold"　scope="row">韓國</th>
+                        <td class="fw-light"><a href="">首爾</a><a href="">濟州島</a><a href="">釜山</a><a href="">江原道</a><a href="">京畿道</a><a href="">仁川</a></td>
+                      </tr>
+                      <tr>
+                        <th class="fw-bold"　scope="row">中國</th>
+                        <td class="fw-light"><a href="">北京</a><a href="">上海</a><a href="">廣州</a><a href="">深圳</a><a href="">珠海市</a><a href="">蘇州、杭州</a><a href="">西安</a><a href="">成都</a><a href="">桂林</a><a href="">張家界</a><a href="">三亞、海口</a><a href="">雲南</a><a href="">哈爾濱</a><a href="">廈門</a><a href="">重慶</a><a href="">貴州</a><a href="">內蒙古</a></td>
+                      </tr>
+                    </tbody>
+                  </table>
+
+                </div>
+                <div  class="layout_southEastAsia_sidebar" style="height: 420px; overflow: auto;">
+                  <table class="table table-borderless" >
+                    <thead>
+                      <tr>
+                        <th class="fw-light" colspan="2">選擇國家 / 城市</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <th class="fw-bold" scope="row" style="width: 20%;"><a href="">新加坡</a></th>
+                        <td class="fw-light"><a href="">新加坡</a></td>
+                      </tr>
+                      <tr>
+                        <th class="fw-bold" scope="row"><a href="">泰國</a></th>
+                        <td class="fw-light "><a href="">曼谷</a><a  href="">芭達亞</a><a  href="">清邁</a><a  href="">普吉島</a><a href="">蘇美島</a><a  href="">喀比</a><a  href="">華欣</a><a  href="">象島</a><a href="">皮皮島</a><a  href="">合艾、麗貝島</a><a  href="">清萊</a><a  href="">素叻府</a><a  href="">北碧</a><a href="">素可泰</a></td>
+                      </tr>
+                      <tr>
+                        <th class="fw-bold"　scope="row">馬來西亞</th>
+                        <td class="fw-light"><a href="">吉隆坡</a><a href="">檳城</a><a href="">沙巴</a><a href="">砂拉越</a><a href="">蘭卡威</a><a href="">新山</a><a href="">怡保</a><a href="">馬六甲</a></td>
+                      </tr>
+                      <tr>
+                        <th class="fw-bold"　scope="row">印尼</th>
+                        <td class="fw-light"><a href="">峇里島</a><a href="">雅加達</a><a href="">龍目島</a><a href="">巴丹</a><a href="">日惹</a><a href="">萬隆</a><a href="">泗水</a></td>
+                      </tr>
+                      <tr>
+                        <th class="fw-bold"　scope="row">菲律賓</th>
+                        <td class="fw-light"><a href="">長灘島</a><a href="">馬尼拉</a><a href="">宿霧</a><a href="">巴拉望</a><a href="">薄荷島</a><a href="">杜馬蓋地</a><a href="">蘇比克＆克拉克</a><a href="">達沃</a></td>
+                      </tr>
+                      <tr>
+                        <th class="fw-bold"　scope="row">越南</th>
+                        <td class="fw-light"><a href="">胡志明市</a><a href="">河內</a><a href="">順化</a><a href="">會安</a><a href="">峴港</a><a href="">富國島</a><a href="">大叻</a><a href="">芽莊</a><a href="">沙壩</a></td>
+                      </tr>
+                      <tr>
+                        <th class="fw-bold"　scope="row">柬埔寨</th>
+                        <td class="fw-light"><a href="">暹粒</a><a href="">金邊</a></td>
+                      </tr>
+                      <tr>
+                        <th class="fw-bold"　scope="row">緬甸</th>
+                        <td class="fw-light"><a href="">仰光</a><a href="">蒲甘</a><a href="">曼德勒</a><a href="">茵來湖</a><a href="">丹兌</a></td>
+                      </tr>
+                     
+                    </tbody>
+                  </table>
+                  <!-- <div class=" text-center opacity-75" style="color: #ff5B00;">向下滑動查看更多</div> -->
+                </div>
+                <div  class="layout_southAsia_sidebar" style="height: 420px; overflow: auto;">
+                  <table class="table table-borderless">
+                    <thead>
+                      <tr>
+                        <th class="fw-light" colspan="2">選擇國家 / 城市</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <th class="fw-bold" scope="row" style="width: 20%;"><a href="">尼泊爾</a></th>
+                        <td class="fw-light"><a href="">加德滿都</a><a href="">博卡拉</a></td>
+                      </tr>
+                      <tr>
+                        <th class="fw-bold" scope="row"><a href="">不丹</a></th>
+                        <td class="fw-light "><a href="">廷布</a></td>
+                      </tr>
+                      <tr>
+                        <th class="fw-bold"　scope="row">印度</th>
+                        <td class="fw-light"><a href="">孟買</a><a href="">德里</a><a href="">齋浦爾</a><a href="">烏代浦</a><a href="">科欽</a><a href="">果阿邦</a><a href="">邦加羅爾</a><a href="">北阿坎德邦</a><a href="">果達古</a><a href="">喜馬偕爾邦</a><a href="">海德拉巴</a><a href="">浦那</a><a href="">瓦拉納西</a><a href="">阿格拉</a><a href="">蒙納</a><a href="">焦特布爾</a><a href="">加爾各答</a><a href="">清奈</a><a href="">賈沙梅爾</a><a href="">阿姆利則</a><a href="">普希卡</a><a href="">艾哈邁達巴德</a></td>
+                      </tr>
+                      <tr>
+                        <th class="fw-bold"　scope="row">阿拉伯聯合大公國</th>
+                        <td class="fw-light"><a href="">杜拜</a><a href="">阿布達比</a></td>
+                      </tr>
+                      <tr>
+                        <th class="fw-bold"　scope="row">卡達</th>
+                        <td class="fw-light"><a href="">杜哈</a></td>
+                      </tr>
+                      <tr>
+                        <th class="fw-bold"　scope="row">阿曼</th>
+                        <td class="fw-light"><a href="">馬斯喀特</a></td>
+                      </tr>
+                      <tr>
+                        <th class="fw-bold"　scope="row">土耳其</th>
+                        <td class="fw-light"><a href="">伊斯坦堡</a><a href="">安塔利亞</a><a href="">卡帕多奇亞</a></td>
+                      </tr>
+                      <tr>
+                        <th class="fw-bold"　scope="row">以色列</th>
+                        <td class="fw-light"><a href="">耶路撒冷</a><a href="">特拉維夫</a></td>
+                      </tr>
+                      <tr>
+                        <th class="fw-bold"　scope="row">斯里蘭卡</th>
+                        <td class="fw-light"><a href="">可倫坡</a><a href="">康提</a><a href="">加勒</a></td>
+                      </tr>
+                    </tbody>
+                  </table>
+
+                </div>
+                <div  class="layout_oceania_sidebar" style="height: 420px; overflow: auto;">
+                  <table class="table table-borderless">
+                    <thead>
+                      <tr>
+                        <th class="fw-light" colspan="2">選擇國家 / 城市</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <th class="fw-bold" scope="row" style="width: 20%;"><a href="">澳洲</a></th>
+                        <td class="fw-light"><a href="">雪梨</a><a href="">墨爾本</a><a href="">凱恩斯</a><a href="">布里斯本</a><a href="">伯斯</a><a href="">黃金海岸</a><a href="">荷巴特</a><a href="">烏魯魯、愛麗絲泉</a><a href="">阿得雷德</a><a href="">達爾文</a><a href="">陽光海岸</a></td>
+                      </tr>
+                      <tr>
+                        <th class="fw-bold"　scope="row">紐西蘭</th>
+                        <td class="fw-light"><a href="">基督城</a><a href="">皇后鎮</a><a href="">奧克蘭</a><a href="">羅托魯瓦</a><a href="">威靈頓</a><a href="">馬爾堡</a><a href="">尼爾森</a><a href="">西海岸冰川</a></td>
+                      </tr>
+                      <tr>
+                        <th class="fw-bold"　scope="row">南非</th>
+                        <td class="fw-light"><a href="">開普敦</a></td>
+                      </tr>
+                      <tr>
+                        <th class="fw-bold"　scope="row">摩洛哥</th>
+                        <td class="fw-light"><a href="">馬拉喀什</a></td>
+                      </tr>
+                    </tbody>
+                  </table>
+
+                </div>
+                <div  class="layout_europe_sidebar" style="height: 420px; overflow: auto;">
+                  <table class="table table-borderless">
+                    <thead>
+                      <tr>
+                        <th class="fw-light" colspan="2">選擇國家 / 城市</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <th class="fw-bold" scope="row" style="width: 20%;"><a href="">英國</a></th>
+                        <td class="fw-light"><a href="">倫敦</a><a href="">愛丁堡</a><a href="">貝爾法斯特</a><a href="">劍橋</a><a href="">格拉斯哥</a><a href="">利物浦</a><a href="">約克</a></td>
+                      </tr>
+                      <tr>
+                        <th class="fw-bold"　scope="row">法國</th>
+                        <td class="fw-light"><a href="">巴黎</a><a href="">阿爾薩斯＆勃根地＆香檳地區</a><a href="">波爾多與西南法</a></td>
+                      </tr>
+                      <tr>
+                        <th class="fw-bold"　scope="row">荷蘭</th>
+                        <td class="fw-light"><a href="">阿姆斯特丹</a></td>
+                      </tr>
+                      <tr>
+                        <th class="fw-bold"　scope="row">德國</th>
+                        <td class="fw-light"><a href="">伯林</a><a href="">慕尼黑</a><a href="">法蘭克福與海德堡</a><a href="">漢堡</a></td>
+                      </tr>
+                      <tr>
+                        <th class="fw-bold"　scope="row">奧地利</th>
+                        <td class="fw-light"><a href="">維也納</a><a href="">薩爾斯堡</a></td>
+                      </tr>
+                      <tr>
+                        <th class="fw-bold"　scope="row">瑞士</th>
+                        <td class="fw-light"><a href="">蘇黎世</a><a href="">琉森</a></td>
+                      </tr>
+                      <tr>
+                        <th class="fw-bold"　scope="row">義大利</th>
+                        <td class="fw-light"><a href="">羅馬</a><a href="">米蘭</a><a href="">佛羅倫斯</a><a href="">威尼斯</a><a href="">那不勒斯</a></td>
+                      </tr>
+                      <tr>
+                        <th class="fw-bold"　scope="row">西班牙</th>
+                        <td class="fw-light"><a href="">馬德里</a><a href="">巴塞隆納</a><a href="">塞維亞</a><a href="">馬拉加＆太陽海岸</a></td>
+                      </tr>
+                      <tr>
+                        <th class="fw-bold"　scope="row">冰島</th>
+                        <td class="fw-light"><a href="">雷克雅維克</a></td>
+                      </tr>
+                      <tr>
+                        <th class="fw-bold"　scope="row">芬蘭</th>
+                        <td class="fw-light"><a href="">赫爾辛基</a><a href="">芬蘭拉普蘭地區</a></td>
+                      </tr>
+                      <tr>
+                        <th class="fw-bold"　scope="row">挪威</th>
+                        <td class="fw-light"><a href="">特羅姆瑟</a></td>
+                      </tr>
+                      <tr>
+                        <th class="fw-bold"　scope="row">丹麥</th>
+                        <td class="fw-light"><a href="">哥本哈根</a></td>
+                      </tr>
+                      <tr>
+                        <th class="fw-bold"　scope="row">希臘</th>
+                        <td class="fw-light"><a href="">雅典</a></td>
+                      </tr>
+                      <tr>
+                        <th class="fw-bold"　scope="row">塞爾維亞</th>
+                        <td class="fw-light"><a href="">貝爾格勒</a></td>
+                      </tr>
+                      <tr>
+                        <th class="fw-bold"　scope="row">愛爾蘭</th>
+                        <td class="fw-light"><a href="">都柏林</a></td>
+                      </tr>
+                      <tr>
+                        <th class="fw-bold"　scope="row">匈牙利</th>
+                        <td class="fw-light"><a href="">布達佩斯</a></td>
+                      </tr>
+                    </tbody>
+                  </table>
+
+                </div>
+                <div  class="layout_america_sidebar" style="height: 420px; overflow: auto;">
+                  <table class="table table-borderless">
+                    <thead>
+                      <tr>
+                        <th class="fw-light" colspan="2">選擇國家 / 城市</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <th class="fw-bold" scope="row" style="width: 20%;"><a href="">美國</a></th>
+                        <td class="fw-light"><a href="">紐約</a><a href="">洛杉磯</a><a href="">夏威夷</a><a href="">舊金山</a><a href="">芝加哥</a><a href="">拉斯維加斯</a><a href="">華盛頓特區</a><a href="">波士頓</a><a href="">邁阿密</a><a href="">塞班島</a><a href="">關島</a></td>
+                      </tr>
+                    </tbody>
+                  </table>
+
+                </div>
+              </div>
+            
+          </div>
+          </div>
+          
+          <div class="collapse" id="layout_allSection" >
+            <div class="row fs-5 rounded-4 border" style=" width: 1200px; margin-left: 18%;" >
+              <div class=" row row-cols-5" >
+                <div class="col d-flex p-0 m-0">
+                <div class="col-1"><img src="/layout_schedule_icon.webp" alt="" style="width: 20px;height: 20px;"></div>
+                <div class="col-11 ps-2" style="width: 180px;">
+                  <div><a href="">行程＆體驗</a></div>
+                  <div><a href="">觀光行程</a> ❯</div>
+                  <div><a href="">郵輪</a> ❯</div>
+                  <div><a href="">按摩＆溫泉</a> ❯</div>
+                  <div><a href="">水上活動</a> ❯</div>
+                  <div><a href="">戶外＆運動</a> ❯</div>
+                  <div><a href="">文化體驗</a> ❯</div>
+                </div>
+                </div>
+                <div class="col d-flex p-0 m-0">
+                  <div class="col-1"><img src="/layout_ticket_icon.webp" alt="" style="width: 20px;height: 20px;"></div>
+                  <div class="col-11 ps-2" style="width: 180px;">
+                    <div><a href="">景點門票</a></div>
+                    <div><a href="">主題樂園</a> ❯</div>
+                    <div><a href="">水上樂園</a> ❯</div>
+                    <div><a href="">博物館</a> ❯</a></div>
+                    <div><a href="">公園＆花園</a> ❯</div>
+                    <div><a href="">動物園＆水族館</a> ❯</div>
+                    <div><a href="">纜車</a> ❯</div>
+                    <div><a href="">歷史景點</a> ❯</div>
+                    <div><a href="">遊樂場</a> ❯</div>
+                    <div><a href="">室內遊戲</a> ❯</div>
+                    <div><a href="">景點通票</a> ❯</div>
+                    <div><a href="">展演活動</a> ❯</div>
+                  </div>
+                  </div>
+                  <div class="col d-flex p-0 m-0">
+                    <div class="col-1"><img src="/layout_ticket_icon.webp" alt="" style="width: 20px;height: 20px;"></div>
+                    <div class="col-11 ps-2" style="width: 175px;">
+                      <div><a href="">住宿</a></div>
+                      <div><a href="">飯店</a> ❯</div>
+                    </div>
+                    </div>
+                  <div class="col d-flex p-0 m-0">
+                    <div class="col-1"><img src="/layout_transport_icon.webp" alt="" style="width: 20px;height: 20px;"></div>
+                    <div class="col-11 ps-2" style="width: 185px;">
+                      <div><a href="">交通</a></div>
+                      <div><a href="">鐵路車票</a> ❯</div>
+                      <div class="fw-light"><a href="">台灣高鐵 </a><a href=""> 日本鐵路</a><a href="">歐洲鐵路</a></div>
+                      <div><a href="">JR Pass</a> ❯</div>
+                      <div><a href="">歐鐵火車通行證</a> ❯</div>
+                      <div><a href="">捷運交通卡＆通票</a> ❯</div>
+                      <div><a href="">機場包車接送</a> ❯</div>
+                      <div><a href="">機場鐵路＆巴士</a> ❯</div>
+                      <div><a href="">機票</a> ❯</div>
+                      <div><a href="">渡輪</a> ❯</div>
+                      <div><a href="">巴士</a> ❯</div>
+                      <div class="fw-light me-3"><a href="">台灣客運巴士</a><br><a href="">星馬跨境巴士</a></div>
+                      <div><a href="">租車</a> ❯</div>
+                      <div><a href="">包車接送 ❯</a></div>
+                    </div>
+              </div>
+              <div class="col d-flex p-0 m-0">
+                <div class="col-1"><img src="/layout_schedule_icon.webp" alt="" style="width: 20px;height: 20px;"></div>
+                <div class="col-11 ps-2" style="width: 180px;">
+                  <div><a href="">超夯玩樂必備</a></div>
+                  <div><a href="">美食品嘗</a> ❯</div>
+                  <div><a href="">購物</a> ❯</div>
+                  <div><a href="">旅遊服務</a> ❯</div>
+                </div>
+                </div> 
+        
+                  
+              </div>
+            </div>
+            </div>
+  <!-- 這裡是RWD部分 -->
+          <div class="collapse navbar-collapse d-lg-none" id="navbarSupportedContent">
+            <ul class="navbar-nav mx-3 mt-3 fs-5">
+              <li class="nav-item">
+                <a class="nav-link" aria-current="page" 
+                role="button" data-bs-toggle="collapse" href="#layout_RWD_search" aria-controls="layout_RWD_search"><img src="/icons_map.png" alt="探索目的地" style="width: 25px;height: 25px; margin-right: 5px;">探索目的地</a>
+                <div class="collapse ms-5" id="layout_RWD_search"> 
+                  <a class="nav-link" aria-current="page"  role="button" data-bs-toggle="collapse" href="#layout_RWD_hotSpot" aria-controls="layout_RWD_hitSpot">熱門目的地</a><div class="collapse ms-4" id="layout_RWD_hotSpot">
+                    <div ><a href="">台北</a><a class="mx-3" href="">東京</a><a href="">大阪</a><a class="mx-3" href="">香港</a></div>
+                  </div>
+                  <a class="nav-link" aria-current="page"  role="button" data-bs-toggle="collapse" href="#layout_RWD_eastAsia" aria-controls="layout_RWD_eastAsia">東亞</a><div class="collapse ms-4" id="layout_RWD_eastAsia">
+                    <div><a href="">香港＆澳門</a><a class="mx-3"  href="">台灣</a><a href="">日本</a><a class="mx-3"  href="">韓國</a></div>
+                  </div>
+                  <a class="nav-link" aria-current="page"  role="button" data-bs-toggle="collapse" href="#layout_RWD_southEastAsia" aria-controls="layout_RWD_southEastAsia">東南亞</a>
+                  <div class="collapse ms-4" id="layout_RWD_southEastAsia">
+                    <div><a href="">新加坡</a><a class="mx-3"  href="">馬來西亞</a><a href="">泰國</a><a  class="mx-3" href="">印尼</a></div>
+                  </div>
+                  <a class="nav-link" aria-current="page"  role="button" data-bs-toggle="collapse" href="#layout_RWD_southAsia" aria-controls="layout_RWD_southAsia">南亞</a>
+                  <div class="collapse ms-4" id="layout_RWD_southAsia">
+                    <div><a href="">尼泊爾</a><a class="mx-3" href="">不丹</a><a href="">印度</a></div>
+                  </div>
+                  <a class="nav-link" aria-current="page"  role="button" data-bs-toggle="collapse" href="#layout_RWD_oceania" aria-controls="layout_RWD_oceania">大洋洲</a>
+                  <div class="collapse ms-4" id="layout_RWD_oceania">
+                    <div><a href="">澳洲</a><a class="mx-3" href="">紐西蘭</a><a href="">南非</a></div>
+                  </div>
+                  <a class="nav-link" aria-current="page"  role="button" data-bs-toggle="collapse" href="#layout_RWD_europe" aria-controls="layout_RWD_europe">歐洲</a> 
+                  <div class="collapse ms-4" id="layout_RWD_europe">
+                    <div><a href="">英國</a><a class="mx-3" href="">法國</a><a href="">荷蘭</a><a class="mx-3" href="">德國</a><a href="">奧地利</a></div>
+                  </div>
+                  <a class="nav-link" aria-current="page"  role="button" data-bs-toggle="collapse" href="#layout_RWD_america" aria-controls="layout_RWD_america">北美洲</a>
+                  <div class="collapse ms-4" id="layout_RWD_america">
+                    <div><a href="">美國</a></div>
+                  </div>
+                </div>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" aria-current="page" 
+                role="button" data-bs-toggle="collapse" href="#layout_RWD_allSection" aria-controls="layout_RWD_search"><img src="/icons8-menu-80.png" alt="全部分類" style="width: 25px;height: 25px; margin-right: 5px;">全部分類</a>
+                <div class="collapse ms-5" id="layout_RWD_allSection"> 
+                  <a class="nav-link" aria-current="page"  role="button" data-bs-toggle="collapse" href="#layout_RWD_shedule" aria-controls="layout_RWD_shedule">行程＆體驗</a><div class="collapse ms-4" id="layout_RWD_shedule">
+                    <div ><a href="">觀光行程</a><a class="mx-3" href="">郵輪</a><a href="">按摩＆溫泉</a><a class="mx-3" href="">水上活動</a></div>
+                  </div>
+                  <a class="nav-link" aria-current="page"  role="button" data-bs-toggle="collapse" href="#layout_RWD_ticket" aria-controls="layout_RWD_ticket">景點門票</a><div class="collapse ms-4" id="layout_RWD_ticket">
+                    <div><a href="">主題樂園</a><a class="mx-3"  href="">水上樂園</a><a href="">博物館</a><a class="mx-3"  href="">公園＆花園</a></div>
+                  </div>
+                  <a class="nav-link" href="#" aria-current="page" role="button">旅館</a>
+                  <a class="nav-link" aria-current="page"  role="button" data-bs-toggle="collapse" href="#layout_RWD_transportation" aria-controls="layout_RWD_transportation">交通</a>
+                  <div class="collapse ms-4" id="layout_RWD_transportation">
+                    <div><a href="">鐵路車票</a><a class="mx-3" href="">JR Pass</a><a href="">歐鐵火車通行證</a><a class="mx-3" href="">捷運交通卡＆通票</a><a href="">機場包車接送</a></div>
+                  </div>
+                  <a class="nav-link" aria-current="page"  role="button" data-bs-toggle="collapse" href="#layout_RWD_must" aria-controls="layout_RWD_must">超夯玩樂必備</a><div class="collapse ms-4" id="layout_RWD_must">
+                    <div><a href="">美食品嚐</a><a class="mx-3"  href="">購物</a><a href="">旅遊服務</a></div>
+                  </div>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" aria-current="page" 
+                role="button" data-bs-toggle="collapse" href="#layout_RWD_scheduleExp" aria-controls="layout_RWD_scheduleExp"><img src="/icons8-schedule-80.png" alt="全部分類" style="width: 25px;height: 25px; margin-right: 5px;">行程＆體驗</a>
+                <div class="collapse ms-5" id="layout_RWD_scheduleExp"> 
+                  <a href="">觀光行程</a><a class="mx-3" href="">郵輪</a><a href="">按摩＆溫泉</a><a class="mx-3" href="">水上活動</a><a href="">戶外＆運動</a><a class="mx-3"  href="">文化體驗</a></div>
+                 
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" aria-current="page" 
+                role="button" data-bs-toggle="collapse" href="#layout_RWD_ticket" aria-controls="layout_RWD_ticket"><img src="/icons8-ticket-50.png" alt="景點門票" style="width: 25px;height: 25px; margin-right: 5px;">景點門票</a>
+                <div class="collapse ms-5" id="layout_RWD_ticket"> 
+                  <a href="">主題樂園</a><a class="mx-3" href="">水上樂園</a><a href="">博物館</a><a class="mx-3" href="">公園＆花園</a><a href="">動物園＆水族館</a><a class="mx-3"  href="">纜車</a><a href="">景館台</a><a class="mx-3" href="">歷史景點</a><a href="">景點通票</a><a class="mx-3" href="">室內遊戲</a><a href="">遊樂場</a></div>
+                 
+              </li>
+              <li class="nav-item">
+                <a class="nav-link"  href="#" aria-current="page" role="button"><img src="/icons8-hotel-48.png" alt="全部分類" style="width: 25px;height: 25px; margin-right: 5px;">飯店</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link"  href="#" aria-current="page" role="button"><img src="/icons8-meal-50.png" alt="全部分類" style="width: 25px;height: 25px; margin-right: 5px;">美食品嚐</a>
+              </li>
+            </ul>
+          </div>
+        
+    
+      
+          
+           
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script> 
+    <script
+  src="https://code.jquery.com/jquery-3.7.1.min.js"
+  integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
+  crossorigin="anonymous"
+></script>
+<script>
+
+$("#layout_navbar_collapseExample").hover(
+  function() {
+      $('#layout_collapseExample').show()}
+      );
+      $("#layout_navbar_collapseExample").hover(
+  function() {
+      $('#layout_allSection').hide()}
+      );
+      
+$("#layout_collapseExample").hover(
+  function() {
+      $('#layout_collapseExample').show()},
+      function() {
+        $('#layout_collapseExample').hide();
+      }
+      ); 
+
+      $("#layout_navbar_allSection").hover(
+  function() {
+      $('#layout_allSection').show()}
+      );
+      $("#layout_navbar_allSection").hover(
+      function(){  $('#layout_collapseExample').hide();}
+      )
+      
+$("#layout_allSection").hover(
+  function() {
+      $('#layout_allSection').show()},
+      function() {
+        $('#layout_allSection').hide();
+      }
+      ); 
+      $("#layout_nav_item_dropdown").hover(
+        function(){
+          $('#layout_allSection').hide();
+        }
+      )
+      $("#layout_nav_item_dropdown").hover(
+        function(){
+          $('#layout_collapseExample').hide();
+        }
+      )
+      
+      // document.querySelector(".layout_southEastAsia_sidebar").addEventListener('scroll', (e)=>{
+      //       if (window > 0){
+      //           document.querySelector(".position-absolute").addClassList("d-none");}
+      //       })
+
+$("#layout_hotSpot, .layout_hitSpot_sidebar").hover(
+  function() {
+    $('.layout_hotSpot_sidebar').show();
+    $('.layout_southEastAsia_sidebar').hide();
+    $('.layout_eastAsia_sidebar').hide();
+    $('.layout_southAsia_sidebar').hide();
+    $('.layout_europe_sidebar').hide();
+    $('.layout_america_sidebar').hide();
+  }
+);
+
+ $("#layout_eastAsia, .layout_eastAsia_sidebar").hover(
+  function() {
+    $('.layout_hotSpot_sidebar').hide();
+    $('.layout_southEastAsia_sidebar').hide();
+    $('.layout_eastAsia_sidebar').show();
+    $('.layout_southAsia_sidebar').hide();
+    $('.layout_oceania_sidebar').hide();
+    $('.layout_europe_sidebar').hide();
+    $('.layout_america_sidebar').hide();
+  }
+);
+
+  $("#layout_southEastAsia, .layout_southEastAsia_sidebar").hover(
+  function() {
+    $('.layout_hotSpot_sidebar').hide();
+    $('.layout_eastAsia_sidebar').hide();
+    $('.layout_southEastAsia_sidebar').show();
+    $('.layout_southAsia_sidebar').hide();
+    $('.layout_oceania_sidebar').hide();
+    $('.layout_europe_sidebar').hide();
+    $('.layout_america_sidebar').hide();
+  }
+)
+$("#layout_southAsia, .layout_southAsia_sidebar").hover(
+  function() {
+    $('.layout_hotSpot_sidebar').hide();
+    $('.layout_eastAsia_sidebar').hide();
+    $('.layout_southEastAsia_sidebar').hide();
+    $('.layout_southAsia_sidebar').show();
+    $('.layout_oceania_sidebar').hide();
+    $('.layout_europe_sidebar').hide();
+    $('.layout_america_sidebar').hide();
+  }
+)
+$("#layout_oceania, .layout_oceania_sidebar").hover(
+  function() {
+    $('.layout_hotSpot_sidebar').hide();
+    $('.layout_eastAsia_sidebar').hide();
+    $('.layout_southEastAsia_sidebar').hide();
+    $('.layout_southAsia_sidebar').hide();
+    $('.layout_oceania_sidebar').show();
+    $('.layout_europe_sidebar').hide();
+    $('.layout_america_sidebar').hide();
+  }
+)
+$("#layout_europe, .layout_europe_sidebar").hover(
+  function() {
+    $('.layout_hotSpot_sidebar').hide();
+    $('.layout_eastAsia_sidebar').hide();
+    $('.layout_southEastAsia_sidebar').hide();
+    $('.layout_southAsia_sidebar').hide();
+    $('.layout_oceania_sidebar').hide();
+    $('.layout_europe_sidebar').show();
+    $('.layout_america_sidebar').hide();
+  }
+)
+$("#layout_america, .layout_america_sidebar").hover(
+  function() {
+    $('.layout_hotSpot_sidebar').hide();
+    $('.layout_eastAsia_sidebar').hide();
+    $('.layout_southEastAsia_sidebar').hide();
+    $('.layout_southAsia_sidebar').hide();
+    $('.layout_oceania_sidebar').hide();
+    $('.layout_europe_sidebar').hide();
+    $('.layout_america_sidebar').show();
+  }
+)
+</script>
+  </body>
+ 
+</html>
