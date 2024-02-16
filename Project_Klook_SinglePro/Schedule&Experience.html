@@ -10,10 +10,11 @@
       integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
       crossorigin="anonymous"
     />
-
+<!-- 增加數字 -->
     <script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
     <script src="/Project_Klook_SinglePro/v-minusplusfield.js" type="text/javascript"></script>
     <link href="/Project_Klook_SinglePro/v-minusplusfield.css" rel="stylesheet" />
+<!--日曆 -->
     <link
       href="https://fonts.googleapis.com/css?family=Roboto:300,400&display=swap"
       rel="stylesheet"
@@ -33,6 +34,16 @@
 
     <!-- Style -->
     <link rel="stylesheet" href="/Project_Klook_SinglePro/calendar-17/css/style.css" />
+
+<!-- 這裡是幻燈片 -->
+<link href="https://fonts.googleapis.com/css?family=Poppins:200,300,400,500,600,700,800,900" rel="stylesheet">
+		
+<link rel="stylesheet" href="/Project_Klook_SinglePro/carousel-10/css/owl.carousel.min.css">
+<link rel="stylesheet" href="/Project_Klook_SinglePro/carousel-10/css/owl.theme.default.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/4.5.6/css/ionicons.min.css">
+<link rel="stylesheet" href="/Project_Klook_SinglePro/carousel-10/css/animate.css">
+<link rel="stylesheet" href="/Project_Klook_SinglePro/carousel-10/css/style.css">
+<!--  -->
     <style>
       * {
         font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
@@ -130,6 +141,20 @@
         overflow-y: scroll;;
         scrollbar-width: none;
       }
+      .ftco-section .img {
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center; }
+  .ftco-section .text-center {
+  text-align: center !important; }
+  .ftco-section .justify-content-center {
+  -webkit-box-pack: center !important;
+  -ms-flex-pack: center !important;
+  justify-content: center !important; }
+  .ftco-section .d-flex {
+  display: -webkit-box !important;
+  display: -ms-flexbox !important;
+  display: flex !important; }
 
     </style>
   </head>
@@ -150,13 +175,14 @@
             >
               <img
                 style="width: 20px; height: 20px"
-                src="/Project_Klook_SinglePro/icons_map.png"
+                src="/Project_Klook_SinglePro/searchicon.png"
                 alt="searchicon"
               />
               <input
                 class="form-control boredr border-0 bg-light fs-5"
                 type="search"
                 placeholder="探索全球目的地 / 活動"
+                
                 aria-label="Search"
                 id="layout_form_control"
               />
@@ -333,11 +359,11 @@
           </div>
         </div>
       </div>
-      <!-- 以下是主要圖片區 -->
-      <div class="ms-0 mx-lg-auto" style="width: 1200px">
-        <div class="container container-lg style="width: 1200px">
-          <div class="row justify-content-center" >
-            <div class="col-12 col-lg-8">
+<!--(((二選一))) 以下是用Modal內包carousel做的右側大圖區//右上以及右下小圖區 -->
+    <div class="ms-0 mx-lg-auto" style="width: 1200px">
+        <div class="container container-lg">
+          <div  class="row justify-content-center">
+          <div class="col-12 col-lg-8">
               <button
                 type="button"
                 class="btn btn-white"
@@ -389,9 +415,69 @@
                 />
               </button>
             </div>
+            
+          </div>
+          </div>
+    </div>
+            
+
+<!-- (((二選一)))以下使用幻燈片做的右側大圖區//右上以及右下小圖區 -->
+<section class="ftco-section rounded-4" style="width: 1200px; margin: auto;">
+    <div class="row">
+      <div class="col-12">
+        <div class="slider-hero">
+          <div class="featured-carousel owl-carousel">
+            <div class="item">
+              <div class="work">
+                <div class="img d-flex align-items-end justify-content-center pb-5 rounded-4" style="background-image: url(/Project_Klook_SinglePro/FoodPackage/響時天堂1.webp);">
+                  <div class="text text-center">
+                    <h2>Most Recommended</h2>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="item">
+              <div class="work">
+                <div class="img d-flex align-items-end justify-content-center pb-5 rounded-4" style="background-image: url(/Project_Klook_SinglePro/FoodPackage/響時天堂2.jpg);">
+                  <div class="text text-center">
+                    <h2>Must Taste</h2>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="item">
+              <div class="work">
+                <div class="img d-flex align-items-end justify-content-center pb-5 rounded-4" style="background-image: url(/Project_Klook_SinglePro/FoodPackage/響時天堂3.jpg);">
+                  <div class="text text-center">
+                    <h2>Cozy Room</h2>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="item">
+              <div class="work">
+                <div class="img d-flex align-items-end justify-content-center pb-5 rounded-4" style="background-image: url(/Project_Klook_SinglePro/FoodPackage/響時天堂4.webp);">
+                  <div class="text text-center">
+                    <h2>Original Choice</h2>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="my-1 text-center">
+            <ul class="thumbnail">
+              <li class="active img"><a href="#"><img src="/Project_Klook_SinglePro/FoodPackage/響時天堂1.webp" alt="Image" class="img-fluid"></a></li>
+              <li><a href="#"><img src="/Project_Klook_SinglePro/FoodPackage/響時天堂2.jpg" alt="Image" class="img-fluid"></a></li>
+              <li><a href="#"><img src="/Project_Klook_SinglePro/FoodPackage/響時天堂3.jpg" alt="Image" class="img-fluid"></a></li>
+              <li><a href="#"><img src="/Project_Klook_SinglePro/FoodPackage/響時天堂4.webp" alt="Image" class="img-fluid"></a></li>
+            </ul>
           </div>
         </div>
       </div>
+    </div> 
+</section>
+
       <!-- 以下是產品特色 -->
       <div class="container" style="width: 1200px">
         <div class="row justify-content-center" >
@@ -470,17 +556,19 @@
         <div
           class="mt-5 ms-3"
           style="background-color: #ff5b00; width: 5px; height: 30px"
+          id="singlePro_layout_packageOption"
         ></div>
         <div
           class="fs-3 fw-bold text-dark mb-1"
           style="margin-left: 40px; margin-top: -35px"
+          
         >
           方案選擇
         </div>
         <div
           class="row"
           style="width: 1200px"
-          id="singlePro_layout_packageOption"
+          
         >
           <div class="col-12 col-lg-8">
             <div class="col-12 rounded-4 px-4 py-4 bg-body-tertiary">
@@ -553,7 +641,7 @@
                     ><button type="button">野柳＆黃金瀑布＆九份</button>
                   </div>
                   <div
-                    class="d-flex border border-0 bg-body-tertiary ms-3 gap-4"
+                    class="d-flex border border-0 bg-body-tertiary ms-3 gap-4 active"
                     id="singlePro_packageOptionBtn"
                   >
                     <button class="border-1" type="button">九份交通接駁</button>
@@ -623,7 +711,7 @@
                       <div id="flush-collapseOne" class="accordion-collapse collapse bg-body-tertiary" data-bs-parent="">
                         <div class="accordion-body">
 
-                          <nav class="navbar position-relative">
+                          <nav class="navbar position-relative" id="singlePro_itinerary_details">
                             <ul class="nav nav-pills container-fluid ms-0 gs-0">
                               <li class="nav-item container-fluid">
                           <a class="nav-link f-5 fw-bold my-0 text-dark" href="#scrollspyHeading1" ><img class="me-2" src="/Project_Klook_SinglePro/singlePro_icon_category_location.png" alt="" style="width: 30px;height: 30px; vertical-align: bottom;"> 集合 ❯</a>
@@ -632,7 +720,7 @@
 <div class="bg-body-secondary position-absolute" style="width: 1px;height: 20px;  top:45px; left: 43px;"></div>
 
                               <li class="nav-item container-fluid">
-                          <span class="nav-link f-5 fw-bold text-dark" href="" ><img class="me-2" src="/Project_Klook_SinglePro/singlePro_icon_category_transport_bus_3x (1).png" alt="" style="width: 30px;height: 30px; vertical-align: bottom;"> 搭乘巴士</span><p class="text-secondary"><img class="me-1" src="/Project_Klook_SinglePro/singlePro_icon_category_timer.png" alt="" style="width: 15px;height: 15px; margin-left:55px ;margin-top: 0px; vertical-align: baseline;">1小時</p>
+                          <span class="nav-link f-5 fw-bold text-dark" href="" ><img class="me-2" src="/singlePro_icon_category_transport_bus_3x (1).png" alt="" style="width: 30px;height: 30px; vertical-align: bottom;"> 搭乘巴士</span><p class="text-secondary"><img class="me-1" src="/singlePro_icon_category_timer.png" alt="" style="width: 15px;height: 15px; margin-left:55px ;margin-top: 0px; vertical-align: baseline;">1小時</p>
                           </li>
  <div class="bg-body-secondary position-absolute" style="width: 1px;height: 70px;  top:90px; left: 43px;"></div>
                               <li class="nav-item container-fluid">
@@ -659,6 +747,7 @@
                         
                       </div>
                     </div>
+                    
                     <!--  -->
                     <div class="accordion-item bg-body-tertiary">
                       <h2 class="accordion-header ">
@@ -666,8 +755,15 @@
                           集合詳情
                         </button>
                       </h2>
+
+                      
                       <div id="flush-collapseThree" class="accordion-collapse collapse bg-body-tertiary" data-bs-parent="">
-                        <div class="accordion-body">
+                        <div class="accordion-body"><div
+data-bs-spy="scroll"
+data-bs-target="#singlePro_itinerary_details"
+data-bs-smooth-scroll="true"
+class="scrollspy-example p-3 rounded-2"
+tabindex="0">
                           <span class="nav-link f-5 fw-bold text-dark" href="" ><img class="me-2" src="/Project_Klook_SinglePro/icon_travel_location_pick_up_xs_3x.png" alt="" style="width: 20px;height: 20px; vertical-align: bottom;"> 去程</span> <span class="nav-link f-5 fw-bold text-dark mt-1" href="" id="scrollspyHeading1">集合</span><a class="text-black" href="#">捷運西門站4號出口／九份昇平戲院門口</a>
                           <p class="text-secondary py-1">請於出發時間前10分鐘抵達<br>
 西門出發：10:30／16:00 <br> 
@@ -678,8 +774,10 @@
 
   <span class="nav-link f-5 fw-bold text-dark" href="" ><img class="me-2" src="/Project_Klook_SinglePro/icon_travel_location_dropoff_xs_3x.png" alt="" style="width: 20px;height: 20px; vertical-align: bottom;"> 返程</span> <span class="nav-link f-5 fw-bold text-dark mt-1" href="" id="scrollspyHeading2">返回下車地點</span><a class="text-black" href="#">九份昇平戲院／捷運西門站4號出口</a>
                         
-                      </div>
+                      </div></div>
                     </div>
+                  
+                    <hr class="text-body-tertiary">
                     <!--  -->
                     <div class="accordion-item bg-body-tertiary">
                       <h2 class="accordion-header ">
@@ -724,7 +822,7 @@
         </div>
       </div>
       <!--  -->
-
+</div>
       <!-- 這個div是Scrollspy結束區域 -->
     </div>
     <!-- 這個div是Scrollspy結束區域 -->
@@ -1142,13 +1240,13 @@
         }
       });
       document
-        .querySelector('img[src="/icons8-favorite-50.png"]')
+        .querySelector('img[src="/Project_Klook_SinglePro/icons8-favorite-50.png"]')
         .parentElement.addEventListener("mouseover", () => {
           document
-            .querySelector('img[src="/icons8-favorite-50.png"]')
-            .setAttribute("src", "/favorite_orange.png");
+            .querySelector('img[src="/Project_Klook_SinglePro/icons8-favorite-50.png"]')
+            .setAttribute("src", "/Project_Klook_SinglePro/favorite_orange.png");
           document.querySelector(
-            'img[src="/favorite_orange.png"]'
+            'img[src="/Project_Klook_SinglePro/favorite_orange.png"]'
           ).parentElement.style.color = "#ff5B00";
         });
 
@@ -1194,7 +1292,7 @@
         var year = result.value.split(" ")[2];
         document.querySelector(
           "#singlePro_dateinput"
-        ).innerHTML = `<img src="/icons8-schedule-64.png"  alt="" style="width: 20px;height: 20px; vertical-align: baseline;"> ${year}年${month}月${day}日`;
+        ).innerHTML = `<img src="/Project_Klook_SinglePro/icons8-schedule-64.png"  alt="" style="width: 20px;height: 20px; vertical-align: baseline;"> ${year}年${month}月${day}日`;
       });
 
       document
@@ -1223,7 +1321,50 @@
     <script src="/Project_Klook_SinglePro/calendar-17/js/popper.min.js"></script>
     <script src="/Project_Klook_SinglePro/calendar-17/js/bootstrap.min.js"></script>
     <script src="/Project_Klook_SinglePro/calendar-17/js/rome.js"></script>
-
     <script src="/Project_Klook_SinglePro/calendar-17/js/main.js"></script>
+    
+    <script src="/Project_Klook_SinglePro/carousel-10/js/jquery.min.js"></script>
+    <script src="/Project_Klook_SinglePro/carousel-10/js/popper.js"></script>
+    <script src="/Project_Klook_SinglePro/carousel-10/js/bootstrap.min.js"></script>
+    <script src="/Project_Klook_SinglePro/carousel-10/js/owl.carousel.min.js"></script>
+    <script src="/Project_Klook_SinglePro/carousel-10/js/main.js"></script>
+
+    <script>
+      // <![CDATA[  <-- For SVG support
+      if ('WebSocket' in window) {
+        (function () {
+          function refreshCSS() {
+            var sheets = [].slice.call(document.getElementsByTagName("link"));
+            var head = document.getElementsByTagName("head")[0];
+            for (var i = 0; i < sheets.length; ++i) {
+              var elem = sheets[i];
+              var parent = elem.parentElement || head;
+              parent.removeChild(elem);
+              var rel = elem.rel;
+              if (elem.href && typeof rel != "string" || rel.length == 0 || rel.toLowerCase() == "stylesheet") {
+                var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, '');
+                elem.href = url + (url.indexOf('?') >= 0 ? '&' : '?') + '_cacheOverride=' + (new Date().valueOf());
+              }
+              parent.appendChild(elem);
+            }
+          }
+          var protocol = window.location.protocol === 'http:' ? 'ws://' : 'wss://';
+          var address = protocol + window.location.host + window.location.pathname + '/ws';
+          var socket = new WebSocket(address);
+          socket.onmessage = function (msg) {
+            if (msg.data == 'reload') window.location.reload();
+            else if (msg.data == 'refreshcss') refreshCSS();
+          };
+          if (sessionStorage && !sessionStorage.getItem('IsThisFirstTime_Log_From_LiveServer')) {
+            console.log('Live reload enabled.');
+            sessionStorage.setItem('IsThisFirstTime_Log_From_LiveServer', true);
+          }
+        })();
+      }
+      else {
+        console.error('Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading.');
+      }
+      // ]]>
+    </script>
   </body>
 </html>
