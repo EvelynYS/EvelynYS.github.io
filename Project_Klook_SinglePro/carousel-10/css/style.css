@@ -165,7 +165,7 @@ figure {
   margin: 0 0 1rem; } */
 
 img {
-  vertical-align: middle;
+
   border-style: none; }
 
 /* svg {
@@ -8159,7 +8159,7 @@ button {
   font-family: "Poppins", Arial, sans-serif; } */
 
 .ftco-section {
-  padding: 7em 0; } 
+  padding: 1em 0; } 
 
 .ftco-no-pt {
   padding-top: 0; }
@@ -8237,10 +8237,10 @@ button {
   width: 100%; }
   .work .img {
     width: 100%;
-    height: 600px;
+    
     position: relative;
     z-index: 0;
-    border-radius: 10px;
+    border-radius: 15px;
     overflow: hidden;
     -webkit-box-shadow: 0px 20px 35px -30px rgba(0, 0, 0, 0.26);
     -moz-box-shadow: 0px 20px 35px -30px rgba(0, 0, 0, 0.26);
@@ -8288,7 +8288,8 @@ button {
       display: block;
       margin: 4px; }
       .thumbnail li a img {
-        width: 80px;
+        width: 60px;
+        height: 60px;
         border-radius: 50%;
         -webkit-transform: scale(0.8);
         -ms-transform: scale(0.8);

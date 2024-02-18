@@ -126,7 +126,8 @@
         toDoItems.push(toDoItem);
         toDoContainer.append(toDoItem);
         jotDown.value = "";
-        window.location.reload();
+        //window.location.reload();
+        init();
       }
 
       //暫時無法解決問題
@@ -194,7 +195,9 @@
       }
       function getTodoFromStorage() {
         toDoItems = [];
-        toDoItems = JSON.parse(localStorage.getItem(localStorageKey));
+        if(localStorage.getItem(localStorageKey)){
+          toDoItems = JSON.parse(localStorage.getItem(localStorageKey));
+        }
 
         if (toDoItems) {
           toDoItems.forEach((toDo) => {
@@ -204,7 +207,8 @@
           });
         }
       }
-      window.onload = function () {
+      window.onload = init();
+      function init () {
         getTodoFromStorage();
         toDoItem = document.createElement("div");
 
@@ -232,7 +236,7 @@
         btnChecks.forEach((btnCheck) => {
           btnCheck.addEventListener("change", checkToDoContent);
         });
-      };
+      }
     </script>
   </body>
 </html>

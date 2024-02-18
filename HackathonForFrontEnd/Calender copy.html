@@ -1,0 +1,369 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap demo</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+
+    <style>
+        .calendar {
+            background: #fff;
+            box-shadow: 0px 1px 1px #0000001a;
+            width: 960px;
+            margin: auto;
+        }
+
+        .title {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .a {
+            display: block;
+            justify-content: space-between;
+        }
+
+        a:nth-child(2) {
+            margin-left: 700px;
+        }
+
+        .body-list ul {
+            width: 100%;
+            font-family: arial;
+            font-weight: bold;
+            font-size: 14px;
+        }
+
+        .body-list>ul>li {
+            width: 14.28%;
+
+            line-height: 36px;
+            list-style-type: none;
+            display: block;
+            box-sizing: border-box;
+            float: left;
+            text-align: center;
+        }
+
+        .body-list:nth-child(2)>ul>li {
+            height: 136px;
+        }
+    </style>
+
+
+</head>
+
+<body>
+    請輸入您的姓名: <input type="text" id="inputname" value=""><br>
+    <div id="show_LocalStorage"></div><br>
+    <button id="btn_save">儲存至local storage</button>
+    <button id="btn_load">從local storage讀取資料</button>
+
+
+    <div class="calendar">
+        <div class="title">
+            <h1 class="green" id="calendar-title">Month</h1>
+            <h2 class="green small" id="calendar-year">Year</h2>
+
+            <!-- Button trigger modal -->
+            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                +
+            </button>
+
+            <!-- Modal -->
+            <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+                aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h1 class="modal-title fs-5" id="exampleModalLabel">新增行程</h1>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <form>
+                                <div class="mb-3 d-flex">
+                                    <input type="text" class="form-control rounded-0 rounded-start text-center"
+                                        id="planYear" value="" /><label
+                                        class="col-form-label border border-secondary-subtle rounded-end bg-secondary  bg-opacity-25 px-3 ">年</label>
+                                </div>
+                                <div class="mb-3 d-flex">
+                                    <input type="text" class="form-control rounded-0 rounded-start text-center"
+                                        id="planMonth" value="" /><label
+                                        class="col-form-label border border-secondary-subtle rounded-end bg-secondary  bg-opacity-25 px-3">月</label>
+                                </div>
+                                <div class="mb-3 d-flex">
+                                    <input type="text" class="form-control rounded-0 rounded-start text-center"
+                                        id="planDay" value="" /><label
+                                        class="col-form-label border border-secondary-subtle rounded-end bg-secondary  bg-opacity-25 px-3">日</label>
+                                </div>
+                                <div class="mb-3 d-flex">
+                                    <label
+                                        class="col-form-label border border-secondary-subtle rounded-0 rounded-start bg-secondary  bg-opacity-25 px-5">代辦事項</label>
+                                    <input type="text" class="form-control rounded-0 rounded-end" id="ToDo-List"
+                                        placeholder="時間, 事項(例如:07:00 報告進度)" value="" />
+                                </div>
+                                <label
+                                    class="col-form-label border border-secondary-subtle rounded bg-secondary  bg-opacity-25 px-3 ">標記顏色
+                                    <input type="color" class="align-middle" /> </label>
+
+
+                            </form>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">關閉</button>
+                            <button type="button" class="btn btn-primary" id="addPlan">新增</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="a">
+                <a href="" id="prev">Prev Month</a>
+                <a href="" id="next">Next Month</a>
+            </div>
+        </div>
+        <div class="body">
+            <div class="body-list">
+                <ul>
+                    <li>一</li>
+                    <li>二</li>
+                    <li>三</li>
+                    <li>四</li>
+                    <li>五</li>
+                    <li>六</li>
+                    <li>日</li>
+                </ul>
+            </div>
+            <div class="body-list">
+                <ul id="days">
+                </ul>
+            </div>
+        </div>
+    </div>
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+        crossorigin="anonymous"></script>
+
+
+    <script>
+
+        var month_olympic = [31, 29, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
+        var month_normal = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
+        var month_name = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+
+        var holder = document.getElementById("days");
+        var prev = document.getElementById("prev");
+        var next = document.getElementById("next");
+        var ctitle = document.getElementById("calendar-title");
+        var cyear = document.getElementById("calendar-year");
+
+        var keyYear = document.querySelector("#planYear");
+        var keyMonth = document.getElementById('planMonth');
+        var keyDay = document.getElementById('planDay');
+        var plan = document.getElementById('ToDo-List');
+        var add = document.getElementById("addPlan");
+
+        var my_date = new Date();
+        var my_year = my_date.getFullYear();
+        var my_month = my_date.getMonth();
+        var my_day = my_date.getDate();
+
+        //找出某年某月1日是星期幾
+        function dayStart(month, year) {
+            var tmpDate = new Date(year, month, 1);
+            return (tmpDate.getDay());
+        }
+
+        function dayEnd(month, year) {
+            var temDate = new Date(year, month, daysMonth(my_month, my_year));
+            return (temDate.getDay());
+        }
+
+        //閏年
+        function daysMonth(month, year) {
+            var tmp = year % 4;
+            if (tmp == 0) {
+                return (month_olympic[month]);
+            } else {
+                return (month_normal[month]);
+            }
+        }
+
+        function refreshDate() {
+            var str = "";
+            var totalDay = daysMonth(my_month, my_year); //取得該月總共幾天
+            var firstDay = dayStart(my_month, my_year); //取得該月第1天是星期幾
+            var myclass;
+            var preDay;
+            if (firstDay == 0) {
+                for (var i = 6; i > 0; i--) {
+                    preDay = [daysMonth((my_month - 1), my_year)] - (i - 1);
+                    str += "<li class='text-secondary bg-secondary bg-opacity-25'>" + preDay + "</li>";
+                }
+            } else {
+                for (var i = (firstDay - 1); i > 0; i--) {
+                    preDay = [daysMonth((my_month - 1), my_year)] - (i - 1);
+                    str += "<li class='text-secondary bg-secondary bg-opacity-25'>" + preDay + "</li>";
+                } //補入每月1日之前的上月日期
+            }
+            for (var d = 1; d <= totalDay; d++) {
+                if ((d < my_day && my_year == my_date.getFullYear() && my_month == my_date.getMonth()) || my_year < my_date.getFullYear() || (my_year == my_date.getFullYear() && my_month < my_date.getMonth())) {
+                    myclass = " class='text-secondary bg-secondary bg-opacity-25'"; //當該日期在當天之前(已過日期),用灰色顯示
+                } else if (d == my_day && my_year == my_date.getFullYear() && my_month == my_date.getMonth()) {
+                    myclass = " class='bg-info bg-opacity-25 border border-info'"; //當天以藍色框線標示
+                } else {
+                    myclass = " class=' bg-info bg-opacity-25 text-secondary''"; //當該日期在當天之後,以藍色灰字體表示
+                }
+                str += "<li" + myclass + ">" + d + "</li>"; //設立當月的日期
+            }
+            for (var i = 1; (i + dayEnd(my_month, my_year)) < 8; i++) {
+                if (dayEnd(my_month, my_year) == 0) { str += ''; }
+                else { str += "<li class='text-secondary bg-secondary bg-opacity-25'>" + i + "</li>"; }
+            }
+            holder.innerHTML = str; //顯示日期
+            ctitle.innerHTML = month_name[my_month]; //顯示月份
+            cyear.innerHTML = my_year; //顯示年份
+        }
+        refreshDate(); //執行日期顯示
+
+        prev.onclick = function (e) {
+            e.preventDefault();
+            my_month--;
+            if (my_month < 0) {
+                my_year--;
+                my_month = 11;
+            }
+            refreshDate();
+        }
+        next.onclick = function (e) {
+            e.preventDefault();
+            my_month++;
+            if (my_month > 11) {
+                my_year++;
+                my_month = 0;
+            }
+            refreshDate();
+        }
+
+
+        var planArr = [];
+        add.addEventListener('click', refreshDateAdd);
+
+        function refreshDateAdd(day, month, year, planContent) {
+            var month = parseInt(keyMonth.value) - 1;
+            var year = parseInt(keyYear.value);
+            var day = parseInt(keyDay.value);
+            var planContent = plan.value
+            var strAdd = "";
+            var totalDay = daysMonth(month, year); //取得該月總共幾天
+            var firstDay = dayStart(month, year); //取得該月第1天是星期幾
+            var myclass;
+            var preDay;
+
+            if (firstDay == 0) {
+                for (var i = 6; i > 0; i--) {
+                    if (parseInt(keyMonth.value) == 1) {
+                        preDay = [daysMonth(11, year)] - (i - 1);
+                    }
+                    else { preDay = [daysMonth(month - 1, year)] - (i - 1); }
+                    strAdd += "<li class='text-secondary bg-secondary bg-opacity-25'>" + preDay + "</li>";
+                }
+            } else {
+                for (var i = (firstDay - 1); i > 0; i--) {
+                    if (parseInt(keyMonth.value) == 1) {
+                        preDay = [daysMonth(11, year)] - (i - 1);
+                    }
+                    else { preDay = [daysMonth(month - 1, year)] - (i - 1); }
+                    strAdd += "<li class='text-secondary bg-secondary bg-opacity-25'>" + preDay + "</li>";
+                } //補入每月1日之前的上月日期
+            }
+            for (var d = 1; d <= totalDay; d++) {
+                if (d == my_day == day && year == my_date.getFullYear() && month == my_date.getMonth()) {
+                    myclass = " class='bg-info bg-opacity-25 border border-info'";
+                    strAdd += "<li" + myclass + ">" + d + "<br>" + planContent + "</li>";//當天以藍色框線標示
+                }
+                else if (d == day) {
+                    myclass = " class=' bg-info bg-opacity-25 text-secondary''";
+                    strAdd += "<li" + myclass + ">" + d + "<br>" + planContent + "</li>";///當該日期在當天之後,以藍色灰字體表示
+                }
+                else {
+                    myclass = " class=' bg-info bg-opacity-25 text-secondary''";
+                    strAdd += "<li" + myclass + ">" + d + "</li>";///當該日期在當天之後,以藍色灰字體表示
+                }
+            }
+            for (var i = 1; (i + dayEnd(month, year)) < 8; i++) {
+                if (dayEnd(month, year) == 0) { strAdd += ''; }
+                else { strAdd += "<li class='text-secondary bg-secondary bg-opacity-25'>" + i + "</li>"; }
+            }
+            holder.innerHTML = strAdd; //顯示日期
+            ctitle.innerHTML = month_name[month]; //顯示月份
+            cyear.innerHTML = year; //顯示年份
+
+            planArr.push({ ToDoList: holder.innerHTML, Month: ctitle.innerHTML, Year: cyear.innerHTML });
+        }
+
+        window.addEventListener('load', () => {
+            if (typeof (Storage) == "undefined") {
+                alert("Sorry!!您的瀏覽器不支援Web Storage");
+            } else {
+                btn_save.addEventListener("click", saveToLocalStorage);
+                btn_load.addEventListener("click", loadFromLocalStorage);
+            }
+        })
+        function saveToLocalStorage() {
+            localStorage.username = inputname.value;
+            show_LocalStorage.innerHTML = "儲存成功!";
+            //let addArr = [];
+            //addArr.push(holder.innerHTML, ctitle.innerHTML, cyear.innerHTML);
+            localStorage.setItem(localStorage.username, JSON.stringify(planArr));
+
+        }
+        function loadFromLocalStorage() {
+            show_LocalStorage.innerHTML = localStorage.username + "您好，很高興見到您！";
+
+            planArr = JSON.parse(localStorage.getItem(localStorage.username));
+            planArr.forEach(plan => {
+                holder.innerHTML = plan.ToDoList;
+                ctitle.innerHTML = plan.Month;
+                cyear.innerHTML = plan.Year;
+
+            })
+
+
+        }
+
+        //暫時解決不了的問題如下:
+        // prev.onclick = function (e) {
+        //             e.preventDefault();
+
+        //             month--;
+        //             if (month < 0) {
+        //                 year--;
+        //                 month = 11;
+        //             }
+        //             refreshDateAdd();
+        //         }
+        //         next.onclick = function (e) {
+        //             e.preventDefault();
+
+        //             month++;
+        //             if (month > 11) {
+        //                 year++;
+        //                 month = 0;
+        //             }
+        //             refreshDateAdd();
+        //         }
+
+
+
+    </script>
+</body>
+
+</html>

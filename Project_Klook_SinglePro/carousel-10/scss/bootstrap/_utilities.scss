@@ -15,3 +15,21 @@
 @import "utilities/spacing";
 @import "utilities/text";
 @import "utilities/visibility";
+
+@import "~bootstrap/scss/helpers";
+
+$utilities: map-merge(
+  $utilities,
+  (
+    "font-size":
+      map-merge(
+        map-get($utilities, "font-size"),
+        (
+          responsive: true
+        )
+      )
+  )
+);
+
+
+@import "~bootstrap/scss/utilities/api";
