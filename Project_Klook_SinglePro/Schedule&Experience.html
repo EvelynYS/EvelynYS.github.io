@@ -179,6 +179,12 @@ background-color:#f48549 !important;
   .container-lg{
     margin: auto;
   }
+  #Btncoupon:hover{
+    background-color: rgb(195, 77, 14) !important;
+  }
+  .sticky-lg-top {
+    top: 180px; /* Adjust as needed */
+}
 
   @media screen and (max-width: 992px) {
     .modalSmPhoto{
@@ -324,8 +330,8 @@ background-color:#f48549 !important;
       class=" container-fluid navbar bg-body-tertiary px-3  z-2"
     >
       <div class="container container-lg">
-        <div class="d-flex fw-bold" >
-          <ul class="nav nav-pills fs-6 fs-5">
+        <div class="d-flex" >
+          <ul class="nav nav-pills fs-6 fs-4">
             <li class="nav-item singlePro_layout">
               <a class="nav-link" href="#singlePro_layout_outline" >總覽</a>
             </li>
@@ -621,9 +627,9 @@ background-color:#f48549 !important;
           </div>
           <div class="col-12 col-lg-4 ">
             <div
-              class="col-12 d-none d-lg-block sticky-lg-top border border-muted rounded-4 fs-4 fw-bold my-3  z-1" 
+              class="col-12 d-none d-lg-block sticky-bottom sticky-lg-top border border-muted rounded-4 fs-4 fw-bold my-3" 
             >
-              <div class="  my-3 mx-5">NT$580</div>
+              <div class=" my-3 mx-5">NT$580</div>
               <button
                 class="btn fs-5 fw-bold text-white text-center mb-3 mx-5"
                 type="submit"
@@ -638,7 +644,7 @@ background-color:#f48549 !important;
       <!-- 以下是方案選擇區 -->
       <div class="singlePro_container container container-lg">
         <div
-          class="mt-2 mt-lg-5 ms-3"
+          class="mt-2 mt-lg-5 ms-1 rounded-1"
           style="background-color: #ff5b00; width: 5px; height: 30px"
           id="singlePro_layout_packageOption"
         ></div>
@@ -872,7 +878,7 @@ tabindex="0">
                         </button>
                       </h2>
                       <div id="flush-collapseFour" class="accordion-collapse collapse bg-body-tertiary" data-bs-parent="">
-                        <div class="accordion-body">Placeholder content for this accordion, which is intended to demonstrate the <code>.accordion-flush</code> class. This is the first item's accordion body.</div>
+                        <div class="accordion-body"><div class="fw-bold">預訂資格<li>此活動最少需4人成團，如未達最低成團人數，將為你安排改期或全額退款</li></div><div class="fw-bold">注意事項<li>行程包含大量步行及階梯攀爬，請確保有足夠體力參加</li></div></div>
                       </div>
                     </div>
                     <!--  -->
@@ -883,7 +889,7 @@ tabindex="0">
                         </button>
                       </h2>
                       <div id="flush-collapseFive" class="accordion-collapse collapse bg-body-tertiary" data-bs-parent="">
-                        <div class="accordion-body">Placeholder content for this accordion, which is intended to demonstrate the <code>.accordion-flush</code> class. This is the first item's accordion body.</div>
+                        <div class="accordion-body"><div class="fw-bold">確認詳情<li>訂單立即確認，如未收到訂單確認資訊，請聯繫客服</li></div><div class="fw-bold">取消政策<li>活動開始24小時前可免費取消</li></div></div>
                       </div>
                     </div>
                     <!--  -->
@@ -894,7 +900,7 @@ tabindex="0">
                         </button>
                       </h2>
                       <div id="flush-collapseSix" class="accordion-collapse collapse bg-body-tertiary" data-bs-parent="">
-                        <div class="accordion-body">Placeholder content for this accordion, which is intended to demonstrate the <code>.accordion-flush</code> class. This is the first item's accordion body.</div>
+                        <div class="accordion-body"><div class="fw-bold">兌換期<li>憑證僅適用於指定日期（與時間）</li></div><div class="fw-bold">憑證類型<li>請出示電子憑證</li></div></div>
                       </div>
                     </div>
                   </div>
@@ -953,9 +959,13 @@ tabindex="0">
   <div class="fs-6 fs-5 fw-bold"><img class=" " src="/Project_Klook_SinglePro/icons8-room-service-48.png" alt="" style="vertical-align: center;transform: scale(.55)">自助餐·西餐廳·下午茶·晚餐·午餐</div></div>
   <hr>
   <div class="row row-cols-2">
-    <div class="col d-flex"><div class="fs-1 ">4.6</div><div class="ms-2"><img src="/Project_Klook_SinglePro/icons8-rating-48.png" alt="" style="width: 30px;height: 30px;"><img src="/Project_Klook_SinglePro/icons8-rating-48.png" alt="" style="width: 30px;height: 30px;"><img src="/Project_Klook_SinglePro/icons8-rating-48.png" alt="" style="width: 30px;height: 30px;"><img src="/Project_Klook_SinglePro/icons8-rating-48.png" alt="" style="width: 30px;height: 30px;"><img src="/Project_Klook_SinglePro/icons8-star-half-empty-48.png" alt="" style="width: 30px;height: 30px;"><div class="d-flex gap-2"><p class=" fs-6 text-secondary ms-1">2,385則評價 </p><p class="fs-6 text-secondary ms-1">新上線活動</p></div></div></div>
+    <div class="col d-flex"><div class="fs-1  py-1 py-lg-3">4.6</div><div class="ms-2  py-1 py-lg-3"><img src="/Project_Klook_SinglePro/icons8-rating-48.png" alt="" style="width: 30px;height: 30px;"><img src="/Project_Klook_SinglePro/icons8-rating-48.png" alt="" style="width: 30px;height: 30px;"><img src="/Project_Klook_SinglePro/icons8-rating-48.png" alt="" style="width: 30px;height: 30px;"><img src="/Project_Klook_SinglePro/icons8-rating-48.png" alt="" style="width: 30px;height: 30px;"><img src="/Project_Klook_SinglePro/icons8-star-half-empty-48.png" alt="" style="width: 30px;height: 30px;"><div class="d-flex gap-2"><p class=" fs-6 text-secondary ms-1">2,385則評價 </p><p class="fs-6 text-secondary ms-1">新上線活動</p></div></div></div>
     <div class="col px-3">
-      <div class="d-flex align-items-center rounded-2 opacity-75" style="background-color:#FF9155;"><img src="/Project_Klook_SinglePro/icons8-chief-32.png" alt="" style="width: 50px;height: 50px;"><div class="text-white ms-1"><span >榮獲獎項</span><br><span class="fw-bold">信義區必吃五星飯店Buffet</span><br><span class="fw-bold">Klook 2020 年度嚴選餐廳</span></div></div>
+      <div class="d-flex align-items-center rounded-2 opacity-75 py-1 py-lg-3" style=" background-image: linear-gradient(
+        to left,
+        #f39c6d,
+        #ff5b00
+      );"><img class="mx-1 mx-lg-2" src="/Project_Klook_SinglePro/icons8-chief-32.png" alt="" style="width: 50px;height: 50px;"><div class="text-white ms-1"><span >榮獲獎項</span><br><span class="fw-bold">信義區必吃五星飯店Buffet</span><br><span class="fw-bold">Klook 2020 年度嚴選餐廳</span></div></div>
     </div>
   </div>
   <div class="bg-body-tertiary position-relative my-3 py-4 rounded-4" >
@@ -978,9 +988,9 @@ tabindex="0">
   <div class="bg-body-tertiary"><img class="container-fluid" src="/Project_Klook_SinglePro/艾美寒舍地圖.png" alt="" ></div>
 </div>
 <hr>
-<div class="col-12">
+<div class="col-12" >
   <div
-  class="mt-2 mt-lg-5 ms-3"
+  class="mt-2 mt-lg-5 ms-1 rounded-1"
   style="background-color: #ff5b00; width: 5px; height: 30px"
   id="singlePro_layout_packageOption"
 ></div>
@@ -991,25 +1001,82 @@ tabindex="0">
 </div>
 <div class="col-12">
   <!-- 第一選項 -->
-<div class="container-fluid rounded-4 px-2 px-lg-4 py-2 py-lg-3 mt-1 mt-lg-2" style="background-color: #fff0e5;"> <div class="row row-cols-2"><div class="col-9"><p class="fw-bold fs-5 mt-1 mt-lj-2">平日自助下午茶餐券2張（紙本餐券寄送）</p> <p><img src="/Project_Klook_SinglePro/icons8-checked-50.png" alt="" style="width: 25px;height: 25px;">有條件取消</p><p><img src="/Project_Klook_SinglePro/icons8-checked-50.png" alt="" style="width: 25px;height: 25px;">開放日期</p></div> 
+<div class="container-fluid rounded-4 px-2 px-lg-4 py-2 py-lg-3 mt-1 mt-lg-2" style="background-color: #fff0e5;border-left: 2px solid #ff5b00;"> <div class="row row-cols-2"><div class="col-9"><p class="fw-bold fs-5 mt-1 mt-lj-2">平日自助下午茶餐券2張（紙本餐券寄送）</p> <p><img src="/Project_Klook_SinglePro/icons8-checked-50.png" alt="" style="width: 25px;height: 25px;">有條件取消</p><p><img src="/Project_Klook_SinglePro/icons8-checked-50.png" alt="" style="width: 25px;height: 25px;">開放日期</p></div> 
 <div class="col-3 text-end"> <span class="bg-danger-subtle rounded-4 fst-italic px-2 " style="color:#ff5b00">17% OFF</span> <p class="fw-bold fs-4 my-1 my-lg-2">NT$ 1,978</p>  <div class=" d-flex justify-content-end">
-  <button class=" py-2 py-lg-3 px-2 px-lg-3 rounded-4 fw-bold text-white border-0" type="button" style="background-color:#ff5b00;">查看優惠</button></div></div></div></div>
+  <button class=" py-2 py-lg-2 px-2 px-lg-3 rounded-4 fw-bold text-white border-0" type="button" style="background-color:#ff5b00;" id="Btncoupon">查看優惠</button></div></div></div></div>
   <!-- 第二選項  -->
-  <div class="container-fluid rounded-4 px-2 px-lg-4 py-2 py-lg-3 mt-1 mt-lg-2" style="background-color: #fff0e5;"> <div class="row row-cols-2"><div class="col-9"><p class="fw-bold fs-5 mt-1 mt-lj-2">平日自助下午茶餐券2張（紙本餐券寄送）</p> <p><img src="/Project_Klook_SinglePro/icons8-checked-50.png" alt="" style="width: 25px;height: 25px;">有條件取消</p><p><img src="/Project_Klook_SinglePro/icons8-checked-50.png" alt="" style="width: 25px;height: 25px;">開放日期</p></div> 
+  <div class="container-fluid rounded-4 px-2 px-lg-4 py-2 py-lg-3 mt-1 mt-lg-2" style="background-color: #fff0e5;border-left: 2px solid #ff5b00; "> <div class="row row-cols-2"><div class="col-9"><p class="fw-bold fs-5 mt-1 mt-lj-2">平日自助下午茶餐券2張（紙本餐券寄送）</p> <p><img src="/Project_Klook_SinglePro/icons8-checked-50.png" alt="" style="width: 25px;height: 25px;">有條件取消</p><p><img src="/Project_Klook_SinglePro/icons8-checked-50.png" alt="" style="width: 25px;height: 25px;">開放日期</p></div> 
 <div class="col-3 text-end"> <span class="bg-danger-subtle rounded-4 fst-italic px-2 " style="color:#ff5b00">12% OFF</span> <p class="fw-bold fs-4 my-1 my-lg-2">NT$ 3,259</p>  <div class=" d-flex justify-content-end">
-  <button class=" py-2 py-lg-3 px-2 px-lg-3 rounded-4 fw-bold text-white border-0" type="button" style="background-color:#ff5b00;">查看優惠</button></div></div></div></div>
+  <button class=" py-2 py-lg-2 px-2 px-lg-3 rounded-4 fw-bold text-white border-0" type="button" style="background-color:#ff5b00;" id="Btncoupon">查看優惠</button></div></div></div></div>
   <!-- 第三選項 -->
-  <div class="container-fluid rounded-4 px-2 px-lg-4 py-2 py-lg-3 mt-1 mt-lg-2" style="background-color: #fff0e5;"> <div class="row row-cols-2"><div class="col-9"><p class="fw-bold fs-5 mt-1 mt-lj-2">平日自助下午茶餐券2張（紙本餐券寄送）</p> <p><img src="/Project_Klook_SinglePro/icons8-checked-50.png" alt="" style="width: 25px;height: 25px;">有條件取消</p><p><img src="/Project_Klook_SinglePro/icons8-checked-50.png" alt="" style="width: 25px;height: 25px;">開放日期</p></div> 
+  <div class="container-fluid rounded-4 px-2 px-lg-4 py-2 py-lg-3 mt-1 mt-lg-2" style="background-color: #fff0e5; border-left: 2px solid #ff5b00;"> <div class="row row-cols-2"><div class="col-9"><p class="fw-bold fs-5 mt-1 mt-lj-2">平日自助下午茶餐券2張（紙本餐券寄送）</p> <p><img src="/Project_Klook_SinglePro/icons8-checked-50.png" alt="" style="width: 25px;height: 25px;">有條件取消</p><p><img src="/Project_Klook_SinglePro/icons8-checked-50.png" alt="" style="width: 25px;height: 25px;">開放日期</p></div> 
 <div class="col-3 text-end"> <span class="bg-danger-subtle rounded-4 fst-italic px-2 " style="color:#ff5b00">12% OFF</span> <p class="fw-bold fs-4 my-1 my-lg-2">NT$ 2,472</p>  <div class=" d-flex justify-content-end">
-  <button class=" py-2 py-lg-3 px-2 px-lg-3 rounded-4 fw-bold text-white border-0" type="button" style="background-color:#ff5b00;">查看優惠</button></div></div></div></div>
+  <button class=" py-2 py-lg-2 px-2 px-lg-3 rounded-4 fw-bold text-white border-0" type="button" style="background-color:#ff5b00;" id="Btncoupon">查看優惠</button></div></div></div></div>
   <!-- 第四選項 -->
-  <div class="container-fluid rounded-4 px-2 px-lg-4 py-2 py-lg-3 mt-1 mt-lg-2" style="background-color: #fff0e5;"> <div class="row row-cols-2"><div class="col-9"><p class="fw-bold fs-5 mt-1 mt-lj-2">平日自助下午茶餐券2張（紙本餐券寄送）</p> <p><img src="/Project_Klook_SinglePro/icons8-checked-50.png" alt="" style="width: 25px;height: 25px;">有條件取消</p><p><img src="/Project_Klook_SinglePro/icons8-checked-50.png" alt="" style="width: 25px;height: 25px;">開放日期</p></div> 
+  <div class="container-fluid rounded-4 px-2 px-lg-4 py-2 py-lg-3 mt-1 mt-lg-2" style="background-color: #fff0e5; border-left: 2px solid #ff5b00;"> <div class="row row-cols-2"><div class="col-9"><p class="fw-bold fs-5 mt-1 mt-lj-2">平日自助下午茶餐券2張（紙本餐券寄送）</p> <p><img src="/Project_Klook_SinglePro/icons8-checked-50.png" alt="" style="width: 25px;height: 25px;">有條件取消</p><p><img src="/Project_Klook_SinglePro/icons8-checked-50.png" alt="" style="width: 25px;height: 25px;">開放日期</p></div> 
 <div class="col-3 text-end"> <span class="bg-danger-subtle rounded-4 fst-italic px-2 " style="color:#ff5b00">5% OFF</span> <p class="fw-bold fs-4 my-1 my-lg-2">NT$ 3,933</p>  <div class=" d-flex justify-content-end">
-  <button class=" py-2 py-lg-3 px-2 px-lg-3 rounded-4 fw-bold text-white border-0" type="button" style="background-color:#ff5b00;">查看優惠</button></div></div></div></div>
+  <button class=" py-2 py-lg-2 px-2 px-lg-3 rounded-4 fw-bold text-white border-0" type="button" style="background-color:#ff5b00;" id="Btncoupon">查看優惠</button></div></div></div></div>
 </div>
 </div>
+<hr>
+<div class="col-12">
+  <div
+  class="mt-2 mt-lg-5 ms-1 rounded-1"
+  style="background-color: #ff5b00; width: 5px; height: 30px"
+  id="singlePro_layout_packageOption"
+></div>
+<div
+  class="fs-3 fw-bold text-dark mb-1"
+  style="margin-left: 40px; margin-top: -35px">
+最新評價
 </div>
-  <div class="col-12 col-lg-4"> </div>
+<div class="row row-cols-2"><div class="col-1 align-content-end"><img src="/Project_Klook_SinglePro/348302fc--e-r.jpg" alt="" style="height: 70px;width: 70px;"></div><div class="col-11 "><div class="d-flex justify-content-between"><span class="fw-bold">Klook用戶</span><span>2024年2月14日</span></div> <div class="fw-bold"><img src="/Project_Klook_SinglePro/icons8-rating-48.png" alt="" style="width: 30px;height: 30px;"><img src="/Project_Klook_SinglePro/icons8-rating-48.png" alt="" style="width: 30px;height: 30px;"><img src="/Project_Klook_SinglePro/icons8-rating-48.png" alt="" style="width: 30px;height: 30px;"><img src="/Project_Klook_SinglePro/icons8-rating-48.png" alt="" style="width: 30px;height: 30px;"><img src="/Project_Klook_SinglePro/icons8-star-half-empty-48.png" alt="" style="width: 30px;height: 30px;">超讚</div><span>我只能說當初買到就是賺到，寒舍艾美的餐廳超好吃，跟朋友聚餐很開心，後來想要再買都沒這樣的優惠了</span><a><p class="text-primary fw-bold my-1 my-lg-3">查看2,385則評價</p></a></div></div>
+</div>
+<hr>
+
+<div class="col-12">
+  <div
+  class="mt-2 mt-lg-5 ms-1 rounded-1"
+  style="background-color: #ff5b00; width: 5px; height: 30px"
+  id="singlePro_layout_packageOption"
+></div>
+<div
+  class="fs-3 fw-bold text-dark mb-1"
+  style="margin-left: 40px; margin-top: -35px">
+如何使用
+</div>
+<div class="my-2 my-lg-4">
+<h5>兌換指南</h5>
+<h3>台北寒舍艾美酒店 探索廚房</h3>
+<li class="my-2">地址：台北市信義區松仁路38號1樓</li>
+<h5>詳情請查看以下連結：<a href="">地圖</a></h5>
+<li class="my-2">如何前往：搭乘捷運至市政府站，自3號出口步行7分鐘即可抵達</li>
+<li class="my-2">開放時間：</li>
+<h5>週一至週日：06:30 - 10:00</h5>
+<h5>週一至週日：11:30 - 14:00</h5>
+<h5>週一至週日：15:00 - 17:00</h5>
+<h5>週一至週日：18:00 - 21:00</h5>
+<li class="fs-4 fw-bold my-3">端午節連續假期假日餐券可使用</li></div>
+</div>
+<hr>
+</div>
+  <div class="col-12 col-lg-4 " >
+    <div class="container-fluid rounded-4 px-2 px-lg-4 py-2 py-lg-3 mt-1 mt-lg-2 bg-body-tertiary sticky-bottom sticky-lg-top" style=" border-top: 2px solid #ff5b00;">
+    <div class="fs-3 fw-bold d-inline-block">自助餐</div>
+    <div class="row mt-1 mt-lg-2">
+      <div class="col-8 col-lg-8 " style="white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;"> <span class="fw-bold" >平日自助下午茶餐券2張（紙本餐券寄送）</span></div><div class="col-4 col-lg-4"><span class="text-secondary">NT$1,978</span></div>
+<div class="col-8 col-lg-8 " style="white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;"> <span class="fw-bold" >平日自助午 / 晚餐券2張（紙本餐券寄送）</span></div><div class="col-4 col-lg-4"><span class="text-secondary">NT$1,978</span></div>
+  <div class="col-8 col-lg-8 " style="white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;"> <span class="fw-bold" >假日自助下午茶券2張（紙本餐券寄送）</span></div><div class="col-4 col-lg-4"><span class="text-secondary">NT$1,978</span></div>
+    </div>
+    <button class="col-12 rounded-4 text-white fw-bold fs-5 fs-lg-3 tex-center mt-1 mt-lg-3 py-2 py-lg-3 border-0" style="background: #ff5b00;" id="Btncoupon"><img  src="/Project_Klook_SinglePro/icons8-lightning-bolt-32.png" alt="" style="vertical-align:middle;">查看優惠</button>
+</div>
+  </div>
 </div>
 
 
@@ -1370,10 +1437,10 @@ tabindex="0">
       window.addEventListener("scroll", (e) => {
         if (window.scrollY > 200) {
           document.getElementById("singlePro_navbar-example2").className =
-            "navbar bg-body-tertiary container-fluid px-3 mb-3 fs-5 d-block position-fixed z-2";
+            "navbar bg-body-tertiary container-fluid px-3 px-lg-5 mb-3 fs-5 d-block position-fixed z-2";
           document
             .getElementById("singlePro_navbar-example2")
-            .setAttribute("style", "top:80px");
+            .setAttribute("style", "top:77px");
         }
         if (window.scrollY < 200) {
           document.getElementById("singlePro_navbar-example2").className =
