@@ -7,17 +7,20 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <style>
         *{
-            font-family: poppins;
+          font-family: "Roboto", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
         }
 #layout_form_control:focus{
 box-shadow:none;
 }
 #layout_input_group:hover{
-border-color: #ff5B00;
+  border-color: #029278;
 }
 #layout_nav_item:hover{
     background-color:  rgb(247, 244, 244);
 }
+#singlePro_layout_top{
+      margin-left: 500px;
+    }
 /* 以上是通用layout 以下是首頁第二行layout */
 #layout_navbar_allSection:hover{
   background-color:  rgb(247, 244, 244);
@@ -41,11 +44,11 @@ border-color: #ff5B00;
 
 .dropdown-item:hover{
     background-color: white;
-    color: #ff5B00;
+    color: #029278;
 }
 
 .collapse-item:hover{
-  background-color: #ff5B00; 
+  background-color: #029278; 
 }
 .collapse-item:hover > div{
 color: white;
@@ -59,7 +62,7 @@ height: 15px;
 top: 6%;
 left:25%;
 clip-path: polygon(0% 0%, 80% 50%, 0% 100%);
-background-color: #ff5B00;
+background-color: #029278;
 }
 
 #layout_eastAsia:hover::after{
@@ -70,7 +73,7 @@ height: 15px;
 top: 20%;
 left:25%;
 clip-path: polygon(0% 0%, 80% 50%, 0% 100%);
-background-color: #ff5B00;
+background-color: #029278;
 }
 #layout_southEastAsia:hover::after{
 content: "";
@@ -80,7 +83,7 @@ height: 15px;
 top: 33.5%;
 left: 25%;
 clip-path: polygon(0% 0%, 80% 50%, 0% 100%);
-background-color: #ff5B00;
+background-color: #029278;
 }
 #layout_southAsia:hover::after{
 content: "";
@@ -90,7 +93,7 @@ height: 15px;
 top: 48%;
 left: 25%;
 clip-path: polygon(0% 0%, 80% 50%, 0% 100%);
-background-color: #ff5B00;
+background-color: #029278;
 }
 #layout_oceania:hover::after{
 content: "";
@@ -100,7 +103,7 @@ height: 15px;
 top: 62%;
 left: 25%;
 clip-path: polygon(0% 0%, 80% 50%, 0% 100%);
-background-color: #ff5B00;
+background-color: #029278;
 }
 #layout_europe:hover::after{
 content: "";
@@ -110,7 +113,7 @@ height: 15px;
 top: 76.5%;
 left: 25%;
 clip-path: polygon(0% 0%, 80% 50%, 0% 100%);
-background-color: #ff5B00;
+background-color: #029278;
 }
 #layout_america:hover::after{
 content: "";
@@ -120,7 +123,7 @@ height: 15px;
 top: 90.5%;
 left: 25%;
 clip-path: polygon(0% 0%, 80% 50%, 0% 100%);
-background-color: #ff5B00;
+background-color: #029278;
 }
 .layout_eastAsia_sidebar{
   display: none;
@@ -141,7 +144,7 @@ background-color: #ff5B00;
   white-space: nowrap;
 }
 .layout_eastAsia_sidebar a:hover{
-  color: #ff5B00;
+  color: #029278;
 }
 .layout_southEastAsia_sidebar a{
   text-decoration: none;
@@ -151,7 +154,7 @@ background-color: #ff5B00;
   white-space: nowrap;
 }
 .layout_southEastAsia_sidebar a:hover{
-  color: #ff5B00;
+  color: #029278;
 }
 .layout_southAsia_sidebar a{
   text-decoration: none;
@@ -161,7 +164,7 @@ background-color: #ff5B00;
   white-space: nowrap;
 }
 .layout_southAsia_sidebar a:hover{
-  color: #ff5B00;
+  color: #029278;
 }
 .layout_oceania_sidebar a{
   text-decoration: none;
@@ -171,7 +174,7 @@ background-color: #ff5B00;
   white-space: nowrap;
 }
 .layout_oceania_sidebar a:hover{
-color: #ff5B00;
+color: #029278;
 }
 .layout_europe_sidebar a{
   text-decoration: none;
@@ -181,7 +184,7 @@ color: #ff5B00;
   white-space: nowrap;
 }
 .layout_europe_sidebar a:hover{
-  color: #ff5B00;
+  color: #029278;
 }
 .layout_america_sidebar a{
   text-decoration: none;
@@ -191,7 +194,7 @@ color: #ff5B00;
   white-space: nowrap;
 }
 .layout_america_sidebar a:hover{
-  color: #ff5B00;
+  color: #029278;
 }
 #layout_allSection{
   display: none;
@@ -202,57 +205,139 @@ color: #ff5B00;
   color: black;
 }
 #layout_allSection a:hover{
-  color: #ff5B00;
+  color: #029278;
 }
+.container{
+    margin: auto;
+  }
+  .container-lg{
+    margin: auto;
+  }
     </style>
   </head>
   <body>
-    <nav class="navbar navbar-expand-lg bg-white">
-        <div class="container-fluid">
-           <div class="d-flex" style="width: 1200px; margin: auto;" >
-           
-          <a class="navbar-brand mt-2" href="#"><img src="/Project_Klook/IconLayout.png" alt="frontpageicon"></a>
 
-          <div class="input-group"><div class="input-group-text border-muted rounded-pill mt-3" id="layout_input_group" style="height:50px"> 
-                <img style="width: 20px; height:20px;" src="/Project_Klook/searchicon.png" alt="searchicon"> 
-                <input class="form-control boredr border-0 bg-light fs-5" type="search" placeholder="探索全球目的地 / 活動" aria-label="Search" id="layout_form_control"></div></div>
-            
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
+<nav class="navbar navbar-expand-lg bg-white sticky-top">
+      <div class="container container-lg">
+        <div class="d-flex fs-6 fs-5">
+          <div class="navbar-brand mt-2">
+          <a  href="#"
+            ><img class="" src="https://res.cloudinary.com/drmkbb1sf/image/upload/w_200,h_100,c_fill,q_100/hgx4uljfkkr3j6irogcf.jpg" alt="frontpageicon" style="width:100px;height:auto;vertical-align: baseline;"
+          /></a></div>
+
+
+          <div class="input-group  d-none d-lg-block ms-5 ms-lg-0 me-2 me-lg-0">
+            <div
+              class="input-group-text border-muted rounded-pill mt-3"
+              id="layout_input_group"
+              style="height: 45px;"
+            >
+              <img
+                style="width: 23px; height: 23px;"
+                src="https://res.cloudinary.com/drmkbb1sf/image/upload/w_100,h_100,c_fill,q_100/h26rnjkadanbotboj4r6.jpg"
+                alt="searchicon"
+              />
+              <input
+                class="form-control border border-0 bg-light fs-6 fs-5"
+                type="search"
+                placeholder="探索台灣旅館/美食"
+                
+                aria-label="Search"
+                id="layout_form_control"
+              />
+            </div>
+          </div>
+          <div class="d-block d-lg-none ms-5 me-2 mt-4 gap-2">
+          <img
+                style="width: 30px; height: 30px;"
+                src="https://res.cloudinary.com/drmkbb1sf/image/upload/w_100,h_100,c_fill,q_100/qbrmi1ymeuqh3ag9cr55.jpg"
+                alt="searchicon"
+              />
+              <img
+              style="width: 30px; height: 30px;"
+              src="https://res.cloudinary.com/drmkbb1sf/image/upload/w_100,h_100,c_fill,q_100/cbl3rzlwvdfsioke5u93.jpg"
+              alt="searchicon"
+            />
+            <img
+            style="width: 30px; height: 30px;"
+            src="https://res.cloudinary.com/drmkbb1sf/image/upload/w_100,h_100,c_fill,q_100/zphkkehtrrorltarjqii.jpg"
+            alt="searchicon"
+          /></div>
+
+          <button
+            class="navbar-toggler mt-3 bg-body-tertiary"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          style=" height: 45px; width: 55px;"
+          >
+            <span class="navbar-toggler-icon" ></span>
           </button>
-        
-          <div class="d-flex me-auto mb-2 mb-lg-0 d-none d-lg-block">
-            <ul class="navbar-nav">
+          
+          
+          <div class="d-none d-lg-block fw-bold" id="singlePro_layout_top" >
+            <ul class="navbar-nav d-flex">
               <li class="nav-item">
-                <div class="rounded-pill mt-3 mx-2 pt-1 px-2" id="layout_nav_item" style="height:50px; width: 100px;"> 
-                <a class="nav-link active" aria-current="page" href="#" >客服中心</a></div>
+                <div
+                  class="rounded-pill mt-3 mx-2 pt-1 px-2"
+                  id="layout_nav_item"
+                  style="height: 45px; width: 100px"
+                >
+                  <a class="nav-link active" aria-current="page" href="#"
+                    >客服中心</a
+                  >
+                </div>
               </li>
               <li class="nav-item">
-                <div class="rounded-pill mt-3 mx-2 pt-1 px-2" id="layout_nav_item" style="height:50px; width: 100px;"> 
-                    <a class="nav-link active" aria-current="page" href="#">最近逛過</a></div>
+                <div
+                  class="rounded-pill mt-3 mx-2 pt-1 px-2"
+                  id="layout_nav_item"
+                  style="height: 45px; width: 100px"
+                >
+                  <a class="nav-link active" aria-current="page" href="#"
+                    >最近逛過</a
+                  >
+                </div>
               </li>
               <li class="nav-item">
-                <div class="rounded-pill mt-3 mx-2 pt-1 px-2" id="layout_nav_item" style="height:50px; width: 70px;"> 
-                    <a class="nav-link active" aria-current="page" href="#">註冊</a></div>
+                <div
+                  class="rounded-pill mt-3 mx-2 pt-1 px-2"
+                  id="layout_nav_item"
+                  style="height: 45px; width: 70px"
+                >
+                  <a class="nav-link active" aria-current="page" href="#"
+                    >註冊</a
+                  >
+                </div>
               </li>
               <li class="nav-item">
-                <div class="rounded-pill mt-3 mx-2 pt-1 px-2 " id="layout_nav_item" style="height:50px; width: 70px;; background-color: #ff5B00;"> 
-                    <a class="nav-link active" aria-current="page" href="#">登入</a></div>
+                <div
+                  class="rounded-pill mt-3 mx-2 pt-1 px-2"
+                  id="layout_nav_item"
+                  style="height: 45px; width: 70px; background-color: #029278"
+                >
+                  <a class="nav-link active text-white" aria-current="page" href="#"
+                    >登入</a
+                  >
+                </div>
               </li>
             </ul>
+          </div>
         </div>
-        </div>
-  
-    </div>
-</nav>
-<div class="container-fluid d-none d-lg-block border-top border-bottom border-muted fs-5">
-    <div class="d-flex" style="width: 1200px; margin:auto;" >
+      </div>
+    </nav>
+
+<div class="container container-lg d-none d-lg-block border-top border-bottom border-muted fs-5">
+    <div class="d-flex" >
         
     
                       <!--探索目的地的下拉選單  -->
                
                       <div class="rounded-pill my-2 me-2 d-flex align-items-center" id="layout_navbar_collapseExample" style="height:50px"> 
-                      <a class="nav-link active px-3" aria-current="page" aria-expanded="false" disabled> <img src="/Project_Klook/icons_map.png" alt="探索目的地" style="width: 25px;height: 25px; margin-right: 5px;">探索目的地</a></div>
+                      <a class="nav-link active px-3" aria-current="page" aria-expanded="false" disabled> <img src="https://res.cloudinary.com/drmkbb1sf/image/upload/w_100,h_100,c_fill,q_100/me2jl6fs2vshwl6ce7sm.jpg" alt="地方" style="width: 25px;height: 25px; margin-right: 5px;">旅館</a></div>
            
                      <!-- 探索目的地的下拉選單 -->
                     
@@ -301,8 +386,8 @@ color: #ff5B00;
                   
           </div>
        
-          <div class="collapse" id="layout_collapseExample" >
-            <div class="row  fs-5 rounded-4 border position-relative" style=" width: 1000px; margin-left: 18%;" >
+          <div class="collapse container container-lg" id="layout_collapseExample" >
+            <div class="row  fs-5 rounded-4 border position-relative">
               <div class=" col-3 px-0 border-end border-muted" >
                 <div class=" collapse-item rounded-4 rounded-bottom-0 rounded-end-0 d-flex align-items-center ps-3" id="layout_hotSpot" style="height: 70px; "><div class="fw-bold" href="">熱門目的地</div></div>
                 <div class="collapse-item d-flex align-items-center ps-3 border-bottom border-top border-muted" id="layout_eastAsia" style="height: 70px; "><div class="fw-bold" href="">東亞<br><span class="fw-light fs-6 ps-2">香港 台北</span></div></div>
@@ -414,7 +499,7 @@ color: #ff5B00;
                      
                     </tbody>
                   </table>
-                  <!-- <div class=" text-center opacity-75" style="color: #ff5B00;">向下滑動查看更多</div> -->
+                  <!-- <div class=" text-center opacity-75" style="color: #029278;">向下滑動查看更多</div> -->
                 </div>
                 <div  class="layout_southAsia_sidebar" style="height: 420px; overflow: auto;">
                   <table class="table table-borderless">
@@ -589,8 +674,8 @@ color: #ff5B00;
           </div>
           </div>
           
-          <div class="collapse" id="layout_allSection" >
-            <div class="row fs-5 rounded-4 border" style=" width: 1200px; margin-left: 18%;" >
+          <div class="collapse container container-lg" id="layout_allSection" >
+            <div class="row fs-5 rounded-4 border" >
               <div class=" row row-cols-5" >
                 <div class="col d-flex p-0 m-0">
                 <div class="col-1"><img src="/Project_Klook/layout_schedule_icon.webp" alt="" style="width: 20px;height: 20px;"></div>

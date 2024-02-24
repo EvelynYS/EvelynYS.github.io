@@ -1,0 +1,829 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap demo</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <style>
+        *{
+          font-family: "Roboto", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+        }
+#layout_form_control:focus{
+box-shadow:none;
+}
+#layout_input_group:hover{
+  border-color: #029278;
+}
+#layout_nav_item:hover{
+    background-color:  rgb(247, 244, 244);
+}
+#singlePro_layout_top{
+      margin-left: 500px;
+    }
+/* 以上是通用layout 以下是首頁第二行layout */
+#layout_navbar_allSection:hover{
+  background-color:  rgb(247, 244, 244);
+}
+
+#layout_navbar_collapseExample:hover{
+  background-color:  rgb(247, 244, 244);
+}
+
+#layout_nav_item_dropdown:hover {
+    background-color:  rgb(247, 244, 244);
+} 
+#layout_nav_item_dropdown:hover> #layout_itinerary_dropdown_menu{
+    display: block;
+    margin-top: 355px;
+    transition-delay: 1s;
+}
+#layout_itinerary_dropdown_menu:hover{
+    display: block;
+}
+
+.dropdown-item:hover{
+    background-color: white;
+    color: #029278;
+}
+
+.collapse-item:hover{
+  background-color: #029278; 
+}
+.collapse-item:hover > div{
+color: white;
+}
+
+#layout_hotSpot:hover::after{
+content: "";
+position: absolute;
+width: 15px;
+height: 15px;
+top: 6%;
+left:25%;
+clip-path: polygon(0% 0%, 80% 50%, 0% 100%);
+background-color: #029278;
+}
+
+#layout_eastAsia:hover::after{
+content: "";
+position: absolute;
+width: 15px;
+height: 15px;
+top: 20%;
+left:25%;
+clip-path: polygon(0% 0%, 80% 50%, 0% 100%);
+background-color: #029278;
+}
+#layout_southEastAsia:hover::after{
+content: "";
+position: absolute;
+width: 15px;
+height: 15px;
+top: 33.5%;
+left: 25%;
+clip-path: polygon(0% 0%, 80% 50%, 0% 100%);
+background-color: #029278;
+}
+#layout_southAsia:hover::after{
+content: "";
+position: absolute;
+width: 15px;
+height: 15px;
+top: 48%;
+left: 25%;
+clip-path: polygon(0% 0%, 80% 50%, 0% 100%);
+background-color: #029278;
+}
+#layout_oceania:hover::after{
+content: "";
+position: absolute;
+width: 15px;
+height: 15px;
+top: 62%;
+left: 25%;
+clip-path: polygon(0% 0%, 80% 50%, 0% 100%);
+background-color: #029278;
+}
+#layout_europe:hover::after{
+content: "";
+position: absolute;
+width: 15px;
+height: 15px;
+top: 76.5%;
+left: 25%;
+clip-path: polygon(0% 0%, 80% 50%, 0% 100%);
+background-color: #029278;
+}
+#layout_america:hover::after{
+content: "";
+position: absolute;
+width: 15px;
+height: 15px;
+top: 90.5%;
+left: 25%;
+clip-path: polygon(0% 0%, 80% 50%, 0% 100%);
+background-color: #029278;
+}
+.layout_eastAsia_sidebar{
+  display: none;
+}
+.layout_southEastAsia_sidebar, .layout_southAsia_sidebar, .layout_oceania_sidebar, .layout_europe_sidebar, .layout_america_sidebar{
+  display: none;
+}
+
+.layout_hotSpot_sidebar a{
+  text-decoration: none;
+  color: aliceblue;
+}
+.layout_eastAsia_sidebar a{
+  text-decoration: none;
+  line-height: 2em;
+  color: black;
+  margin-right: 1em;
+  white-space: nowrap;
+}
+.layout_eastAsia_sidebar a:hover{
+  color: #029278;
+}
+.layout_southEastAsia_sidebar a{
+  text-decoration: none;
+  line-height: 2em;
+  color: black;
+  margin-right: 1em;
+  white-space: nowrap;
+}
+.layout_southEastAsia_sidebar a:hover{
+  color: #029278;
+}
+.layout_southAsia_sidebar a{
+  text-decoration: none;
+  line-height: 2em;
+  color: black;
+  margin-right: 1em;
+  white-space: nowrap;
+}
+.layout_southAsia_sidebar a:hover{
+  color: #029278;
+}
+.layout_oceania_sidebar a{
+  text-decoration: none;
+  line-height: 2em;
+  color: black;
+  margin-right: 1em;
+  white-space: nowrap;
+}
+.layout_oceania_sidebar a:hover{
+color: #029278;
+}
+.layout_europe_sidebar a{
+  text-decoration: none;
+  line-height: 2em;
+  color: black;
+  margin-right: 1em;
+  white-space: nowrap;
+}
+.layout_europe_sidebar a:hover{
+  color: #029278;
+}
+.layout_america_sidebar a{
+  text-decoration: none;
+  line-height: 2em;
+  color: black;
+  margin-right: 1em;
+  white-space: nowrap;
+}
+.layout_america_sidebar a:hover{
+  color: #029278;
+}
+#layout_allSection{
+  display: none;
+}
+#layout_allSection a{
+  text-decoration: none;
+  line-height: 2em;
+  color: black;
+}
+#layout_allSection a:hover{
+  color: #029278;
+}
+.container{
+    margin: auto;
+  }
+  .container-lg{
+    margin: auto;
+  }
+  #navbarSupportedContent a{
+    text-decoration: none;
+  }
+    </style>
+  </head>
+  <body>
+
+<nav class="navbar navbar-expand-lg bg-white sticky-top">
+      <div class="container container-lg">
+        <div class="d-flex fs-6 fs-5">
+          <div class="navbar-brand mt-2">
+          <a  href="#"
+            ><img class="" src="https://res.cloudinary.com/drmkbb1sf/image/upload/w_200,h_100,c_fill,q_100/hgx4uljfkkr3j6irogcf.jpg" alt="frontpageicon" style="width:100px;height:auto;vertical-align: baseline;"
+          /></a></div>
+
+
+          <div class="input-group  d-none d-lg-block ms-5 ms-lg-0 me-2 me-lg-0">
+            <div
+              class="input-group-text border-muted rounded-pill mt-3"
+              id="layout_input_group"
+              style="height: 45px;"
+            >
+              <img
+                style="width: 23px; height: 23px;"
+                src="https://res.cloudinary.com/drmkbb1sf/image/upload/w_100,h_100,c_fill,q_100/h26rnjkadanbotboj4r6.jpg"
+                alt="searchicon"
+              />
+              <input
+                class="form-control border border-0 bg-light fs-6 fs-5"
+                type="search"
+                placeholder="探索台灣旅館/美食"
+                
+                aria-label="Search"
+                id="layout_form_control"
+              />
+            </div>
+          </div>
+          <div class="d-block d-lg-none ms-5 me-2 mt-4 gap-2">
+          <img
+                style="width: 30px; height: 30px;"
+                src="https://res.cloudinary.com/drmkbb1sf/image/upload/w_100,h_100,c_fill,q_100/qbrmi1ymeuqh3ag9cr55.jpg"
+                alt="searchicon"
+              />
+              <img
+              style="width: 30px; height: 30px;"
+              src="https://res.cloudinary.com/drmkbb1sf/image/upload/w_100,h_100,c_fill,q_100/cbl3rzlwvdfsioke5u93.jpg"
+              alt="searchicon"
+            />
+            <img
+            style="width: 30px; height: 30px;"
+            src="https://res.cloudinary.com/drmkbb1sf/image/upload/w_100,h_100,c_fill,q_100/zphkkehtrrorltarjqii.jpg"
+            alt="searchicon"
+          /></div>
+
+          <button
+            class="navbar-toggler mt-3 bg-body-tertiary"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          style=" height: 45px; width: 55px;"
+          >
+            <span class="navbar-toggler-icon" ></span>
+          </button>
+          
+          
+          <div class="d-none d-lg-block fw-bold" id="singlePro_layout_top" >
+            <ul class="navbar-nav d-flex">
+              <li class="nav-item">
+                <div
+                  class="rounded-pill mt-3 mx-2 pt-1 px-2"
+                  id="layout_nav_item"
+                  style="height: 45px; width: 100px"
+                >
+                  <a class="nav-link active" aria-current="page" href="#"
+                    >客服中心</a
+                  >
+                </div>
+              </li>
+              <li class="nav-item">
+                <div
+                  class="rounded-pill mt-3 mx-2 pt-1 px-2"
+                  id="layout_nav_item"
+                  style="height: 45px; width: 100px"
+                >
+                  <a class="nav-link active" aria-current="page" href="#"
+                    >最近逛過</a
+                  >
+                </div>
+              </li>
+              <li class="nav-item">
+                <div
+                  class="rounded-pill mt-3 mx-2 pt-1 px-2"
+                  id="layout_nav_item"
+                  style="height: 45px; width: 70px"
+                >
+                  <a class="nav-link active" aria-current="page" href="#"
+                    >註冊</a
+                  >
+                </div>
+              </li>
+              <li class="nav-item">
+                <div
+                  class="rounded-pill mt-3 mx-2 pt-1 px-2"
+                  id="layout_nav_item"
+                  style="height: 45px; width: 70px; background-color: #029278"
+                >
+                  <a class="nav-link active text-white" aria-current="page" href="#"
+                    >登入</a
+                  >
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+<div class="container container-lg d-none d-lg-block border-top border-bottom border-muted fs-5">
+    <div class="row row-cols-2" >
+                      <!--探索目的地的下拉選單  -->
+               
+                      <div class="col my-2 d-flex align-items-center" id="layout_navbar_collapseExample" style="height:50px"> 
+                      <a class="nav-link active px-3" aria-current="page" aria-expanded="false" disabled> <img class="me-1 me-lg-2" src="https://res.cloudinary.com/drmkbb1sf/image/upload/w_100,h_100,c_fill,q_100/me2jl6fs2vshwl6ce7sm.jpg" alt="地方" style="width: 25px;height: 25px;">旅館探索</a></div>
+           
+                     <!-- 探索目的地的下拉選單 -->
+                    
+                      <div class="col my-2 d-flex align-items-center" id="layout_navbar_allSection" style="height:50px"> 
+                          <a class="nav-link active px-3" aria-current="page" href="#"> <img class="me-1 me-lg-2"src="https://res.cloudinary.com/drmkbb1sf/image/upload/w_100,h_100,c_fill,q_100/me2jl6fs2vshwl6ce7sm.jpg" alt="地方" style="width: 25px;height: 25px;">美食品嚐</a></div>
+                      
+                  </div>
+                  
+ </div>
+       
+          <div class="collapse container container-lg　position-absolute" id="layout_collapseExample" >
+            <div class="row  w-75 h-75 fs-5 rounded-4 border border-muted position-relative">
+              <div class=" col-3 px-0 border-end border-muted" >
+                <div class=" collapse-item rounded-4 rounded-bottom-0 rounded-end-0 d-flex align-items-center ps-3" id="layout_hotSpot" style="height: 70px; "><div class="fw-bold" href="">熱門目的地</div></div>
+                <div class="collapse-item d-flex align-items-center ps-3 border-bottom border-top border-muted" id="layout_eastAsia" style="height: 70px; "><div class="fw-bold" href="">台北<br><span class="fw-light fs-6 ps-2">北投 淡水</span></div></div>
+                <div class="collapse-item d-flex align-items-center ps-3 border-bottom border-top border-muted" id="layout_southEastAsia" style="height: 70px; "><div class="fw-bold" href="">宜蘭<br><span class="fw-light fs-6 ps-2">礁溪 頭城</span></div></div>
+                <div class="collapse-item d-flex align-items-center ps-3  border-bottom border-top border-muted" id="layout_southAsia" style="height: 70px; "><div class="fw-bold" href="">基隆 / 新北<br><span class="fw-light fs-6 ps-2">九份 十分 萬里</span></div></div>
+                <div class="collapse-item d-flex align-items-center ps-3 border-bottom border-top border-muted" id="layout_oceania" style="height: 70px; "><div class="fw-bold" href="" >台中<br><span class="fw-light fs-6 ps-2">高美濕地 東勢林場</span></div></div>
+                <div class="collapse-item d-flex align-items-center ps-3 border-bottom border-top border-muted" id="layout_europe" style="height: 70px; "><div class="fw-bold" href="" >台南<br><span class="fw-light fs-6 ps-2">赤崁樓 孔廟文化區</span></div></div>
+                <div class="collapse-item  rounded-4 rounded-top-0 rounded-end-0 d-flex align-items-center ps-3 " id="layout_america" style="height: 70px; "><div class="fw-bold" href="">花蓮<br><span class="fw-light fs-6 ps-2">太魯閣國家公園</span></div></div>
+              </div>
+              <div class="col-9 rounded-end-4 border-muted">
+                <div class="layout_hotSpot_sidebar" >
+                  <div class="container text-center my-2 my-lg-4">
+                    <div class="row row-cols-4 my-2 my-lg-4">
+                      <div class="col"><a  href="#"><div class="rounded-3 fw-bold" style=" height: 90px; background-image: url(https://res.cloudinary.com/drmkbb1sf/image/upload/w_150,h_90,c_fill,q_100/y2mvigd4z3i1b6on8pgw.jpg); background-repeat:round; padding-top:60px;" disabled>台北</div></a></div>
+                      <div class="col"><a  href="#"><div class="rounded-3 fw-bold" style="height: 90px; background-image: url(https://res.cloudinary.com/drmkbb1sf/image/upload/w_150,h_90,c_fill,q_100/gt8qor7cyhf4ttmpzn4v.jpg); background-repeat:round; padding-top: 60px;" disabled>基隆</div></a></div>
+                      <div class="col"><a  href="#"><div class="rounded-3 fw-bold" style="height: 90px; background-image: url(https://res.cloudinary.com/drmkbb1sf/image/upload/w_150,h_90,c_fill,q_100/nrxc27bpjkxolr5ubgwt.jpg); background-repeat:round; padding-top: 60px;" disabled>花蓮</div></a></div>
+                      <div class="col"><a  href="#"><div class="rounded-3 fw-bold" style="height: 90px; background-image: url(https://res.cloudinary.com/drmkbb1sf/image/upload/w_150,h_90,c_fill,q_100/yrqi5bb2e6eaongc1gti.jpg); background-repeat:round; padding-top: 60px; " disabled>苗栗</div></a></div>
+                    </div>
+                  </div>
+                  <div class="container text-center">
+                    <div class="row row-cols-4  my-2 my-lg-4">
+                      <div class="col"><a  href="#"><div class="rounded-3 fw-bold" style=" height: 90px; background-image: url(https://res.cloudinary.com/drmkbb1sf/image/upload/w_150,h_90,c_fill,q_100/yob1edefwzatglyixlgh.jpg);background-repeat:round; padding-top: 60px;" disabled>台中</div></a></div>
+                      <div class="col"><a  href="#"><div class="rounded-3 fw-bold" style="height: 90px; background-image: url(https://res.cloudinary.com/drmkbb1sf/image/upload/w_150,h_90,c_fill,q_100/swj6hlic3fqf0qdlmrut.jpg);background-repeat:round; padding-top: 60px;" disabled>彰化</div></a></div>
+                      <div class="col"><a  href="#"><div class="rounded-3 fw-bold" style="height: 90px; background-image: url(https://res.cloudinary.com/drmkbb1sf/image/upload/w_150,h_90,c_fill,q_100/qm8flyw3rkeus3b7lfah.jpg); background-repeat:round;padding-top: 60px;" disabled>高雄</div></a></div>
+                      <div class="col"><a  href="#"><div class="rounded-3 fw-bold" style="height: 90px; background-image: url(https://res.cloudinary.com/drmkbb1sf/image/upload/w_160,h_90,c_fill,q_100/pchxniywhlajnezorcvg.jpg); background-repeat:round;padding-top: 60px;" disabled>宜蘭</div></a></div>
+                    </div>
+                  </div>
+                  <div class="container text-center">
+                    <div class="row row-cols-4  my-2 my-lg-4">
+                      <div class="col"><a  href="#"><div class="rounded-3 fw-bold" style=" height: 90px; background-image: url(https://res.cloudinary.com/drmkbb1sf/image/upload/w_160,h_90,c_fill,q_100/opcvc62eal9fdrzbfeit.jpg);background-repeat:round; padding-top: 60px;" disabled>台南</div></a></div>
+                      <div class="col"><a  href="#"><div class="rounded-3 fw-bold" style="height: 90px; background-image: url(https://res.cloudinary.com/drmkbb1sf/image/upload/w_160,h_90,c_fill,q_100/e9uj0s9jolyit33ckglz.jpg);background-repeat:round; padding-top: 60px;" disabled>台東</div></a></div>
+                      <div class="col"><a  href="#"><div class="rounded-3 fw-bold" style="height: 90px; background-image: url(https://res.cloudinary.com/drmkbb1sf/image/upload/w_160,h_90,c_fill,q_100/xvhonb0ma59ayyfin8kq.jpg);background-repeat:round; padding-top: 60px;" disabled>南投</div></a></div>
+                      <div class="col"><a  href="#"><div class="rounded-3 fw-bold" style="height: 90px; background-image: url(https://res.cloudinary.com/drmkbb1sf/image/upload/w_160,h_90,c_fill,q_100/wmqhivw0bshvwrdmyzwm.jpg); background-repeat:round;padding-top: 60px;" disabled>新北</div></a></div>
+                    </div>
+                </div>
+               </div>
+                <div  class="layout_eastAsia_sidebar">
+                  <table class="table table-borderless my-2 my-lg-4" >
+                    <thead>
+                      <tr >
+                        <th class="fw-light" colspan="2">選擇旅館位置／周邊景點</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <th class="fw-bold" scope="row" style="width: 20%;"><a href="">北投區</a></th>
+                        <td class="fw-light"><a href="">捷運北投站</a><a  href="">捷運新北投站</a></td>
+                      </tr>
+                      <tr>
+                        <th class="fw-bold"　scope="row">中山區</th>
+                        <td class="fw-light">捷運雙連站<a href=""></a><a href="">六條通</a><a href="">南西商圈</a></td>
+                      </tr>
+                      <tr>
+                        <th class="fw-bold"　scope="row">士林區</th>
+                        <td class="fw-light"><a href="">士林夜市</a><a href="">國立故宮博物院</a><a href="">陽明山國家公園</a><a href="">天母市集</a></td>
+                      </tr>
+                      <tr>
+                        <th class="fw-bold"　scope="row">萬華區</th>
+                        <td class="fw-light"><a href="">龍山寺</a><a href="">西門町</a><a href=""></a></td>
+                      </tr>
+                      <tr>
+                        <th class="fw-bold"　scope="row">信義區</th>
+                        <td class="fw-light"><a href="">台北101</a><a href="">國父紀念館</a><a href="">忠孝商圈</a></td>
+                      </tr>
+                      <tr>
+                        <th class="fw-bold"　scope="row">南港區</th>
+                        <td class="fw-light"><a href="">南港展覽館</a></td>
+                      </tr>
+                      <tr>
+                        <th class="fw-bold"　scope="row">松山區</th>
+                        <td class="fw-light"><a href="">饒河夜市</a></td>
+                      </tr>
+                    </tbody>
+                  </table>
+
+                </div>
+                <div  class="layout_southEastAsia_sidebar">
+                  <table class="table table-borderless my-2 my-lg-4" >
+                    <thead>
+                      <tr>
+                        <th class="fw-light" colspan="2">選擇旅館位置／周邊景點</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <th class="fw-bold" scope="row" style="width: 20%;"><a href="">宜蘭市</a></th>
+                        <td class="fw-light"><a href="">蘭陽原創館</a><a href="">宜蘭酒廠</a><a href="">東門夜市</a></td>
+                      </tr>
+                      <tr>
+                        <th class="fw-bold" scope="row"><a href="">礁溪</a></th>
+                        <td class="fw-light "><a href="">林美石磐步道</a><a  href="">礁溪溫泉公園</a></td>
+                      </tr>
+                      <tr>
+                        <th class="fw-bold"　scope="row">頭城</th>
+                        <td class="fw-light"><a href="">頭城老街</a><a href="">蘭陽博物館</a></td>
+                      </tr>
+                      <tr>
+                        <th class="fw-bold"　scope="row">蘇澳</th>
+                        <td class="fw-light"><a href="">蘇澳冷泉公園</a><a href="">蘇澳新站</a></td>
+                      </tr>           
+                    </tbody>
+                  </table>
+                </div>
+                <div  class="layout_southAsia_sidebar" >
+                  <table class="table table-borderless  my-2 my-lg-4">
+                    <thead>
+                      <tr>
+                        <th class="fw-light" colspan="2">選擇旅館位置／周邊景點</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <th class="fw-bold" scope="row" style="width: 20%;"><a href="">基隆</a></th>
+                        <td class="fw-light"><a href="">廟口夜市</a><a href="">九份</a></td>
+                      </tr>
+                      <tr>
+                        <th class="fw-bold" scope="row"><a href="">中和、永和</a></th>
+                        <td class="fw-light "><a href="">環球購物中心中和館</a></td>
+                      </tr>
+                      <tr>
+                        <th class="fw-bold" scope="row"><a href="">淡水</a></th>
+                        <td class="fw-light "><a href="">捷運竹圍站</a><a  href="">捷運淡水站</a><a  href="">八里</a><a href="">淡水魚人馬頭</a></td>
+                      </tr>
+                      <tr>
+                        <th class="fw-bold"　scope="row">新店</th>
+                        <td class="fw-light"><a href="">碧潭風景區</a><a href="">烏來老街溫</a></td>
+                      </tr>
+                      <tr>
+                        <th class="fw-bold"　scope="row">萬里、金山</th>
+                        <td class="fw-light"><a href="">金山老街</a><a href="">朱銘美術館</a></td>
+                      </tr>
+                      <tr>
+                        <th class="fw-bold"　scope="row">板橋、新莊</th>
+                        <td class="fw-light"><a href="">林本源園邸</a><a href="">台灣玩具博物館</a><a href="">新莊廟街</a></td>
+                      </tr>
+                      <tr>
+                        <th class="fw-bold"　scope="row">三峽、鶯歌</th>
+                        <td class="fw-light"><a href="">三峽老街</a><a href="">陶瓷博物館</a></td>
+                      </tr>
+                    </tbody>
+                  </table>
+
+                </div>
+                <div  class="layout_oceania_sidebar" style="height: 420px; overflow: auto;">
+                  <table class="table table-borderless  my-2 my-lg-4">
+                    <thead>
+                      <tr>
+                        <th class="fw-light" colspan="2">選擇旅館位置／周邊景點</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <th class="fw-bold" scope="row" style="width: 20%;"><a href="">清水</a></th>
+                        <td class="fw-light"><a href="">高美濕地</a></td>
+                      </tr>
+                      <tr>
+                        <th class="fw-bold"　scope="row">北區</th>
+                        <td class="fw-light"><a href="">一中街商圈</a><a href="">國立科學自然博物館</a></td>
+                      </tr>
+                      <tr>
+                        <th class="fw-bold"　scope="row">西區</th>
+                        <td class="fw-light"><a href="">刑務所演武場、審計新村、勤美誠品綠園道</a></td>
+                      </tr>
+                      <tr>
+                        <th class="fw-bold"　scope="row">和平區</th>
+                        <td class="fw-light"><a href="">武陵農場</a><a href="">谷關溫泉</a><a href="">大雪山國家森林遊樂區</a></td>
+                      </tr>
+                      <tr>
+                        <th class="fw-bold"　scope="row">新社區</th>
+                        <td class="fw-light"><a href="">新社莊園古堡</a><a href="">薰衣草森林</a></td>
+                      </tr>
+                      <tr>
+                        <th class="fw-bold"　scope="row">西屯區</th>
+                        <td class="fw-light"><a href="">國家歌劇院</a><a href="">逢甲夜市商圈、東海大學路思義教堂</a></td>
+                      </tr>
+                    </tbody>
+                  </table>
+
+                </div>
+                <div  class="layout_europe_sidebar" style="height: 420px; overflow: auto;">
+                  <table class="table table-borderless  my-2 my-lg-4">
+                    <thead>
+                      <tr>
+                        <th class="fw-light" colspan="2">選擇旅館位置／周邊景點</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <th class="fw-bold" scope="row" style="width: 20%;"><a href="">中西區</a></th>
+                        <td class="fw-light"><a href="">赤崁樓</a><a href="">台南美術館二館</a><a href="">台南孔廟</a><a href="">旭峰號</a></td>
+                      </tr>
+                      <tr>
+                        <th class="fw-bold"　scope="row">安平區</th>
+                        <td class="fw-light"><a href="">漁光島</a><a href="">安平樹屋</a></td>
+                      </tr>
+                      <tr>
+                        <th class="fw-bold"　scope="row">安南區</th>
+                        <td class="fw-light"><a href="">四草紅樹林綠色隧道</a></td>
+                      </tr>
+                      <tr>
+                        <th class="fw-bold"　scope="row">仁德區</th>
+                        <td class="fw-light"><a href="">奇美博物館</a><a href="">十鼓仁糖文創園區</a></td>
+                      </tr>
+                    </tbody>
+                  </table>
+
+                </div>
+                <div  class="layout_america_sidebar" style="height: 420px; overflow: auto;">
+                  <table class="table table-borderless  my-2 my-lg-4">
+                    <thead>
+                      <tr>
+                        <th class="fw-light" colspan="2">選擇旅館位置／周邊景點</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <th class="fw-bold" scope="row" style="width: 20%;"><a href="">花蓮市</a></th>
+                        <td class="fw-light"><a href="">彩虹觀光夜市．福町夜市</a><a href="">松園別館</a></td>
+                      </tr>
+                      <tr>
+                        <th class="fw-bold" scope="row" style="width: 20%;"><a href="">富里鄉</a></th>
+                        <td class="fw-light"><a href="">六十石山</a></td>
+                      </tr>
+                      <tr>
+                        <th class="fw-bold" scope="row" style="width: 20%;"><a href="">秀林鄉</a></th>
+                        <td class="fw-light"><a href="">太魯閣國家公園．花蓮</a><a href="">慕谷慕魚</a></td>
+                      </tr>
+                    </tbody>
+                  </table>
+
+                </div>
+              </div>
+            
+          </div>
+          </div>
+          
+          <div class="collapse container container-lg　position-absolute" id="layout_allSection" >
+            <div class="row fs-5 rounded-4 border w-50 h-50 ms-auto ms-lg-auto" >
+              <div class=" row row-cols-2" >
+                  <div class="col d-flex p-0 m-0">
+                    <div class="col-1"><img class="mx-1 mx-lg-2" src="https://res.cloudinary.com/drmkbb1sf/image/upload/w_75,h_75,c_fill,q_100/quxy1qsnyw4kwtrozmtc.jpg" alt="" style="width: 25px;height: 25px;"></div>
+                    <div class="col-11 mx-1 mx-lg-3">
+                      <div><a href="">縣市搜尋</a></div>
+                      <div><a href="">台北市</a> ❯</div>
+                      <div class="fw-light"><a class="px-1 px-lg-2" href="">中山區</a><a class="px-1 px-lg-2" href="">信義區</a><a class="px-1 px-lg-2" href="">萬華區</a></div>
+                      <div><a href="">新北市</a> ❯</div>
+                      <div><a href="">桃園市</a> ❯</div>
+                      <div><a href="">台中市</a> ❯</div>
+                      <div><a href="">台南市</a> ❯</div>
+                      <div><a href="">高雄市</a> ❯</div>
+                      <div><a href="">基隆市</a> ❯</div>
+                      <div><a href="">新竹縣、市</a> ❯</div>
+                      <div><a href="">嘉義縣、市</a> ❯</div>
+                      <div><a href="">更多縣市</a> ❯</div>
+                    </div>
+              </div>
+              <div class="col d-flex p-0 m-0">
+                <div class="col-1"><img class="mx-1 mx-lg-2" src="https://res.cloudinary.com/drmkbb1sf/image/upload/w_100,h_100,c_fill,q_100/dcoq6dhxcdkccrwrf98a.jpg" alt="" style="width: 25px;height: 25px;"></div>
+                    <div class="col-11 mx-1 mx-lg-3">
+                  <div><a href="">餐點搜尋</a></div>
+                  <div><a href="">台式料理</a> ❯</div>
+                  <div><a href="">西式料理</a> ❯</div>
+                  <div><a href="">日式料理</a> ❯</div>
+                  <div><a href="">素食料理</a> ❯</div>
+                  <div><a href="">泰式料理</a> ❯</div>
+                  <div><a href="">南洋料理</a> ❯</div>
+                  <div><a href="">街頭小吃</a> ❯</div>
+                  <div><a href="">米其林推薦</a> ❯</div>
+                  <div><a href="">早餐</a> ❯</div>
+                  <div><a href="">午餐</a> ❯</div>
+                  <div><a href="">晚餐</a> ❯</div>
+                  <div><a href="">下午茶</a> ❯</div>
+                  <div><a href="">酒吧</a> ❯</div>
+                  <div><a href="">麵包＆甜點</a> ❯</div>
+                  <div><a href="">咖啡店</a> ❯</div>
+                  <div><a href="">更多料理</a> ❯</div>
+                </div>
+                </div> 
+        
+                  
+              </div>
+            </div>
+            </div>
+  <!-- 這裡是RWD部分 -->
+          <div class="collapse navbar-collapse d-lg-none" id="navbarSupportedContent">
+            <ul class="navbar-nav" id="layoutRWD_Hotel">
+<li class="nav-item"><div class="row row-cols-2">
+    <a class="nav-link col text-center text-success-emphasis fw-bold border-bottom-0 border border-success-subtle link-opacity-25-hover" style="background-color: #dbf3ea;" id="BtnlayoutRWD_Hotel">旅館探索</a>
+    <a class="nav-link col text-center border-0" id="BtnlayoutRWD_Food">美食品嚐</a></div></li>
+    <li class="nav-item"><div class="row row-cols-2 ">   
+    <div class="col-12 border-top border-success-subtle" style="background-color:  #dbf3ea;">
+        <div class="row row-cols-3 my-3 mx-2 row-gap-3">
+            <div class="col"><a class="nav-link" href="#"><div class="rounded-3 fw-bold text-decoration-none text-white text-center" style=" height: 90px; background-image: url(https://res.cloudinary.com/drmkbb1sf/image/upload/w_150,h_90,c_fill,q_100/y2mvigd4z3i1b6on8pgw.jpg); background-repeat:round; padding-top:60px;" disabled>台北</div></a></div>
+                      <div class="col"><a class="nav-link" href="#"><div class="rounded-3 fw-bold text-decoration-none text-white text-center" style="height: 90px; background-image: url(https://res.cloudinary.com/drmkbb1sf/image/upload/w_150,h_90,c_fill,q_100/gt8qor7cyhf4ttmpzn4v.jpg); background-repeat:round; padding-top: 60px;" disabled>基隆</div></a></div>
+                      <div class="col"><a class="nav-link" href="#"><div class="rounded-3 fw-bold text-decoration-none text-white text-center" style="height: 90px; background-image: url(https://res.cloudinary.com/drmkbb1sf/image/upload/w_150,h_90,c_fill,q_100/yob1edefwzatglyixlgh.jpg); background-repeat:round; padding-top: 60px;" disabled>台中</div></a></div>
+                      <div class="col"><a class="nav-link" href="#"><div class="rounded-3 fw-bold text-decoration-none text-white text-center" style=" height: 90px; background-image: url(https://res.cloudinary.com/drmkbb1sf/image/upload/w_160,h_90,c_fill,q_100/opcvc62eal9fdrzbfeit.jpg); background-repeat:round; padding-top:60px;" disabled>台南</div></a></div>
+                      <div class="col"><a class="nav-link" href="#"><div class="rounded-3 fw-bold text-decoration-none text-white text-center" style="height: 90px; background-image: url(https://res.cloudinary.com/drmkbb1sf/image/upload/w_150,h_90,c_fill,q_100/qm8flyw3rkeus3b7lfah.jpg); background-repeat:round; padding-top: 60px;" disabled>高雄</div></a></div>
+                      <div class="col"><a class="nav-link" href="#"><div class="rounded-3 fw-bold text-decoration-none text-white text-center" style="height: 90px; background-image: url(https://res.cloudinary.com/drmkbb1sf/image/upload/w_150,h_90,c_fill,q_100/nrxc27bpjkxolr5ubgwt.jpg); background-repeat:round; padding-top: 60px;" disabled>花蓮</div></a></div>
+        </div>
+        <div class=" col-12 fw-bold my-2 mx-3" ><a class="px-2 mx-1 rounded-1 bg-success-subtle text-success-emphasis text-nowrap" href="">新北市</a><a class="px-2 mx-1 rounded-1 bg-success-subtle text-success-emphasis text-nowrap" href="">新竹市</a><a class="px-2 mx-1 rounded-1 bg-success-subtle text-success-emphasis text-nowrap" href="">宜蘭縣</a><a class="px-2 mx-1 rounded-1 bg-success-subtle text-success-emphasis text-nowrap" href="">南投縣</a><a class="px-2 mx-1 rounded-1 bg-success-subtle text-success-emphasis text-nowrap" href="">彰化縣</a><a class="px-2 mx-1 rounded-1 bg-success-subtle text-success-emphasis text-nowrap" href="">屏東縣</a><a class="px-2 mx-1 rounded-1 bg-success-subtle text-success-emphasis text-nowrap" href="">新竹縣</a><a class="px-2 mx-1 rounded-1 bg-success-subtle text-success-emphasis text-nowrap" href="">更多縣市 ❯</a></div>
+    </div>
+</li>
+</ul>
+<ul class="navbar-nav d-none" id="layoutRWD_Food">
+    <li class="nav-item"><div class="row row-cols-2" >
+        <a class="nav-link col text-center border-0" id="BtnlayoutRWD_Hotel">旅館探索</a>
+        <a class="nav-link col text-center text-success-emphasis fw-bold border-bottom-0 border border-secondary link-opacity-25-hover bg-body-secondary" id="BtnlayoutRWD_Food">美食品嚐</a></div></li>
+        <li class="nav-item"><div class="row row-cols-2">   
+        <div class="col-12 border-top border-secondary bg-body-secondary" >
+            <div class="row row-cols-3 my-3 mx-2 row-gap-3">
+                <div class="col"><a class="nav-link" href="#"><div class="rounded-circle fw-bold text-decoration-none text-white text-center" style=" height: 90px; background-image: url(https://res.cloudinary.com/drmkbb1sf/image/upload/w_100,h_100,c_fill,q_100/jgl3fqhmzwywykjnifjw.jpg); background-repeat:round; padding-top:60px;" disabled>日式</div></a></div>
+                          <div class="col"><a class="nav-link" href="#"><div class="rounded-circle fw-bold text-decoration-none text-white text-center" style="height: 90px; background-image: url(https://res.cloudinary.com/drmkbb1sf/image/upload/w_100,h_100,c_fill,q_100/txex9xtcevd8gakpqlyk.jpg); background-repeat:round; padding-top: 60px;" disabled>台式</div></a></div>
+                          <div class="col"><a class="nav-link" href="#"><div class="rounded-circle fw-bold text-decoration-none text-white text-center" style="height: 90px; background-image: url(https://res.cloudinary.com/drmkbb1sf/image/upload/w_100,h_100,c_fill,q_100/nd78l3xpnqggrie34gkp.jpg); background-repeat:round; padding-top: 60px;" disabled>西式</div></a></div>
+                          <div class="col"><a class="nav-link" href="#"><div class="rounded-circle fw-bold text-decoration-none text-white text-center" style=" height: 90px; background-image: url(https://res.cloudinary.com/drmkbb1sf/image/upload/w_100,h_100,c_fill,q_100/yplsygb9jxwzgnlr4h2u.jpg); background-repeat:round; padding-top:60px;" disabled>泰式</div></a></div>
+                          <div class="col"><a class="nav-link" href="#"><div class="rounded-circle fw-bold text-decoration-none text-white text-center" style="height: 90px; background-image: url(https://res.cloudinary.com/drmkbb1sf/image/upload/w_100,h_100,c_fill,q_100/lkbhmgnv0ojlyt86upey.jpg); background-repeat:round; padding-top: 60px;" disabled>素食</div></a></div>
+                          <div class="col"><a class="nav-link" href="#"><div class="rounded-circle fw-bold text-decoration-none text-white text-center" style="height: 90px; background-image: url(https://res.cloudinary.com/drmkbb1sf/image/upload/w_100,h_100,c_fill,q_100/soaaqjrwxnx3ulvapxio.jpg); background-repeat:round; padding-top: 60px;" disabled>小吃</div></a></div>
+            </div>
+            <div class=" col-12 fw-bold my-2 mx-3" ><a class="px-2 mx-1 rounded-1 bg-body-tertiary text-success-emphasis text-nowrap" href="">早餐</a><a class="px-2 mx-1 rounded-1 bg-body-tertiary text-success-emphasis text-nowrap" href="">午餐</a><a class="px-2 mx-1 rounded-1 bg-body-tertiary text-success-emphasis text-nowrap" href="">晚餐</a><a class="px-2 mx-1 rounded-1 bg-body-tertiary text-success-emphasis text-nowrap" href="">下午茶</a><a class="px-2 mx-1 rounded-1 bg-body-tertiary text-success-emphasis text-nowrap" href="">麵包及甜點</a><a class="px-2 mx-1 rounded-1 bg-body-tertiary text-success-emphasis text-nowrap" href="">咖啡店</a><a class="px-2 mx-1 rounded-1 bg-body-tertiary text-success-emphasis text-nowrap" href="">酒吧</a><a class="px-2 mx-1 rounded-1 bg-body-tertiary text-success-emphasis text-nowrap" href="">更多料理 ❯</a></div>
+        </div>
+    </li>
+    </ul>
+
+</div>
+
+         
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script> 
+    <script
+  src="https://code.jquery.com/jquery-3.7.1.min.js"
+  integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
+  crossorigin="anonymous"
+></script>
+<script>
+
+$("#layout_navbar_collapseExample").hover(
+  function() {
+      $('#layout_collapseExample').show()}
+      );
+      $("#layout_navbar_collapseExample").hover(
+  function() {
+      $('#layout_allSection').hide()}
+      );
+      
+$("#layout_collapseExample").hover(
+  function() {
+      $('#layout_collapseExample').show()},
+      function() {
+        $('#layout_collapseExample').hide();
+      }
+      ); 
+
+      $("#layout_navbar_allSection").hover(
+  function() {
+      $('#layout_allSection').show()}
+      );
+      $("#layout_navbar_allSection").hover(
+      function(){  $('#layout_collapseExample').hide();}
+      )
+      
+$("#layout_allSection").hover(
+  function() {
+      $('#layout_allSection').show()},
+      function() {
+        $('#layout_allSection').hide();
+      }
+      ); 
+      $("#layout_nav_item_dropdown").hover(
+        function(){
+          $('#layout_allSection').hide();
+        }
+      )
+      $("#layout_nav_item_dropdown").hover(
+        function(){
+          $('#layout_collapseExample').hide();
+        }
+      )
+      
+
+
+$("#layout_hotSpot, .layout_hitSpot_sidebar").hover(
+  function() {
+    $('.layout_hotSpot_sidebar').show();
+    $('.layout_southEastAsia_sidebar').hide();
+    $('.layout_eastAsia_sidebar').hide();
+    $('.layout_southAsia_sidebar').hide();
+    $('.layout_europe_sidebar').hide();
+    $('.layout_america_sidebar').hide();
+  }
+);
+
+ $("#layout_eastAsia, .layout_eastAsia_sidebar").hover(
+  function() {
+    $('.layout_hotSpot_sidebar').hide();
+    $('.layout_southEastAsia_sidebar').hide();
+    $('.layout_eastAsia_sidebar').show();
+    $('.layout_southAsia_sidebar').hide();
+    $('.layout_oceania_sidebar').hide();
+    $('.layout_europe_sidebar').hide();
+    $('.layout_america_sidebar').hide();
+  }
+);
+
+  $("#layout_southEastAsia, .layout_southEastAsia_sidebar").hover(
+  function() {
+    $('.layout_hotSpot_sidebar').hide();
+    $('.layout_eastAsia_sidebar').hide();
+    $('.layout_southEastAsia_sidebar').show();
+    $('.layout_southAsia_sidebar').hide();
+    $('.layout_oceania_sidebar').hide();
+    $('.layout_europe_sidebar').hide();
+    $('.layout_america_sidebar').hide();
+  }
+)
+$("#layout_southAsia, .layout_southAsia_sidebar").hover(
+  function() {
+    $('.layout_hotSpot_sidebar').hide();
+    $('.layout_eastAsia_sidebar').hide();
+    $('.layout_southEastAsia_sidebar').hide();
+    $('.layout_southAsia_sidebar').show();
+    $('.layout_oceania_sidebar').hide();
+    $('.layout_europe_sidebar').hide();
+    $('.layout_america_sidebar').hide();
+  }
+)
+$("#layout_oceania, .layout_oceania_sidebar").hover(
+  function() {
+    $('.layout_hotSpot_sidebar').hide();
+    $('.layout_eastAsia_sidebar').hide();
+    $('.layout_southEastAsia_sidebar').hide();
+    $('.layout_southAsia_sidebar').hide();
+    $('.layout_oceania_sidebar').show();
+    $('.layout_europe_sidebar').hide();
+    $('.layout_america_sidebar').hide();
+  }
+)
+$("#layout_europe, .layout_europe_sidebar").hover(
+  function() {
+    $('.layout_hotSpot_sidebar').hide();
+    $('.layout_eastAsia_sidebar').hide();
+    $('.layout_southEastAsia_sidebar').hide();
+    $('.layout_southAsia_sidebar').hide();
+    $('.layout_oceania_sidebar').hide();
+    $('.layout_europe_sidebar').show();
+    $('.layout_america_sidebar').hide();
+  }
+)
+$("#layout_america, .layout_america_sidebar").hover(
+  function() {
+    $('.layout_hotSpot_sidebar').hide();
+    $('.layout_eastAsia_sidebar').hide();
+    $('.layout_southEastAsia_sidebar').hide();
+    $('.layout_southAsia_sidebar').hide();
+    $('.layout_oceania_sidebar').hide();
+    $('.layout_europe_sidebar').hide();
+    $('.layout_america_sidebar').show();
+  }
+)
+
+document.querySelectorAll("#BtnlayoutRWD_Food").forEach(btn =>{
+   btn.addEventListener("click", () => {
+    document.querySelector("#layoutRWD_Hotel").classList.add("d-none");
+    document.querySelector("#layoutRWD_Food").classList.remove("d-none");
+}); 
+});
+
+document.querySelectorAll("#BtnlayoutRWD_Hotel").forEach(btn => {
+    btn.addEventListener("click", () => {
+        document.querySelector("#layoutRWD_Food").classList.add("d-none");
+        document.querySelector("#layoutRWD_Hotel").classList.remove("d-none");
+    });
+});
+
+
+</script>
+  </body>
+ 
+</html>
