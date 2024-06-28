@@ -1,0 +1,33 @@
+{
+    "name": "Taipei 101 Pent House",
+    "address": "No. 101, Section 5, Xinyi Road, Xinyi District, Taipei City, Taiwan",
+    "description": "Pent house in Taipei 101",
+    "image": "https://ipfs.io/ipfs/Qmf1PDds2BN7wU66rQ49RjAgttTVsks1be1HEKhTtQxpEr/Taipei_101_PentHouse.webp",
+    "id": "2",
+    "attributes": [
+        {
+            "trait_type": "Purchase Price",
+            "value": 20
+        },
+        {
+            "trait_type": "Type of Residence",
+            "value": "Pent House"
+        },
+        {
+            "trait_type": "Bed Rooms",
+            "value": 4
+        },
+        {
+            "trait_type": "Bathrooms",
+            "value": 3
+        },
+        {
+            "trait_type": "Square Feet",
+            "value": 2000
+        },
+        {
+            "trait_type": "Year Built",
+            "value": 2022
+        }
+    ]
+}

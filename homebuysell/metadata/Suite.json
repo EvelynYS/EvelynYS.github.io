@@ -1,0 +1,33 @@
+{
+    "name": "Taipei 101 Suite",
+    "address": "No. 101, Section 5, Xinyi Road, Xinyi District, Taipei City, Taiwan",
+    "description": "Suite in Taipei 101",
+    "image": "https://ipfs.io/ipfs/Qmf1PDds2BN7wU66rQ49RjAgttTVsks1be1HEKhTtQxpEr/Taipei_101_Suite.webp",
+    "id": "3",
+    "attributes": [
+        {
+            "trait_type": "Purchase Price",
+            "value": 15
+        },
+        {
+            "trait_type": "Type of Residence",
+            "value": "Suite"
+        },
+        {
+            "trait_type": "Bed Rooms",
+            "value": 2
+        },
+        {
+            "trait_type": "Bathrooms",
+            "value": 1
+        },
+        {
+            "trait_type": "Square Feet",
+            "value": 1200
+        },
+        {
+            "trait_type": "Year Built",
+            "value": 2022
+        }
+    ]
+}

@@ -1,0 +1,223 @@
+*{
+    font-family: "Roboto", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  }
+#layout_form_control:focus{
+box-shadow:none;
+}
+#layout_input_group:hover{
+border-color: #029278;
+}
+#layout_nav_item:hover{
+background-color:  rgb(247, 244, 244);
+}
+/* 以上是通用layout 以下是首頁第二行layout */
+#layout_navbar_allSection:hover{
+background-color:  rgb(247, 244, 244);
+}
+
+#layout_navbar_collapseExample:hover{
+background-color:  rgb(247, 244, 244);
+}
+
+#layout_nav_item_dropdown:hover {
+background-color:  rgb(247, 244, 244);
+} 
+#layout_nav_item_dropdown:hover> #layout_itinerary_dropdown_menu{
+display: block;
+margin-top: 355px;
+transition-delay: 1s;
+}
+#layout_itinerary_dropdown_menu:hover{
+display: block;
+}
+
+.dropdown-item:hover{
+background-color: white;
+color: #029278;
+}
+
+.collapse-item:hover{
+background-color: #029278; 
+}
+.collapse-item:hover > div{
+color: white;
+}
+
+#layout_hotSpot:hover::after{
+content: "";
+position: absolute;
+width: 15px;
+height: 15px;
+top: 6%;
+left:25%;
+clip-path: polygon(0% 0%, 80% 50%, 0% 100%);
+background-color: #029278;
+}
+
+#layout_eastAsia:hover::after{
+content: "";
+position: absolute;
+width: 15px;
+height: 15px;
+top: 20%;
+left:25%;
+clip-path: polygon(0% 0%, 80% 50%, 0% 100%);
+background-color: #029278;
+}
+#layout_southEastAsia:hover::after{
+content: "";
+position: absolute;
+width: 15px;
+height: 15px;
+top: 33.5%;
+left: 25%;
+clip-path: polygon(0% 0%, 80% 50%, 0% 100%);
+background-color: #029278;
+}
+#layout_southAsia:hover::after{
+content: "";
+position: absolute;
+width: 15px;
+height: 15px;
+top: 48%;
+left: 25%;
+clip-path: polygon(0% 0%, 80% 50%, 0% 100%);
+background-color: #029278;
+}
+#layout_oceania:hover::after{
+content: "";
+position: absolute;
+width: 15px;
+height: 15px;
+top: 62%;
+left: 25%;
+clip-path: polygon(0% 0%, 80% 50%, 0% 100%);
+background-color: #029278;
+}
+#layout_europe:hover::after{
+content: "";
+position: absolute;
+width: 15px;
+height: 15px;
+top: 76.5%;
+left: 25%;
+clip-path: polygon(0% 0%, 80% 50%, 0% 100%);
+background-color: #029278;
+}
+#layout_america:hover::after{
+content: "";
+position: absolute;
+width: 15px;
+height: 15px;
+top: 90.5%;
+left: 25%;
+clip-path: polygon(0% 0%, 80% 50%, 0% 100%);
+background-color: #029278;
+}
+.layout_eastAsia_sidebar{
+display: none;
+}
+.layout_southEastAsia_sidebar, .layout_southAsia_sidebar, .layout_oceania_sidebar, .layout_europe_sidebar, .layout_america_sidebar{
+display: none;
+}
+
+.layout_hotSpot_sidebar a{
+text-decoration: none;
+color: aliceblue;
+}
+.layout_eastAsia_sidebar a{
+text-decoration: none;
+line-height: 2em;
+color: black;
+margin-right: 1em;
+white-space: nowrap;
+}
+.layout_eastAsia_sidebar a:hover{
+color: #029278;
+}
+.layout_southEastAsia_sidebar a{
+text-decoration: none;
+line-height: 2em;
+color: black;
+margin-right: 1em;
+white-space: nowrap;
+}
+.layout_southEastAsia_sidebar a:hover{
+color: #029278;
+}
+.layout_southAsia_sidebar a{
+text-decoration: none;
+line-height: 2em;
+color: black;
+margin-right: 1em;
+white-space: nowrap;
+}
+.layout_southAsia_sidebar a:hover{
+color: #029278;
+}
+.layout_oceania_sidebar a{
+text-decoration: none;
+line-height: 2em;
+color: black;
+margin-right: 1em;
+white-space: nowrap;
+}
+.layout_oceania_sidebar a:hover{
+color: #029278;
+}
+.layout_europe_sidebar a{
+text-decoration: none;
+line-height: 2em;
+color: black;
+margin-right: 1em;
+white-space: nowrap;
+}
+.layout_europe_sidebar a:hover{
+color: #029278;
+}
+.layout_america_sidebar a{
+text-decoration: none;
+line-height: 2em;
+color: black;
+margin-right: 1em;
+white-space: nowrap;
+}
+.layout_america_sidebar a:hover{
+color: #029278;
+}
+#layout_allSection{
+display: none;
+}
+#layout_allSection a{
+text-decoration: none;
+line-height: 2em;
+color: black;
+}
+#layout_allSection a:hover{
+color: #029278;
+}
+.container{
+margin: auto;
+}
+.container-lg{
+margin: auto;
+}
+#navbarSupportedContent a{
+text-decoration: none;
+}
+
+@media screen and (min-width: 993px) {
+.container-fluid{
+width: 100%;
+}
+
+#layout_form_control{
+width: 200px;
+}
+#LayoutHomePageIcon{
+margin-left: 15%;
+}
+#singlePro_layout_toptop{
+margin-left: 500px;
+}
+}

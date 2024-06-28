@@ -1,0 +1,205 @@
+* {
+    font-family: "Roboto", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  }
+  /* 這裡是首頁layout */
+  #layout_form_control:focus {
+    box-shadow: none;
+  }
+  #layout_input_group:hover {
+    border-color: #029278;
+  }
+  #layout_nav_item:hover {
+    background-color: rgb(247, 244, 244);
+  }
+  #layout_nav_item:hover {
+    background-color: rgb(247, 244, 244);
+  }
+#singlePro_layout_top{
+  margin-left: 500px;
+}
+  .singlePro_layout a {
+    color: black;
+  }
+  .singlePro_layout a:hover {
+    color: #029278;
+  }
+  .singlePro_layout > .nav-link.active {
+    color: #029278;
+    font-weight: bold;
+    background-color: rgb(247, 244, 244);
+    border-bottom: #029278 solid;
+    border-radius: 0%;
+  }
+  .breadcrumb a {
+    color: black;
+    font-weight: light;
+    text-decoration: none;
+  }
+  #singlePro_tag > div {
+    margin-left: 10px;
+    padding: 5px 10px;
+    background-color: #f5f5f5;
+    color: gray;
+    border-radius: 8px;
+  }
+
+  #singlePro_recommend_tag a {
+    margin-right: 15px;
+    padding: 5px 10px;
+    background-color: #dbf3ea;
+    color: #029278;
+    border-radius: 8px;
+    text-decoration: none;
+  }
+  #singlePro_dateinput:focus {
+    box-shadow: none;
+  }
+  .form-select:focus {
+    box-shadow: none;
+  }
+  .form-check-input[type="radio"]:focus {
+    background-color: #029278; /* 修改背景色 */
+    box-shadow: none;
+    border-color: #029278;
+    color: #029278;
+  }
+  .form-check-input[type="radio"] {
+    /* 修改背景色 */
+    box-shadow: none;
+    border-color: #029278;
+    color: #029278;
+  }
+  #singlePro_packageOptionBtn button {
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 8px;
+    padding: 10px 15px;
+    margin: 10px;
+    width: fit-content;
+    border: solid rgb(108, 102, 102) 1px;
+    text-decoration: none;
+    color:black;
+  }
+  #singlePro_packageOptionBtn button:focus {
+    border-radius: 8px;
+    padding: 10px 15px;
+    border: solid #029278 1px;
+    background-color: #dbf3ea;
+    color: #029278;
+  }
+  #singlePro_packageOptionBtn button:hover {
+    border-radius: 8px;
+    padding: 10px 15px;
+    background-color: #dbf3ea;
+  }
+  #accordionFlushExample button{
+    background-color: #f8f9fa;;
+  }
+  #accordionFlushExample button:focus{
+    box-shadow: none;
+    background-color: #f8f9fa;;
+  }
+  #singlePro_sidebar{
+    overflow-y: scroll;;
+    scrollbar-width: none;
+  }
+  #singlePro_externallink{
+    overflow-y: scroll;;
+    scrollbar-width: none;
+  }
+#singlePro_addtoCart:hover{
+background-color:#78c4b6 !important;
+}
+#singlePro_booking:hover{
+background-color:#428e80 !important;
+}
+
+
+
+  .ftco-section .img {
+background-size: cover;
+background-repeat: no-repeat;
+background-position: center center; }
+.ftco-section .text-center {
+text-align: center !important; }
+.ftco-section .justify-content-center {
+-webkit-box-pack: center !important;
+-ms-flex-pack: center !important;
+justify-content: center !important; }
+.ftco-section .d-flex {
+display: -webkit-box !important;
+display: -ms-flexbox !important;
+display: flex !important; }
+
+.container{
+margin: auto;
+}
+.container-lg{
+margin: auto;
+}
+#Btncoupon{
+box-shadow: none;
+width: fit-content;
+}
+#Btncoupon:hover{
+background-color:darkgray !important;
+box-shadow: none;
+width: fit-content;
+}
+#BtncouponBig{
+background-color: #029278 !important;
+box-shadow: none;
+width: 100%;
+}
+#BtncouponBig:hover{
+background-color: #015e4d !important;
+box-shadow: none;
+width: 100%;
+}
+
+
+
+@media screen and (max-width: 992px) {
+.modalSmPhoto{
+  display: block;
+}
+.modalBgPhoto{
+  display: none;
+}
+#singlePro_container{
+  margin-top: -50px !important;
+} 
+#description{
+  width: 85%;
+}
+.work .img{
+  height:180px;
+}
+#singlePro_sidebar{
+  height:400px;
+}
+.fixed-bottom{
+  position: fixed;
+  bottom: 0px;
+}
+} 
+@media screen and (min-width: 993px) {
+.modalSmPhoto{
+  display: none;
+}
+.modalBgPhoto{
+  display: block;
+}
+#description{
+  width: 700px;
+}
+.work .img{
+  height:500px;
+}
+#singlePro_sidebar{
+  height:750px;
+}
+.sticky-lg-top {
+top: 180px;
+}
+} 
