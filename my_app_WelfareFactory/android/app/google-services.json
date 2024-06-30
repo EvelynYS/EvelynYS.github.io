@@ -1,0 +1,67 @@
+{
+  "project_info": {
+    "project_number": "854289820257",
+    "project_id": "welfare-factory",
+    "storage_bucket": "welfare-factory.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:854289820257:android:a2c5dc87db18019ef51820",
+        "android_client_info": {
+          "package_name": "com.android.application"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAYXG8I92XBJfc9MwuqbdbvIOH-qhrf-Q4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:854289820257:android:87d00555c0dba284f51820",
+        "android_client_info": {
+          "package_name": "com.example.my_"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAYXG8I92XBJfc9MwuqbdbvIOH-qhrf-Q4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:854289820257:android:29e0614f6c7cc829f51820",
+        "android_client_info": {
+          "package_name": "com.example.my_app"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAYXG8I92XBJfc9MwuqbdbvIOH-qhrf-Q4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
